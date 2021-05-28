@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="FFT4v4.c" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\FFT4v4.c"/>
+    <originFiles name="FFT_DIT4_out.gold.dat" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\FFT_DIT4_out.gold.dat"/>
+    <originFiles name="FFT_DIT4_v2.h" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\FFT_DIT4_v2.h"/>
+    <originFiles name="calc_index.c" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\calc_index.c"/>
+    <originFiles name="div_floor.c" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\div_floor.c"/>
+    <originFiles name="four_raised_to_x.c" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\four_raised_to_x.c"/>
+  </source>
+  <testbench>
+    <originFiles name="FFT4v4_test.c" path="C:\Users\aaron\Desktop\git_artículo\VivadoProjects\FFT_EJEMPLO\FFT4v4_test.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

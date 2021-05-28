@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="FFT_DIT4_FUNC" xd:componentRef="FFT_DIT4_FUNC" xd:initiationInterval="206" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="xcr_d0" xd:originalName="xcr_d0" xd:direction="out" xd:interfaceRef="xcr_d0" xd:busTypeRef="ap_memory" xd:arraySize="16" xd:dataWidth="32"/>
+  <xd:arg xd:name="xcr_q0" xd:originalName="xcr_q0" xd:direction="in" xd:interfaceRef="xcr_q0" xd:busTypeRef="ap_memory" xd:arraySize="16" xd:dataWidth="32"/>
+  <xd:arg xd:name="xci_d0" xd:originalName="xci_d0" xd:direction="out" xd:interfaceRef="xci_d0" xd:busTypeRef="ap_memory" xd:arraySize="16" xd:dataWidth="32"/>
+  <xd:arg xd:name="xci_q0" xd:originalName="xci_q0" xd:direction="in" xd:interfaceRef="xci_q0" xd:busTypeRef="ap_memory" xd:arraySize="16" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="205" xd:worst-case="205" xd:average-case="205"/>
+  <xd:resourceEstimates xd:LUT="3681" xd:FF="3592" xd:BRAM="0" xd:DSP="34"/>
+</xd:acceleratorMap>

@@ -1,0 +1,52 @@
+   Compiling(apcc) ../../../../FFT4v4_test.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Eduardo Romero A' on host 'superlap' (Windows NT_amd64 version 6.2) on Wed May 31 18:23:39 -0700 2017
+INFO: [HLS 200-10] In directory 'G:/Dropbox/Adaviv_proy/FFT_DIT4_v1/sol_pipe_top/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../four_raised_to_x.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Eduardo Romero A' on host 'superlap' (Windows NT_amd64 version 6.2) on Wed May 31 18:24:00 -0700 2017
+INFO: [HLS 200-10] In directory 'G:/Dropbox/Adaviv_proy/FFT_DIT4_v1/sol_pipe_top/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../div_floor.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Eduardo Romero A' on host 'superlap' (Windows NT_amd64 version 6.2) on Wed May 31 18:24:12 -0700 2017
+INFO: [HLS 200-10] In directory 'G:/Dropbox/Adaviv_proy/FFT_DIT4_v1/sol_pipe_top/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../calc_index.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Eduardo Romero A' on host 'superlap' (Windows NT_amd64 version 6.2) on Wed May 31 18:24:28 -0700 2017
+INFO: [HLS 200-10] In directory 'G:/Dropbox/Adaviv_proy/FFT_DIT4_v1/sol_pipe_top/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../FFT4v4.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'Eduardo Romero A' on host 'superlap' (Windows NT_amd64 version 6.2) on Wed May 31 18:24:46 -0700 2017
+INFO: [HLS 200-10] In directory 'G:/Dropbox/Adaviv_proy/FFT_DIT4_v1/sol_pipe_top/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+ 		 X[0]=1.00000+j0.00000
+ 		 X[1]=-0.92388+j-0.38268
+ 		 X[2]=0.70711+j0.70711
+ 		 X[3]=-0.38268+j-0.92388
+ 		 X[4]=0.00000+j1.00000
+ 		 X[5]=0.38268+j-0.92388
+ 		 X[6]=-0.70711+j0.70711
+ 		 X[7]=0.92388+j-0.38268
+ 		 X[8]=-1.00000+j0.00000
+ 		 X[9]=0.92388+j0.38268
+ 		 X[10]=-0.70711+j-0.70711
+ 		 X[11]=0.38268+j0.92388
+ 		 X[12]=0.00000+j-1.00000
+ 		 X[13]=-0.38268+j0.92388
+ 		 X[14]=0.70711+j-0.70711
+ 		 X[15]=-0.92388+j0.38268
+Comparing against output data 
+*******************************************
+PASS: The output matches the golden output!
+*******************************************
+INFO: [SIM 1] CSim done with 0 errors.
