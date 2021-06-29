@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>insertion_sort</name>
+	<name>insertion_sort_</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -29,47 +29,47 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/.apc/.src</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/.apc/.tb</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/.apc/.tb</location>
 		</link>
 		<link>
 			<name>.reference/insertion_sort.h</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort.h</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/solution1/.tcls</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/insertion_sort.c</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort.c</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort.c</location>
 		</link>
 		<link>
 			<name>testbench/insertion_sort_tb.c</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort_tb.c</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort_tb.c</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/solution1/solution1.directive</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/solution1/directives.tcl</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/solution1/script.tcl</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

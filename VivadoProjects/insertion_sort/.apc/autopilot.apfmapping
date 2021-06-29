@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="insertion_sort.c" path="C:\Users\aaron\Desktop\git_artículo\ProyectosEnVivado\insertion_sort.c"/>
-    <originFiles name="insertion_sort.c" path="C:\Users\aaron\Desktop\git_artículo\ProyectosEnVivado\insertion_sort.c"/>
+    <originFiles name="insertion_sort.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\insertion_sort.c"/>
   </source>
   <testbench>
-    <originFiles name="insertion_sort_tb.c" path="C:\Users\aaron\Desktop\git_artículo\ProyectosEnVivado\insertion_sort_tb.c"/>
-    <originFiles name="insertion_sort_tb.c" path="C:\Users\aaron\Desktop\git_artículo\ProyectosEnVivado\insertion_sort_tb.c"/>
+    <originFiles name="insertion_sort_tb.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\insertion_sort_tb.c"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

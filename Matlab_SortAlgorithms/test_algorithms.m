@@ -7,7 +7,7 @@ clc,clear,close all;
 N = 5;
 for i = 1:100 
     A = randi([-100 100],1,N);
-    A_obj = Heap_c(A);
+    A_obj = Heap_c([4 3 2 1])%Heap_c(A);
     tic
     insertion_sort(A);
     t_insertion(i) = toc;

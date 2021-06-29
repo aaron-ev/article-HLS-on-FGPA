@@ -1,10 +1,14 @@
-void selection_sort(unsigned int *A, unsigned int len)
+
+
+#include "selection_sort.h"
+
+void selection_sort (data_inp A[N])
 {
-    for (int i = 0; i < len - 1; i++)
+    for (int i = 0; i < N - 1; i++)
     {
     	unsigned int min = A[i];
     	unsigned int index_min = i;
-        for (int j = i + 1; j < len; j++)
+        for (int j = i + 1; j < N; j++)
         {
             if (A[j] < min)
             {

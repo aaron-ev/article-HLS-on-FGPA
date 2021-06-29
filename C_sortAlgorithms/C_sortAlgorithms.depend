@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1624560933 source:c:\users\aaron\desktop\git_article\c_sortalgorithms\sortalgorithms.c
+	"sortAlgorithms.h"
+	<stdio.h>
+	"math.h"
+
+1624561215 c:\users\aaron\desktop\git_article\c_sortalgorithms\sortalgorithms.h
+	"stdint.h"
+	"math.h"
+	"limits.h"
+
+1624563339 source:c:\users\aaron\desktop\git_article\c_sortalgorithms\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sortAlgorithms.h"
+

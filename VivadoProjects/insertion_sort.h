@@ -1,16 +1,14 @@
 /*******************************************************************************/
-#ifndef insertion_SORT_H_
-#define insertion_SORT_H_
+#ifndef INSERTION_SORT_H_
+#define INSERTION_SORT_H_
 
-#define N    10	// Number of elements to order
-#define TRUE 1
+#define N	48	// Number of elements to order
+typedef float data_inp;
 
-typedef float data_inp; // Bus de entrada
+float A[N];
 
-void insertion_sort (data_inp A[]);
-void data_load(data_inp A[]);
-void data_unload(data_inp A[]);
-
+void insertion_sort(float A[N]);
+//void swap(data_inp A[],int i_index,int j_index);
 #endif
 
 

@@ -1,0 +1,375 @@
+
+
+================================================================
+== Vivado HLS Report for 'bubbleSort'
+================================================================
+* Date:           Wed Jun 23 13:05:50 2021
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        bubbleSort
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a100tcsg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.69|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-------+-----+-------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    | min |  max  | min |  max  |   Type  |
+    +-----+-------+-----+-------+---------+
+    |   97|  22657|   98|  22658|   none  |
+    +-----+-------+-----+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-------+----------+-----------+-----------+--------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  |  Trip  |          |
+        |  Loop Name  | min |  max  |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-------------+-----+-------+----------+-----------+-----------+--------+----------+
+        |- Loop 1     |   96|  22656|  2 ~ 472 |          -|          -|      48|    no    |
+        | + Loop 1.1  |    0|    470|  4 ~ 10  |          -|          -| 0 ~ 47 |    no    |
+        +-------------+-----+-------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 12
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp)
+3 --> 
+	4  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / (tmp_4)
+	12  / (!tmp_4)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	3  / true
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: stg_13 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([48 x float]* %A) nounwind, !map !8
+
+ST_1: stg_14 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @bubbleSort_str) nounwind
+
+ST_1: stg_15 [1/1] 1.57ns
+:2  br label %1
+
+
+ <State 2>: 1.57ns
+ST_2: indvars_iv [1/1] 0.00ns
+:0  %indvars_iv = phi i7 [ %i, %3 ], [ 47, %0 ]
+
+ST_2: tmp [1/1] 0.00ns
+:1  %tmp = call i1 @_ssdm_op_BitSelect.i1.i7.i32(i7 %indvars_iv, i32 6)
+
+ST_2: empty [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 48, i64 48, i64 48) nounwind
+
+ST_2: stg_19 [1/1] 1.57ns
+:3  br i1 %tmp, label %4, label %.preheader
+
+ST_2: stg_20 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 3>: 4.38ns
+ST_3: i_assign [1/1] 0.00ns
+.preheader:0  %i_assign = phi i6 [ %j, %._crit_edge ], [ 0, %1 ]
+
+ST_3: i_assign_cast [1/1] 0.00ns
+.preheader:1  %i_assign_cast = zext i6 %i_assign to i7
+
+ST_3: exitcond [1/1] 2.43ns
+.preheader:2  %exitcond = icmp eq i7 %i_assign_cast, %indvars_iv
+
+ST_3: empty_6 [1/1] 0.00ns
+.preheader:3  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 47, i64 0) nounwind
+
+ST_3: j [1/1] 1.67ns
+.preheader:4  %j = add i6 %i_assign, 1
+
+ST_3: stg_26 [1/1] 0.00ns
+.preheader:5  br i1 %exitcond, label %3, label %2
+
+ST_3: tmp_s [1/1] 0.00ns
+:0  %tmp_s = zext i6 %i_assign to i64
+
+ST_3: A_addr [1/1] 0.00ns
+:1  %A_addr = getelementptr [48 x float]* %A, i64 0, i64 %tmp_s
+
+ST_3: A_load [2/2] 2.71ns
+:2  %A_load = load float* %A_addr, align 4
+
+ST_3: tmp_6 [1/1] 0.00ns
+:3  %tmp_6 = zext i6 %j to i64
+
+ST_3: A_addr_1 [1/1] 0.00ns
+:4  %A_addr_1 = getelementptr [48 x float]* %A, i64 0, i64 %tmp_6
+
+ST_3: A_load_1 [2/2] 2.71ns
+:5  %A_load_1 = load float* %A_addr_1, align 4
+
+ST_3: i [1/1] 1.67ns
+:0  %i = add i7 %indvars_iv, -1
+
+ST_3: stg_34 [1/1] 0.00ns
+:1  br label %1
+
+
+ <State 4>: 2.71ns
+ST_4: A_load [1/2] 2.71ns
+:2  %A_load = load float* %A_addr, align 4
+
+ST_4: A_load_1 [1/2] 2.71ns
+:5  %A_load_1 = load float* %A_addr_1, align 4
+
+
+ <State 5>: 8.69ns
+ST_5: p_Val2_1 [1/1] 0.00ns
+:6  %p_Val2_1 = bitcast float %A_load to i32
+
+ST_5: loc_V [1/1] 0.00ns
+:7  %loc_V = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_1, i32 23, i32 30)
+
+ST_5: loc_V_1 [1/1] 0.00ns
+:8  %loc_V_1 = trunc i32 %p_Val2_1 to i23
+
+ST_5: A_load_1_to_int [1/1] 0.00ns
+:9  %A_load_1_to_int = bitcast float %A_load_1 to i32
+
+ST_5: tmp_3 [1/1] 0.00ns
+:10  %tmp_3 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %A_load_1_to_int, i32 23, i32 30)
+
+ST_5: tmp_2 [1/1] 0.00ns
+:11  %tmp_2 = trunc i32 %A_load_1_to_int to i23
+
+ST_5: notlhs [1/1] 2.47ns
+:12  %notlhs = icmp ne i8 %loc_V, -1
+
+ST_5: notrhs [1/1] 2.84ns
+:13  %notrhs = icmp eq i23 %loc_V_1, 0
+
+ST_5: tmp_5 [1/1] 0.00ns (grouped into LUT with out node tmp_4)
+:14  %tmp_5 = or i1 %notrhs, %notlhs
+
+ST_5: notlhs3 [1/1] 2.47ns
+:15  %notlhs3 = icmp ne i8 %tmp_3, -1
+
+ST_5: notrhs4 [1/1] 2.84ns
+:16  %notrhs4 = icmp eq i23 %tmp_2, 0
+
+ST_5: tmp_7 [1/1] 0.00ns (grouped into LUT with out node tmp_4)
+:17  %tmp_7 = or i1 %notrhs4, %notlhs3
+
+ST_5: tmp_8 [1/1] 0.00ns (grouped into LUT with out node tmp_4)
+:18  %tmp_8 = and i1 %tmp_5, %tmp_7
+
+ST_5: tmp_9 [1/1] 6.37ns
+:19  %tmp_9 = fcmp ogt float %A_load, %A_load_1
+
+ST_5: tmp_4 [1/1] 1.37ns (out node of the LUT)
+:20  %tmp_4 = and i1 %tmp_8, %tmp_9
+
+ST_5: stg_52 [1/1] 0.00ns
+:21  br i1 %tmp_4, label %_ifconv, label %._crit_edge
+
+ST_5: p_Result_s [1/1] 0.00ns
+_ifconv:0  %p_Result_s = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %p_Val2_1, i32 31)
+
+ST_5: p_Result_1 [1/1] 0.00ns
+_ifconv:1  %p_Result_1 = call i24 @_ssdm_op_BitConcatenate.i24.i1.i23(i1 true, i23 %loc_V_1) nounwind
+
+ST_5: tmp_4_i_i_i [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:2  %tmp_4_i_i_i = zext i24 %p_Result_1 to i78
+
+ST_5: tmp_i_i_i_i_cast1 [1/1] 0.00ns
+_ifconv:3  %tmp_i_i_i_i_cast1 = zext i8 %loc_V to i9
+
+ST_5: sh_assign [1/1] 1.67ns
+_ifconv:4  %sh_assign = add i9 %tmp_i_i_i_i_cast1, -127
+
+ST_5: isNeg [1/1] 0.00ns
+_ifconv:5  %isNeg = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %sh_assign, i32 8)
+
+ST_5: tmp_6_i_i_i [1/1] 1.67ns
+_ifconv:6  %tmp_6_i_i_i = sub i8 127, %loc_V
+
+ST_5: tmp_6_i_i_i_cast [1/1] 0.00ns
+_ifconv:7  %tmp_6_i_i_i_cast = sext i8 %tmp_6_i_i_i to i9
+
+ST_5: sh_assign_1 [1/1] 1.37ns
+_ifconv:8  %sh_assign_1 = select i1 %isNeg, i9 %tmp_6_i_i_i_cast, i9 %sh_assign
+
+ST_5: sh_assign_1_cast [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:9  %sh_assign_1_cast = sext i9 %sh_assign_1 to i32
+
+ST_5: sh_assign_1_cast_cast [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:10  %sh_assign_1_cast_cast = sext i9 %sh_assign_1 to i24
+
+ST_5: tmp_8_i_i_i [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:11  %tmp_8_i_i_i = zext i32 %sh_assign_1_cast to i78
+
+ST_5: tmp_9_i_i_i [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:12  %tmp_9_i_i_i = lshr i24 %p_Result_1, %sh_assign_1_cast_cast
+
+ST_5: tmp_1_i_i_i [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:13  %tmp_1_i_i_i = shl i78 %tmp_4_i_i_i, %tmp_8_i_i_i
+
+ST_5: tmp_14 [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:14  %tmp_14 = call i1 @_ssdm_op_BitSelect.i1.i24.i32(i24 %tmp_9_i_i_i, i32 23)
+
+ST_5: tmp_10 [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:15  %tmp_10 = zext i1 %tmp_14 to i32
+
+ST_5: tmp_11 [1/1] 0.00ns (grouped into LUT with out node p_Val2_4)
+_ifconv:16  %tmp_11 = call i32 @_ssdm_op_PartSelect.i32.i78.i32.i32(i78 %tmp_1_i_i_i, i32 23, i32 54)
+
+ST_5: p_Val2_4 [1/1] 3.26ns (out node of the LUT)
+_ifconv:17  %p_Val2_4 = select i1 %isNeg, i32 %tmp_10, i32 %tmp_11
+
+ST_5: p_Val2_7_i_i_i [1/1] 2.39ns
+_ifconv:18  %p_Val2_7_i_i_i = sub i32 0, %p_Val2_4
+
+ST_5: stg_72 [1/1] 2.71ns
+_ifconv:20  store float %A_load_1, float* %A_addr, align 4
+
+
+ <State 6>: 7.55ns
+ST_6: p_Val2_s [1/1] 1.37ns
+_ifconv:19  %p_Val2_s = select i1 %p_Result_s, i32 %p_Val2_7_i_i_i, i32 %p_Val2_4
+
+ST_6: tmp_2_i [6/6] 6.18ns
+_ifconv:21  %tmp_2_i = sitofp i32 %p_Val2_s to float
+
+
+ <State 7>: 6.18ns
+ST_7: tmp_2_i [5/6] 6.18ns
+_ifconv:21  %tmp_2_i = sitofp i32 %p_Val2_s to float
+
+
+ <State 8>: 6.18ns
+ST_8: tmp_2_i [4/6] 6.18ns
+_ifconv:21  %tmp_2_i = sitofp i32 %p_Val2_s to float
+
+
+ <State 9>: 6.18ns
+ST_9: tmp_2_i [3/6] 6.18ns
+_ifconv:21  %tmp_2_i = sitofp i32 %p_Val2_s to float
+
+
+ <State 10>: 6.18ns
+ST_10: tmp_2_i [2/6] 6.18ns
+_ifconv:21  %tmp_2_i = sitofp i32 %p_Val2_s to float
+
+
+ <State 11>: 6.18ns
+ST_11: tmp_2_i [1/6] 6.18ns
+_ifconv:21  %tmp_2_i = sitofp i32 %p_Val2_s to float
+
+
+ <State 12>: 2.71ns
+ST_12: stg_80 [1/1] 2.71ns
+_ifconv:22  store float %tmp_2_i, float* %A_addr_1, align 4
+
+ST_12: stg_81 [1/1] 0.00ns
+_ifconv:23  br label %._crit_edge
+
+ST_12: stg_82 [1/1] 0.00ns
+._crit_edge:0  br label %.preheader
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

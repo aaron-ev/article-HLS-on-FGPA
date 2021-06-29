@@ -1,19 +1,58 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "selection_sort.h"
 
-#define LEN 5
-void selection_sort(unsigned int* A, unsigned int len);
+data_inp A[N];
 
 int main()
 {
-	unsigned int A[LEN] = {5,4,3,2,1};
-
-	//Calling to selection algorithm
-	selection_sort(A,LEN);
-
-	//Displaying results
-	for(unsigned int i = 0; i < LEN;i++)
-	{
-		printf(" A[%u] = %u",i,A[i]);
-	}
+	data_load(A);
+	selection_sort(A);
+	data_unload(A);
 	return 0;
+}
+
+void data_load(data_inp A[])
+{
+	FILE *fp;
+	int i;
+
+	fp = fopen("testFile.txt","w");
+	if(fp == NULL)
+	{
+		printf("No se ha podido crear el archivo");
+		exit(1);
+	}
+	printf("Se ha creado el archivo");
+	//Saving unordered numbers into the file.
+	for (i = 0; i < N; i = i + 1)
+	{
+		A[i] = rand()%100;
+		fprintf(fp,"%f\n",A[i]);
+	}
+	fclose(fp);
+
+}
+
+void data_unload(data_inp A[])
+{
+	FILE *fp;
+	int i;
+
+	fp = fopen("testFile.txt","a");
+
+	if(fopen == NULL)
+	{
+		printf("No se ha podido crear el archivo");
+		exit(1);
+	}
+	//Saving ordered numbers into the file.
+	fprintf(fp,"------------\n");
+
+	for (i = 0; i < N; i = i + 1)
+	{
+		fprintf(fp,"%f\n",A[i]);
+	}
+	fclose(fp);
+
 }

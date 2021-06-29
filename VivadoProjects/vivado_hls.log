@@ -1,15 +1,46 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Thu May 27 15:22:54 -0700 2021
-INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado'
-C:/Users/aaron/Desktop/git_artÃ­culo/ProyectosEnVivado/insertion_sort/solution1/csynth.tcl can't be opened.
-couldn't read file "C:/Users/aaron/Desktop/git_artÃ­culo/ProyectosEnVivado/insertion_sort/solution1/csynth.tcl": no such file or directory
-    while executing
-"source C:/Users/aaron/Desktop/git_artÃ­culo/ProyectosEnVivado/insertion_sort/solution1/csynth.tcl"
-    invoked from within
-"hls::main C:/Users/aaron/Desktop/git_artículo/ProyectosEnVivado/insertion_sort/solution1/csynth.tcl"
-    ("uplevel" body line 1)
-    invoked from within
-"uplevel 1 hls::main {*}$args"
-    (procedure "hls_proc" line 5)
-    invoked from within
-"hls_proc $argv"
+INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Thu Jun 24 12:48:41 -0700 2021
+INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects'
+INFO: [HLS 200-10] Opening project 'C:/Users/aaron/Desktop/git_article/vivadoProjects/shellSort'.
+INFO: [HLS 200-10] Adding design file 'shellSort.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'shellSort_tb.c' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/aaron/Desktop/git_article/vivadoProjects/shellSort/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100tcsg324-1'
+INFO: [HLS 200-10] Analyzing design file 'shellSort.c' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'swap' into 'shellSort' (shellSort.c:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'swap' into 'shellSort' (shellSort.c:63) automatically.
+INFO: [HLS 200-111] Elapsed time: 9.112 seconds; current memory usage: 71.3 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'shellSort' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'shellSort' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.079 seconds; current memory usage: 72.5 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'shellSort' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.049 seconds; current memory usage: 72.5 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'shellSort' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'shellSort/A' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'shellSort' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'shellSort_fcmp_32ns_32ns_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'shellSort'.
+INFO: [HLS 200-111] Elapsed time: 0.085 seconds; current memory usage: 72.5 MB.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for shellSort.
+INFO: [VHDL 208-304] Generating VHDL RTL for shellSort.
+INFO: [VLOG 209-307] Generating Verilog RTL for shellSort.
+INFO: [HLS 200-112] Total elapsed time: 10.68 seconds; peak memory usage: 72.5 MB.

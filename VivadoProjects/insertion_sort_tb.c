@@ -1,18 +1,38 @@
+/* Insertion sort ascending order */
 #include <stdio.h>
 #include <stdlib.h>
-#include "insertion_sort.h"
+#include  "insertion_sort.h"
 
-data_inp A[N];
-//data_inp A_out[N];
+//create a txt file and sabe unsorted array
+void data_load(float *A);
+
+//save sorted array in txt file
+void data_unload(float *A);
+
+/*
+void printArray(data_inp A[],int size)
+{
+    int i;
+    for(i = 0; i < size; i = i + 1)
+    {
+        printf("A[%i] = %f\n",i,A[i]);
+    }
+    printf("----------\n");
+}
+*/
+
 int main()
 {
-	data_load(A);
-	insertion_sort(A);
-	data_unload(A);
-	return 0;
+    data_load(A);
+    //printArray(A,N);
+    insertion_sort(A);
+    //printArray(A,N);
+    data_unload(A);
+
+    return 0;
 }
 
-void data_load(data_inp A[])
+void data_load(float *A)
 {
 	FILE *fp;
 	int i;
@@ -23,7 +43,7 @@ void data_load(data_inp A[])
 		printf("No se ha podido crear el archivo");
 		exit(1);
 	}
-	printf("Se ha creado el archivo");
+	printf("Se ha creado el archivo\n");
 	//Saving unordered numbers into the file.
 	for (i = 0; i < N; i = i + 1)
 	{
@@ -34,11 +54,7 @@ void data_load(data_inp A[])
 
 }
 
-
-// Function to show the FFT results
-//void data_unload(float xcr[], float xci[], float *salr, float *sali) {
-
-void data_unload(data_inp A[])
+void data_unload(float *A)
 {
 	FILE *fp;
 	int i;
@@ -58,6 +74,4 @@ void data_unload(data_inp A[])
 		fprintf(fp,"%f\n",A[i]);
 	}
 	fclose(fp);
-	//A_out = A;
-
 }
