@@ -60,7 +60,6 @@ IFLAG += -D__SIM_DDS__
 IFLAG += -g
 IFLAG += -DNT
 LFLAG += -Wl,--enable-auto-import 
-DFLAG += -DAUTOCC
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 
 
@@ -71,16 +70,14 @@ all: $(TARGET)
 
 
 
-AUTOCC := cmd //c apcc.bat  
-
 $(ObjDir)/heapSort_tb.o: ../../../../heapSort_tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../heapSort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Echo) "   Compiling ../../../../heapSort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/heapSort_tb.d
 
 $(ObjDir)/heapSort.o: ../../../../heapSort.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../heapSort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Echo) "   Compiling ../../../../heapSort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/heapSort.d

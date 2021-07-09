@@ -1,5 +1,5 @@
 
-set TopModule "selection_sort"
+set TopModule "selectionSort"
 set ClockPeriod "10.000000"
 set ClockList {ap_clk}
 set multiClockList {}
@@ -9,7 +9,7 @@ set PipelineFlag 0
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
-set FloatingPointFlag 1
+set FloatingPointFlag 0
 set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7a100t:csg324:-1"
 set SourceFiles {sc {} c ../../selection_sort.c}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/solution1.directive}
+set DirectiveFile {C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/solution1.directive}
 set TBFiles {verilog ../../selection_sort_tb.c bc ../../selection_sort_tb.c vhdl ../../selection_sort_tb.c sc ../../selection_sort_tb.c cas ../../selection_sort_tb.c c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

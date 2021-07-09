@@ -2,57 +2,18 @@
 #include <stdlib.h>
 #include "heapSort.h"
 
-void data_load(float *A);
-void data_unload(float *A);
-int main()
+int main(void)
 {
-	data_load(A);
-	heapSort_noRecurv(A);
-	data_unload(A);
-	return 0;
-}
-
-void data_load(float *A)
-{
-	FILE *fp;
 	int i;
-
-	fp = fopen("testFile.txt","w");
-	if(fp == NULL)
+	data_inp dataOut;
+	for(i = 0; i < N;i =i +1)
 	{
-		printf("No se ha podido crear el archivo");
-		exit(1);
+		heapSort(rand()%65536,0);
 	}
-	printf("Se ha creado el archivo");
-	//Saving unordered numbers into the file.
-	for (i = 0; i < N; i = i + 1)
+	for(i = 0; i < N;i =i +1)
 	{
-		A[i] = rand()%100;
-		fprintf(fp,"%f\n",A[i]);
+		dataOut = heapSort(0,i);
 	}
-	fclose(fp);
-
+    return 0;
 }
 
-void data_unload(float *A)
-{
-	FILE *fp;
-	int i;
-
-	fp = fopen("testFile.txt","a");
-
-	if(fopen == NULL)
-	{
-		printf("No se ha podido crear el archivo");
-		exit(1);
-	}
-	//Saving ordered numbers into the file.
-	fprintf(fp,"------------\n");
-
-	for (i = 0; i < N; i = i + 1)
-	{
-		fprintf(fp,"%f\n",A[i]);
-	}
-	fclose(fp);
-
-}

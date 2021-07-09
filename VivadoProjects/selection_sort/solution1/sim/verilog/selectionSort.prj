@@ -1,0 +1,4 @@
+verilog xil_defaultlib "selectionSort.autotb.v"
+verilog xil_defaultlib "selectionSort.v"
+verilog xil_defaultlib "selectionSort_A.v"
+

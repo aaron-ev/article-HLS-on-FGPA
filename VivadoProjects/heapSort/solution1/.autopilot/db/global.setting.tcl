@@ -1,5 +1,5 @@
 
-set TopModule "heapSort_noRecurv"
+set TopModule "heapSort"
 set ClockPeriod "10.000000"
 set ClockList {ap_clk}
 set multiClockList {}
@@ -9,7 +9,7 @@ set PipelineFlag 0
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
-set FloatingPointFlag 1
+set FloatingPointFlag 0
 set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0

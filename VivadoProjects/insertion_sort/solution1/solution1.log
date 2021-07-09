@@ -7,38 +7,4 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7a100tcsg324-1'
-@I [HLS-10] Analyzing design file 'insertion_sort.c' ... 
-@I [HLS-10] Validating synthesis directives ...
-@I [HLS-10] Starting code transformations ...
-@I [HLS-10] Checking synthesizability ...
-@I [HLS-111] Elapsed time: 9.183 seconds; current memory usage: 72.1 MB.
-@I [HLS-10] Starting hardware synthesis ...
-@I [HLS-10] Synthesizing 'insertion_sort' ...
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'insertion_sort' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [SCHED-11] Starting scheduling ...
-@I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.057 seconds; current memory usage: 73 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'insertion_sort' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [BIND-100] Starting micro-architecture generation ...
-@I [BIND-101] Performing variable lifetime analysis.
-@I [BIND-101] Exploring resource sharing.
-@I [BIND-101] Binding ...
-@I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.037 seconds; current memory usage: 73 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'insertion_sort' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'insertion_sort/A' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on function 'insertion_sort' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Generating core module 'insertion_sort_fcmp_32ns_32ns_1_1': 1 instance(s).
-@I [RTGEN-100] Finished creating RTL model for 'insertion_sort'.
-@I [HLS-111] Elapsed time: 0.077 seconds; current memory usage: 73 MB.
-@I [HLS-10] Finished generating all RTL models.
-@I [SYSC-301] Generating SystemC RTL for insertion_sort.
-@I [VHDL-304] Generating VHDL RTL for insertion_sort.
-@I [VLOG-307] Generating Verilog RTL for insertion_sort.
-@I [HLS-112] Total elapsed time: 10.84 seconds; peak memory usage: 73 MB.
+@I [IMPL-8] Exporting RTL as an IP in IP-XACT.

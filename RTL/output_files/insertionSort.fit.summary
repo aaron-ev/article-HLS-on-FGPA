@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Jul 08 12:31:51 2021
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Revision Name : insertionSort
+Top-level Entity Name : topInsertionSort
+Family : Cyclone IV GX
+Device : EP4CGX22CF19C6
+Timing Models : Final
+Total logic elements : 10,306 / 21,280 ( 48 % )
+    Total combinational functions : 10,283 / 21,280 ( 48 % )
+    Dedicated logic registers : 4,225 / 21,280 ( 20 % )
+Total registers : 4225
+Total pins : 46 / 167 ( 28 % )
+Total virtual pins : 0
+Total memory bits : 0 / 774,144 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 80 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 4 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 4 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 4 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 4 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

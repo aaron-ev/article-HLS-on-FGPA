@@ -1,13 +1,13 @@
-<project xmlns="com.autoesl.autopilot.project" top="heapSort_noRecurv" name="heapSort">
-    <files>
-        <file name="heapSort.c" sc="0" tb="false" cflags=""/>
-        <file name="../../heapSort_tb.c" sc="0" tb="1" cflags=""/>
-    </files>
+<project xmlns="com.autoesl.autopilot.project" name="heapSort" top="heapSort">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
+        <SimFlow name="csim" setup="true" csimMode="2" lastCsimMode="2"/>
     </Simulation>
+    <files xmlns="">
+        <file name="../../heapSort_tb.c" sc="0" tb="1" cflags=" "/>
+        <file name="heapSort.c" sc="0" tb="false" cflags=""/>
+    </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
     </solutions>

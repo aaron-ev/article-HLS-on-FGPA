@@ -60,7 +60,6 @@ IFLAG += -D__SIM_DDS__
 IFLAG += -g
 IFLAG += -DNT
 LFLAG += -Wl,--enable-auto-import 
-DFLAG += -DAUTOCC
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 
 
@@ -71,16 +70,14 @@ all: $(TARGET)
 
 
 
-AUTOCC := cmd //c apcc.bat  
-
 $(ObjDir)/mergeSort_tb.o: ../../../../mergeSort_tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../mergeSort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Echo) "   Compiling ../../../../mergeSort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/mergeSort_tb.d
 
 $(ObjDir)/bubbleSort.o: ../../../../bubbleSort.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../bubbleSort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Echo) "   Compiling ../../../../bubbleSort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/bubbleSort.d

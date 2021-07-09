@@ -11,7 +11,10 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'flagFill' is power-on initialization." projectName="bubbleSort" solutionName="solution1" date="2021-07-09T11:21:41.273-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'count' is power-on initialization." projectName="bubbleSort" solutionName="solution1" date="2021-07-09T11:21:41.262-0700" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>

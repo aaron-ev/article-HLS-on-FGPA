@@ -2,7 +2,7 @@
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
+        <SimFlow name="csim" setup="true" csimMode="2" lastCsimMode="2"/>
     </Simulation>
     <files xmlns="">
         <file name="../../mergeSort_tb.c" sc="0" tb="1" cflags=" "/>

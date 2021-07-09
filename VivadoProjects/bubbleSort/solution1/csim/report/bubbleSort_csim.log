@@ -1,9 +1,4 @@
-   Compiling(apcc) ../../../../bubbleSort.c in debug mode
-INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Tue Jun 22 14:59:23 -0700 2021
-INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is apcc_db
-INFO: [APCC 202-1] APCC is done.
+   Compiling ../../../../mergeSort_tb.c in debug mode
+   Compiling ../../../../bubbleSort.c in debug mode
    Generating csim.exe
-Se ha creado el archivo
-INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 1] CSim file generation done with 0 errors.

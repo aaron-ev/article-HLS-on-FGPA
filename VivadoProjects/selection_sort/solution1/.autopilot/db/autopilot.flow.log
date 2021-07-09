@@ -1,479 +1,308 @@
-@I [HLS-0] Workspace C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1 opened at Mon May 31 11:19:03 -0700 2021
+@I [HLS-0] Workspace C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1 opened at Fri Jul 09 11:38:57 -0700 2021
 @I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.004Total elapsed time: 0.709 sec.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 0.689 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.007Total elapsed time: 0.719 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.691 sec.
 @I [HLS-100] Command "import_lib C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7 "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.lib "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/xilinx_interface.lib "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/plb46.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 0.764 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.693 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/fsl.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 0.770 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.694 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/axi4.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 0.782 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.695 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 0.788 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.695 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 0.797 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.056Total elapsed time: 0.797 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.696 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 0.696 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 0.809 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.697 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/dds_compiler.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 0.819 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.698 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfft.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 0.828 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.698 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfir.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 0.834 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.109Total elapsed time: 0.840 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.699 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 0.700 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_old.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 0.849 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.702 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_vivado.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 0.859 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.702 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 0.893 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.706 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 0.909 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.707 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 0.915 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.022Total elapsed time: 0.916 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.708 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.708 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.013Total elapsed time: 0.929 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.061Total elapsed time: 0.930 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.710 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 0.710 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/dsp48e1.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 0.942 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.711 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.943 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.711 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.944 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.713 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed medium "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.945 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.226Total elapsed time: 0.946 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.714 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.024Total elapsed time: 0.715 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 0.982 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.719 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 0.989 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.720 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.013Total elapsed time: 1.3 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.722 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 1.23 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 0.727 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023Total elapsed time: 1.48 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.045Total elapsed time: 1.49 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 0.737 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 0.738 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.035Total elapsed time: 1.85 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 0.750 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.019Total elapsed time: 1.105 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 0.759 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 1.120 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 0.763 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 1.129 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.763 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.113Total elapsed time: 1.243 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.095Total elapsed time: 0.859 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 1.251 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.284Total elapsed time: 1.252 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.861 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.144Total elapsed time: 0.861 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.262 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.305Total elapsed time: 1.263 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.316Total elapsed time: 1.263 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.863 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.147Total elapsed time: 0.863 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.148Total elapsed time: 0.863 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.264 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.864 sec.
 @I [HLS-100] Command "import_lib C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_fpv6 "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv7.lib "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_hp.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 1.286 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018Total elapsed time: 1.288 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.865 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 0.867 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv.hlp "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.319 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.876 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.320 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.877 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.320 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.320 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.878 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.878 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.322 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 1.322 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 1.323 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.879 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 0.880 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 0.880 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_hp.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 1.334 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.074Total elapsed time: 1.338 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.881 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.021Total elapsed time: 0.885 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_fpv6.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 1.355 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.017Total elapsed time: 1.356 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.888 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.888 sec.
 @I [HLS-100] Command "set_part xc7a100tcsg324-1 "
 @I [HLS-100] Command "add_library xilinx/artix7/artix7:xc7a100t:csg324:-1 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.376 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.893 sec.
 @I [HLS-100] Command "license_isbetapart xc7a100t "
-@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.383Total elapsed time: 1.761 sec.
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.017Total elapsed time: 0.911 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.763 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.913 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.764 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.914 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.764 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.395Total elapsed time: 1.770 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.915 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.024Total elapsed time: 0.917 sec.
 @I [HLS-100] Command "add_library xilinx/artix7/artix7_fpv6 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.778 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.009Total elapsed time: 1.780 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.919 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.003Total elapsed time: 0.921 sec.
 @I [HLS-10] Setting target device to 'xc7a100tcsg324-1'
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.422Total elapsed time: 1.781 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.032Total elapsed time: 0.921 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.781 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.922 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.781 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.922 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.782 sec.
-@I [HLS-100] Command 'open_solution' returned 0; elapsed 1.11Total elapsed time: 1.782 sec.
-@I [HLS-100] Command "set_part xc7a100tcsg324-1 -tool vivado "
-@I [HLS-100] Command "add_library xilinx/artix7/artix7:xc7a100t:csg324:-1 "
-@I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.786 sec.
-@I [HLS-100] Command "license_isbetapart xc7a100t "
-@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0Total elapsed time: 1.787 sec.
-@I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.788 sec.
-@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.788 sec.
-@I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.788 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.009Total elapsed time: 1.795 sec.
-@I [HLS-100] Command "add_library xilinx/artix7/artix7_fpv6 "
-@I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.796 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.002Total elapsed time: 1.798 sec.
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.018Total elapsed time: 1.800 sec.
-@I [HLS-100] Command "create_clock -period 10 -name default "
-@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.006Total elapsed time: 1.806 sec.
-@I [HLS-100] Command "csynth_design "
-@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
-@I [HLS-10] Analyzing design file 'selection_sort.c' ... 
-@0 [HLS-0] Analyzing design file 'selection_sort.c' ... 
-@I [HLS-0] Compiling one TU...
-@I [HLS-0] 
-Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado_HLS/2016.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  "selection_sort.c"  -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.00.o"
-
-@I [HLS-100] Command "is_encrypted C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.00.o "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.006Total elapsed time: 2.741 sec.
-@I [HLS-0] Syntax Checker time: 0 seconds per iteration
-@I [HLS-0] 
-Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado_HLS/2016.1/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "selection_sort.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c"
-
-@I [HLS-0] GCC PP time: 0 seconds per iteration
-@I [HLS-100] Command "list_core -type functional_unit "
-@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 3.40 sec.
-@I [HLS-0] Marker-Pragma convertor: C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c.ap-line.c C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c.ap-line.c.CXX 1
-@I [HLS-0] 
-Source processor: exec C:/Xilinx/Vivado_HLS/2016.1/tps/win64/jre/bin/java -Xmx512m -classpath   "C:/Xilinx/Vivado_HLS/2016.1/lib/classes/autopilot.sourceprocessor.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/com.ibm.icu_4.4.2.v20110208.jar;C:/Xilinx/Vivado_HLS/2016.1/lib/classes/jargs.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar;C:/Xilinx/Vivado_HLS/2016.1/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c.ap-line.c"  -m "selection_sort" -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c.ap-cdt.c" -c --pp --directive C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/solution1.directive --source C:/Users/aaron/Desktop/VivadoProjects/selection_sort.c --error C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ca --gf --pd --p2d C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db --sd --scff C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/.systemc_flag --ad
-
-@I [HLS-0] Marker-Pragma convertor: C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pp.0.c.ap-cdt.c C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pragma.0.c C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pragma.0.c.ap-line.CXX 0
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 4.74 sec.
-@I [HLS-0] CDT processor time: 1 seconds per iteration
-@I [HLS-0] Pragma handling time: 0 seconds per iteration
-@I [HLS-0] 
-Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado_HLS/2016.1/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pragma.1.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pragma.2.c"
-
-@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado_HLS/2016.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.pragma.2.c"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot" -I "C:/Xilinx/Vivado_HLS/2016.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.g.bc"
-@I [HLS-10] Validating synthesis directives ...
-@0 [HLS-0] Validating synthesis directives ...
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 4.786 sec.
-@I [HLS-0] Linking all ...
-@I [HLS-0] exec llvm-ld  "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.bc"  -disable-opt  -LC:/Xilinx/Vivado_HLS/2016.1/win64/lib -lm_basic -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.pre"
-@I [HLS-0] Link time: 0 seconds per iteration
-@I [HLS-0] Linking all ...
-@I [HLS-0] exec llvm-ld  "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.g.bc"  -disable-opt  -LC:/Xilinx/Vivado_HLS/2016.1/win64/lib -lm_basic -o "C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.pre"
-@I [HLS-0] Link time: 0 seconds per iteration
-@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 "
-@I [HLS-100] Command "cleanup_all_models "
-@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 5.982 sec.
-@I [HLS-10] Starting code transformations ...
-@0 [HLS-0] Starting code transformations ...
-@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top selection_sort  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.0.bc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
-@I [XFORM-603] Inlining function 'ap_fixed_base<78, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'hls::cast_IEEE754<unsigned int, float>' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/hls/hls_round.h:395).
-@I [XFORM-603] Inlining function 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<55, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
-@I [HLS-0] Std xform time: 1 seconds per iteration
-@I [HLS-100] Command "is_encrypted C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.1.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.008Total elapsed time: 9.78 sec.
-@I [HLS-10] Checking synthesizability ...
-@0 [HLS-0] Checking synthesizability ...
-@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -simplifycfg -mem2reg -globaldce -resolve-double-ptr  -dce -deadargelim -dce -instcombine  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.1.bc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.2.prechk.bc -f
-@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned int, float>' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
-@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned int, float>' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
-@I [XFORM-602] Inlining function 'fp_struct<float>::__signbit' into 'hls::cast_IEEE754<unsigned int, float>' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/hls/hls_round.h:402) automatically.
-@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned int, float>' into '__hls_fptoui_float_i32' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/lib_floatconversion.cpp:49) automatically.
-@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
-@I [HLS-0] syn check 2/2: transform -syn-check   C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
-@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
-@I [HLS-0] Compiler optimizing ...
-@I [HLS-0] Share syncheck's 1.bc for syn flow: copy C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.g.1.bc to C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.1.bc
-@I [HLS-0] presyn 1: transform -hls -tmp C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -indvars -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify -instcombine  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.1.bc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.1.tmp.bc -f
-@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned int, float>' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
-@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned int, float>' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
-@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned int, float>' into '__hls_fptoui_float_i32' (r:/builds/2016.1/continuous/2016_04_08_1538259/src/products/hls/hls_lib/src/lib_floatconversion.cpp:49) automatically.
-@I [XFORM-602] Inlining function '__hls_fptoui_float_i32' into 'selection_sort' (selection_sort.c:9) automatically.
-@I [HLS-0] Presyn 1 time: 0 seconds per iteration
-@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -interface-preproc -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg -loop-simplify -auto-burst   -norm-name C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
-@I [XFORM-401] Performing if-conversion on hyperblock from (selection_sort.c:13:13) in function 'selection_sort'... converting 6 basic blocks.
-@I [XFORM-401] Performing if-conversion on hyperblock from (selection_sort.c:9:29) to (selection_sort.c:11:27) in function 'selection_sort'... converting 4 basic blocks.
-@I [HLS-0] Presyn 2 time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.2.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.003Total elapsed time: 11.963 sec.
-@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.2.bc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
-@I [HLS-0] Build ssdm time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.o.3.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.007Total elapsed time: 13.527 sec.
-@I [HLS-0] Finish building internal data model.
-@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 8.125Total elapsed time: 14.107 sec.
-@I [HLS-111] Elapsed time: 14.167 seconds; current memory usage: 315 MB.
-@I [HLS-100] Command 'elaborate' returned 0; elapsed 12.363Total elapsed time: 14.170 sec.
-@I [HLS-100] Command "autosyn "
-@I [HLS-10] Starting hardware synthesis ...
-@0 [HLS-0] Starting hardware synthesis ...
-@I [HLS-0] Synthesizing C/C++ design ...
-@I [HLS-10] Synthesizing 'selection_sort' ...
-@0 [HLS-0] Synthesizing 'selection_sort' ...
-@I [HLS-100] Command "ap_set_top_model selection_sort "
-@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 14.183 sec.
-@I [HLS-100] Command "get_model_list selection_sort -filter all-wo-channel -topdown "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 14.184 sec.
-@I [HLS-100] Command "preproc_iomode -model selection_sort "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.005Total elapsed time: 14.189 sec.
-@I [HLS-100] Command "get_model_list selection_sort -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 14.191 sec.
-@I [HLS-0] Model list for configure: selection_sort
-@I [HLS-0] Configuring Module : selection_sort ...
-@I [HLS-100] Command "set_default_model selection_sort "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 14.192 sec.
-@I [HLS-100] Command "apply_spec_resource_limit selection_sort "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 14.192 sec.
-@I [HLS-0] Model list for preprocess: selection_sort
-@I [HLS-0] Preprocessing Module: selection_sort ...
-@I [HLS-100] Command "set_default_model selection_sort "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 14.192 sec.
-@I [HLS-100] Command "cdfg_preprocess -model selection_sort "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.004Total elapsed time: 14.197 sec.
-@I [HLS-100] Command "rtl_gen_preprocess selection_sort "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001Total elapsed time: 14.198 sec.
-@I [HLS-0] Model list for synthesis: selection_sort
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'selection_sort' 
-@0 [HLS-0] -- Scheduling module 'selection_sort' 
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "set_default_model selection_sort "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 14.200 sec.
-@I [HLS-100] Command "schedule -model selection_sort "
-@I [SCHED-11] Starting scheduling ...
-@I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.09Total elapsed time: 14.290 sec.
-@I [HLS-111] Elapsed time: 0.203 seconds; current memory usage: 315 MB.
-@I [HLS-100] Command "report -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.012Total elapsed time: 14.388 sec.
-@I [HLS-100] Command "db_write -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.047Total elapsed time: 14.437 sec.
-@I [HLS-0] Finish scheduling selection_sort.
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'selection_sort' 
-@0 [HLS-0] -- Exploring micro-architecture for module 'selection_sort' 
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "set_default_model selection_sort "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 14.446 sec.
-@I [HLS-100] Command "bind -model selection_sort "
-@I [BIND-110] clear=
-@I [BIND-110] debug=
-@I [BIND-110] drf=
-@I [BIND-110] effort=
-@I [BIND-110] fast_refine=
-@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
-@I [BIND-110] global_opt=
-@I [BIND-110] gsearch=
-@I [BIND-110] help=
-@I [BIND-110] help-hidden=
-@I [BIND-110] min_mem_port=
-@I [BIND-110] min_op=
-@I [BIND-110] minreg=
-@I [BIND-110] ml=
-@I [BIND-110] model=selection_sort
-@I [BIND-110] no_false_path=
-@I [BIND-110] no_min_op=
-@I [BIND-110] normalize=
-@I [BIND-110] quiet=
-@I [BIND-110] refine=
-@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
-@I [BIND-110] search=
-@I [BIND-110] tight_delay=
-@I [BIND-110] verbose=
-@I [BIND-110] wFF=
-@I [BIND-110] wFU=
-@I [BIND-110] wMUX=
-@I [BIND-110] wNET=
-@I [BIND-100] Starting micro-architecture generation ...
-@I [BIND-101] Performing variable lifetime analysis.
-@I [BIND-101] Exploring resource sharing.
-@I [BIND-101] Binding ...
-@I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.038Total elapsed time: 14.485 sec.
-@I [HLS-111] Elapsed time: 0.174 seconds; current memory usage: 315 MB.
-@I [HLS-100] Command "report -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.031Total elapsed time: 14.581 sec.
-@I [HLS-100] Command "db_write -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.07Total elapsed time: 14.653 sec.
-@I [HLS-0] Finish binding selection_sort.
-@I [HLS-100] Command "get_model_list selection_sort -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0.001Total elapsed time: 14.655 sec.
-@I [HLS-0] Preprocessing for RTLGen ...
-@I [HLS-100] Command "rtl_gen_preprocess selection_sort "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.002Total elapsed time: 14.657 sec.
-@I [HLS-0] Model list for RTL generation: selection_sort
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'selection_sort' 
-@0 [HLS-0] -- Generating RTL for module 'selection_sort' 
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model selection_sort -vendor xilinx -mg_file C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.compgen.tcl "
-@I [RTGEN-500] Setting interface mode on port 'selection_sort/A' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on function 'selection_sort' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Generating core module 'selection_sort_fcmp_32ns_32ns_1_1': 1 instance(s).
-@I [RTGEN-100] Generating core module 'selection_sort_uitofp_32ns_32_6': 1 instance(s).
-@I [RTGEN-100] Finished creating RTL model for 'selection_sort'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.038Total elapsed time: 14.706 sec.
-@I [HLS-111] Elapsed time: 0.209 seconds; current memory usage: 315 MB.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 14.759 sec.
-@I [HLS-100] Command "gen_rtl selection_sort -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/syn/systemc/selection_sort -synmodules selection_sort "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.006Total elapsed time: 14.766 sec.
-@I [HLS-100] Command "gen_rtl selection_sort -istop -style xilinx -f -lang vhdl -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/syn/vhdl/selection_sort "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.026Total elapsed time: 14.793 sec.
-@I [HLS-100] Command "gen_rtl selection_sort -istop -style xilinx -f -lang vlog -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/syn/verilog/selection_sort "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.015Total elapsed time: 14.809 sec.
-@I [HLS-100] Command "export_constraint_db -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.constraint.tcl -f -tool general "
-@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.002Total elapsed time: 14.812 sec.
-@I [HLS-100] Command "report -model selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.design.xml -verbose -f -dv "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.026Total elapsed time: 14.839 sec.
-@I [HLS-100] Command "report -model selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.sdaccel.xml -verbose -f -sdaccel "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.029Total elapsed time: 14.870 sec.
-@I [HLS-100] Command "gen_tb_info selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort -p C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.021Total elapsed time: 14.893 sec.
-@I [HLS-100] Command "report -model selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/syn/report/selection_sort_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.019Total elapsed time: 14.915 sec.
-@I [HLS-100] Command "report -model selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/syn/report/selection_sort_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.012Total elapsed time: 14.927 sec.
-@I [HLS-100] Command "report -model selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.047Total elapsed time: 14.975 sec.
-@I [HLS-100] Command "db_write -model selection_sort -o C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.04Total elapsed time: 15.17 sec.
-@I [HLS-100] Command "sc_get_clocks selection_sort "
-@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 15.86 sec.
-@I [HLS-100] Command "sc_get_portdomain selection_sort "
-@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 15.86 sec.
-@I [HLS-0] Model list for RTL component generation: selection_sort
-@I [HLS-0] Handling components in module [selection_sort] ... 
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.compgen.tcl "
-@I [HLS-0] Found component selection_sort_uitofp_32ns_32_6.
-@I [HLS-0] Append model selection_sort_uitofp_32ns_32_6
-@I [HLS-0] Found component selection_sort_fcmp_32ns_32ns_1_1.
-@I [HLS-0] Append model selection_sort_fcmp_32ns_32ns_1_1
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 15.105 sec.
-@I [HLS-0] Append model selection_sort
-@I [HLS-0] Generating RTL model list ...
-@I [HLS-0] All models in this session: selection_sort_uitofp_32ns_32_6 selection_sort_fcmp_32ns_32ns_1_1 selection_sort
-@I [HLS-0] To file: write model selection_sort_uitofp_32ns_32_6
-@I [HLS-0] To file: write model selection_sort_fcmp_32ns_32ns_1_1
-@I [HLS-0] To file: write model selection_sort
-@I [HLS-0] Finished generating RTL model list.
-
-
-@I [HLS-0] RTL Generation done.
-@I [HLS-0] CAS Generation done.
-@I [HLS-0] CBC Generation done.
-@I [HLS-100] Command "export_ssdm C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/a.export.ll "
-@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.002Total elapsed time: 15.122 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.132 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.922 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.245Total elapsed time: 0.924 sec.
+@I [HLS-100] Command "cosim_design -trace_level all "
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.928 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.936 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.958 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/common.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/APCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 15.158 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023Total elapsed time: 15.159 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.962 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 0.963 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/op.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.169 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.964 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/op_simcore.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.013Total elapsed time: 15.184 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.965 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/generic/autopilot/interface.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.195 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.196 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.966 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.967 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.199 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.970 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.200 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.971 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 15.202 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.973 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 15.207 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 0.977 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 15.217 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 15.217 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 0.987 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 0.988 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 15.229 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 1.0 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 15.240 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 1.9 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 15.245 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 1.14 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.245 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.16 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.091Total elapsed time: 15.336 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.117Total elapsed time: 1.133 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 15.339 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.141Total elapsed time: 15.339 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.134 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.166Total elapsed time: 1.134 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.341 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.145Total elapsed time: 15.342 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.145Total elapsed time: 15.342 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.136 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.169Total elapsed time: 1.136 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.17Total elapsed time: 1.137 sec.
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/artix7/artix7_fpv6.gen "
 @I [HLS-100] Command "source C:/Xilinx/Vivado_HLS/2016.1/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 15.344 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 15.344 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.352 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.354 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 15.357 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.358 sec.
-@I [HLS-100] Command "source C:/Users/aaron/Desktop/VivadoProjects/selection_sort/solution1/.autopilot/db/selection_sort.compgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.114Total elapsed time: 15.474 sec.
-@I [HLS-10] Finished generating all RTL models.
-@0 [HLS-0] Finished generating all RTL models.
-@I [SYSC-301] Generating SystemC RTL for selection_sort.
-@I [VHDL-304] Generating VHDL RTL for selection_sort.
-@I [VLOG-307] Generating Verilog RTL for selection_sort.
-@I [HLS-100] Command 'autosyn' returned 0; elapsed 1.386Total elapsed time: 15.557 sec.
-@I [HLS-100] Command 'csynth_design' returned 0; elapsed 13.752Total elapsed time: 15.558 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 14.93Total elapsed time: 15.559 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.139 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.139 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.141 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.144 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.146 sec.
+@I [HLS-100] Command "is_encrypted C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort_tb.c "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 1.152 sec.
+@I [HLS-100] Command "is_encrypted C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort.c "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.001Total elapsed time: 1.153 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.154 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.155 sec.
+@I [COSIM-47] Using XSIM for RTL simulation.
+@I [COSIM-14] Instrumenting C test bench ...
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.167 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.169 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.171 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.172 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.174 sec.
+@I [HLS-0] Marker-Pragma convertor: C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/./sim/autowrap/testbench/selection_sort_tb.c_pre.c C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/./sim/autowrap/testbench/selection_sort_tb.c_pre.c.line.c ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/selection_sort_tb.c_pre.c.tb.c.line ./sim/autowrap/testbench/selection_sort_tb.c_pre.c.tb.c ./sim/autowrap/testbench/line.tmp 0
+@I [HLS-0] Marker-Pragma convertor: C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/./sim/autowrap/testbench/selection_sort.c_pre.c C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/./sim/autowrap/testbench/selection_sort.c_pre.c.line.c ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/selection_sort.c_pre.c.tb.c.line ./sim/autowrap/testbench/selection_sort.c_pre.c.tb.c ./sim/autowrap/testbench/line.tmp 0
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 2.704 sec.
+@I [HLS-100] Command "source .run_sim.tcl "
+@I [COSIM-302] Starting C TB testing ... 
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.143Total elapsed time: 25.122 sec.
+@I [COSIM-333] Generating C post check test bench ...
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 25.135 sec.
+@I [COSIM-12] Generating RTL test bench ...
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.163 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.164 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.165 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.167 sec.
+@I [HLS-100] Command "source ../tv/cdatafile/ref.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.169 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.170 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.171 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.173 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.174 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.177 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 25.179 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 25.187 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.189 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.190 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 25.207 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.211 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.213 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.215 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.216 sec.
+@I [HLS-100] Command "source ../tv/cdatafile/ref.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.218 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.219 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.220 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.221 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.223 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.225 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 25.227 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.230 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.231 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.232 sec.
+@I [HLS-100] Command "source C:/Users/aaron/Desktop/git_article/vivadoProjects/selection_sort/solution1/.autopilot/db/selectionSort.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.266 sec.
+@I [HLS-100] Command "source .run_sim.tcl "
+@I [HLS-100] Command "source check_sim.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.294 sec.
+@I [HLS-100] Command "source .sim.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.299 sec.
+@I [COSIM-323] Starting verilog simulation. 
+@I [COSIM-15] Starting XSIM ...
+@I [COSIM-316] Starting C post checking ...
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.682Total elapsed time: 34.973 sec.
+@I [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+@I [HLS-100] Command 'cosim_design' returned 0; elapsed 34.196Total elapsed time: 35.120 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 34.448Total elapsed time: 35.121 sec.
 @I [HLS-100] Command "cleanup_all "
-@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.004Total elapsed time: 15.564 sec.
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.001Total elapsed time: 35.123 sec.

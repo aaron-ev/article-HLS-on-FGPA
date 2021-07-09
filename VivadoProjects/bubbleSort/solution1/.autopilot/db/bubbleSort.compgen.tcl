@@ -1,130 +1,85 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 0
-set name bubbleSort_sitofp_32ns_32_6
-set corename simcore_sitofp
-set op sitofp
-set stage_num 6
-set max_latency -1
-set registered_input 1
-set in0_width 32
-set in0_signed 0
-set out_width 32
+# Memory (RAM/ROM)  definition:
+set ID 0
+set MemName bubbleSort_A
+set CoreName ap_simcore_mem
+set PortList { 2 2 }
+set DataWd 16
+set AddrRange 256
+set AddrWd 8
+set impl_style block
+set TrueReset 0
+set IsROM 0
+set ROMData { }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.71
+set ClkPeriod 10
+set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_sitofp] == "ap_gen_simcore_sitofp"} {
-eval "ap_gen_simcore_sitofp { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
     reset_level 1 \
     sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    out_width ${out_width} \
-}"
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
 } else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_sitofp, check your AutoPilot builtin lib"
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
 }
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
+  ::AP::rtl_comp_handler $MemName
 }
 
 
-set op sitofp
-set corename Int2Float
-if {${::AESL::PGuard_autocg_gen} && (${::AESL::PGuard_autocg_fpip} || ${::AESL::PGuard_autocg_fpv6en} || ${::AESL::PGuard_autocg_hpen})} {
-if {[info proc ::AESL_LIB_XILINX_FPV6::fpv6_gen] == "::AESL_LIB_XILINX_FPV6::fpv6_gen"} {
-eval "::AESL_LIB_XILINX_FPV6::fpv6_gen { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
+set CoreName RAM
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
     reset_level 1 \
     sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    out_width ${out_width} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your platform lib"
-}
-}
-
-
-set id 1
-set name bubbleSort_fcmp_32ns_32ns_1_1
-set corename simcore_fcmp
-set op fcmp
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 32
-set in0_signed 0
-set in1_width 32
-set in1_signed 0
-set out_width 1
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_fcmp] == "ap_gen_simcore_fcmp"} {
-eval "ap_gen_simcore_fcmp { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_fcmp, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op fcmp
-set corename FCmp
-if {${::AESL::PGuard_autocg_gen} && (${::AESL::PGuard_autocg_fpip} || ${::AESL::PGuard_autocg_fpv6en} || ${::AESL::PGuard_autocg_hpen})} {
-if {[info proc ::AESL_LIB_XILINX_FPV6::fpv6_gen] == "::AESL_LIB_XILINX_FPV6::fpv6_gen"} {
-eval "::AESL_LIB_XILINX_FPV6::fpv6_gen { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your platform lib"
-}
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
+  }
 }
 
 
@@ -135,24 +90,35 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 2 \
-    name A \
+eval "cg_default_interface_gen_dc { \
+    id 1 \
+    name dataIn \
+    type other \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir IO \
-    corename A \
+    corename dc_dataIn \
     op interface \
-    ports { A_address0 { O 6 vector } A_ce0 { O 1 bit } A_we0 { O 1 bit } A_d0 { O 32 vector } A_q0 { I 32 vector } A_address1 { O 6 vector } A_ce1 { O 1 bit } A_we1 { O 1 bit } A_d1 { O 32 vector } A_q1 { I 32 vector } } \
+    ports { dataIn { I 16 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'A'"
-}
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 2 \
+    name posOutData \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_posOutData \
+    op interface \
+    ports { posOutData { I 8 vector } } \
+} "
+}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
@@ -168,6 +134,20 @@ eval "cg_default_interface_gen_dc { \
 } "
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id -2 \
+    name ap_return \
+    type ap_return \
+    reset_level 1 \
+    sync_rst true \
+    corename ap_return \
+    op interface \
+    ports { ap_return { O 16 vector } } \
+} "
+}
+
 
 # Adapter definition:
 set PortName ap_clk
@@ -175,7 +155,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -2 \
+    id -3 \
     name ${PortName} \
     reset_level 1 \
     sync_rst true \
@@ -195,7 +175,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -3 \
+    id -4 \
     name ${PortName} \
     reset_level 1 \
     sync_rst true \

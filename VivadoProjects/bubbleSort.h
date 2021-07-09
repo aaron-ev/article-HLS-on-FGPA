@@ -1,12 +1,15 @@
 /*******************************************************************************/
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
+
 #include "stdint.h"
+#include "stdio.h"
+#include "stdint.h"
+#define N	256	// Number of elements to order
+typedef short data_inp;
 
-#define N	48	// Number of elements to order
-
-float A[N];
-void bubbleSort(float A[N]);
+void bubbleAlgorithm(data_inp A[N]);
+data_inp bubbleSort(data_inp dataIn,char posOutData);
 
 #endif
 

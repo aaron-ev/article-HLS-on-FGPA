@@ -2,13 +2,14 @@
 #ifndef SELECTION_SORT_H_
 #define SELECTION_SORT_H_
 
-#define N	48	// Number of elements to order
+#include "stdint.h"
+#include "stdio.h"
+#include "stdint.h"
+#define N	256	// Number of elements to order
+typedef short data_inp;
 
-typedef float data_inp;
-
-void selection_sort (data_inp A[]);
-void data_load(data_inp A[]);
-void data_unload(data_inp A[]);
+void selectionAlgorithm (data_inp A[N]);
+data_inp selectionSort(data_inp dataIn,char posOutData);
 
 #endif
 

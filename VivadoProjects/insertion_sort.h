@@ -2,13 +2,14 @@
 #ifndef INSERTION_SORT_H_
 #define INSERTION_SORT_H_
 
-#define N	48	// Number of elements to order
-typedef float data_inp;
+#include "stdint.h"
+#include "stdio.h"
+#include "stdint.h"
+#define N	256	// Number of elements to order
+typedef short data_inp;
 
-float A[N];
+void insertion_sort(data_inp A[N]);
 
-void insertion_sort(float A[N]);
-//void swap(data_inp A[],int i_index,int j_index);
 #endif
 
 

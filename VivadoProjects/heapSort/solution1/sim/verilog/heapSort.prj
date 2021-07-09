@@ -1,0 +1,5 @@
+verilog xil_defaultlib "heapSort.autotb.v"
+verilog xil_defaultlib "heapSort.v"
+verilog xil_defaultlib "heapSort_A.v"
+verilog xil_defaultlib "heapSort_maxHeapify_noRecurv.v"
+

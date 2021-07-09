@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="selection_sort.c" path="C:\Users\aaron\Desktop\VivadoProjects\selection_sort.c"/>
+    <originFiles name="selection_sort.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\selection_sort.c"/>
   </source>
   <testbench>
-    <originFiles name="selection_sort_tb.c" path="C:\Users\aaron\Desktop\VivadoProjects\selection_sort_tb.c"/>
+    <originFiles name="selection_sort_tb.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\selection_sort_tb.c"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

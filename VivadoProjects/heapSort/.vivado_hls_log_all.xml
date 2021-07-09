@@ -11,7 +11,11 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'flagFill' is power-on initialization." projectName="heapSort" solutionName="solution1" date="2021-07-09T11:28:08.075-0700" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'count' is power-on initialization." projectName="heapSort" solutionName="solution1" date="2021-07-09T11:28:08.054-0700" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 32767 to 256 for loop 'Loop-0' in function 'maxHeapify_noRecurv'." projectName="heapSort" solutionName="solution1" date="2021-07-09T11:28:07.270-0700" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>

@@ -9,38 +9,33 @@
 ***********************************
 */
 
-void swap(float *A,uint32_t i, int32_t j)
+void heapSort_noRecurv(data_inp A[N])
 {
-    int32_t temp;
-    temp = A[i];
-    A[i] = A[j];
-    A[j] = temp;
-}
-
-void heapSort_noRecurv(float A[N])
-{
-    int i,j;
-    //printArray(A,sizeA);
+    short i,j;
     for(i = (N/2)-1; i >=0; i = i - 1)
     {
         maxHeapify_noRecurv(A,i,N);
-        //printArray(A,sizeA);
     }
      for(i = N - 1; i >=0; i = i - 1)
     {
-        swap(A,i,0);
+    	//swap operation
+        data_inp temp;
+        temp = A[0];
+        A[0] = A[i];
+        A[i] = temp;
+
         maxHeapify_noRecurv(A,0,i);
     }
 }
-void maxHeapify_noRecurv(float A[N],uint32_t startA, uint32_t endA)
+void maxHeapify_noRecurv(data_inp A[N],data_inp startA, data_inp endA)
 {
     int current = startA;
     int i;
     for(i = 0; i < endA; i = i + 1)
    // while(current * 2 + 1 < endA)
     {
-        uint32_t left = current * 2 + 1;
-        uint32_t right = current * 2 + 2;
+    	data_inp left = current * 2 + 1;
+    	data_inp right = current * 2 + 2;
 
         if(left < endA && A[current] < A[left])
             current = left;
@@ -48,10 +43,40 @@ void maxHeapify_noRecurv(float A[N],uint32_t startA, uint32_t endA)
             current = right;
         if(current != startA)
         {
-            swap(A,current,startA);
+            //swap(A,current,startA);
+            //swap operation
+            data_inp temp;
+            temp = A[current];
+            A[current] = A[startA];
+            A[startA] = temp;
+
             startA = current;
         }
        // else
         //    break;
     }
+}
+
+data_inp heapSort(data_inp dataIn,char posOutData)
+{
+	static data_inp *ptr;
+	static data_inp A[N];
+	static flagFill = 0;
+	static count = 0;
+	if(count < N)
+	{
+		A[count] = dataIn;
+		count++;
+		return 0;
+	}
+	else
+	{
+		if(flagFill == 0)
+		{
+			ptr = A;
+			heapSort_noRecurv(A);
+			flagFill = 1;
+		}
+	}
+	return ptr[posOutData];
 }

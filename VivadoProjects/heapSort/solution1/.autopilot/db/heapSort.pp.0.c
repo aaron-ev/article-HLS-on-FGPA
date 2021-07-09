@@ -1121,10 +1121,12 @@ __extension__ typedef unsigned long long uintmax_t;
 
 
 
+typedef short data_inp;
 
-float A[48 /* Number of elements to order*/];
-void heapSort_noRecurv(float A[48 /* Number of elements to order*/]);
-void maxHeapify_noRecurv(float A[48 /* Number of elements to order*/],uint32_t startA, uint32_t endA);
+void heapSort_noRecurv(data_inp A[256 /* Number of elements to order*/]);
+void maxHeapify_noRecurv(data_inp A[256 /* Number of elements to order*/],data_inp startA, data_inp endA);
+
+data_inp heapSort(data_inp dataIn,char posOutData);
 # 4 "heapSort.c" 2
 
 /**********************************
@@ -1134,38 +1136,33 @@ void maxHeapify_noRecurv(float A[48 /* Number of elements to order*/],uint32_t s
 ***********************************
 */
 
-void swap(float *A,uint32_t i, int32_t j)
+void heapSort_noRecurv(data_inp A[256 /* Number of elements to order*/])
 {
-    int32_t temp;
-    temp = A[i];
-    A[i] = A[j];
-    A[j] = temp;
-}
-
-void heapSort_noRecurv(float A[48 /* Number of elements to order*/])
-{
-    int i,j;
-    //printArray(A,sizeA);
-    for(i = (48 /* Number of elements to order*//2)-1; i >=0; i = i - 1)
+    short i,j;
+    for(i = (256 /* Number of elements to order*//2)-1; i >=0; i = i - 1)
     {
-        maxHeapify_noRecurv(A,i,48 /* Number of elements to order*/);
-        //printArray(A,sizeA);
+        maxHeapify_noRecurv(A,i,256 /* Number of elements to order*/);
     }
-     for(i = 48 /* Number of elements to order*/ - 1; i >=0; i = i - 1)
+     for(i = 256 /* Number of elements to order*/ - 1; i >=0; i = i - 1)
     {
-        swap(A,i,0);
+     //swap operation
+        data_inp temp;
+        temp = A[0];
+        A[0] = A[i];
+        A[i] = temp;
+
         maxHeapify_noRecurv(A,0,i);
     }
 }
-void maxHeapify_noRecurv(float A[48 /* Number of elements to order*/],uint32_t startA, uint32_t endA)
+void maxHeapify_noRecurv(data_inp A[256 /* Number of elements to order*/],data_inp startA, data_inp endA)
 {
     int current = startA;
     int i;
     for(i = 0; i < endA; i = i + 1)
    // while(current * 2 + 1 < endA)
     {
-        uint32_t left = current * 2 + 1;
-        uint32_t right = current * 2 + 2;
+     data_inp left = current * 2 + 1;
+     data_inp right = current * 2 + 2;
 
         if(left < endA && A[current] < A[left])
             current = left;
@@ -1173,10 +1170,40 @@ void maxHeapify_noRecurv(float A[48 /* Number of elements to order*/],uint32_t s
             current = right;
         if(current != startA)
         {
-            swap(A,current,startA);
+            //swap(A,current,startA);
+            //swap operation
+            data_inp temp;
+            temp = A[current];
+            A[current] = A[startA];
+            A[startA] = temp;
+
             startA = current;
         }
        // else
         //    break;
     }
+}
+
+data_inp heapSort(data_inp dataIn,char posOutData)
+{
+ static data_inp *ptr;
+ static data_inp A[256 /* Number of elements to order*/];
+ static flagFill = 0;
+ static count = 0;
+ if(count < 256 /* Number of elements to order*/)
+ {
+  A[count] = dataIn;
+  count++;
+  return 0;
+ }
+ else
+ {
+  if(flagFill == 0)
+  {
+   ptr = A;
+   heapSort_noRecurv(A);
+   flagFill = 1;
+  }
+ }
+ return ptr[posOutData];
 }

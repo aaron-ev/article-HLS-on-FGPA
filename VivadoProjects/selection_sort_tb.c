@@ -2,57 +2,17 @@
 #include <stdlib.h>
 #include "selection_sort.h"
 
-data_inp A[N];
-
-int main()
+int main(void)
 {
-	data_load(A);
-	selection_sort(A);
-	data_unload(A);
-	return 0;
-}
-
-void data_load(data_inp A[])
-{
-	FILE *fp;
 	int i;
-
-	fp = fopen("testFile.txt","w");
-	if(fp == NULL)
+	data_inp dataOut;
+	for(i = 0; i < N;i =i +1)
 	{
-		printf("No se ha podido crear el archivo");
-		exit(1);
+		selectionSort(rand()%65536,0);
 	}
-	printf("Se ha creado el archivo");
-	//Saving unordered numbers into the file.
-	for (i = 0; i < N; i = i + 1)
+	for(i = 0; i < N;i =i +1)
 	{
-		A[i] = rand()%100;
-		fprintf(fp,"%f\n",A[i]);
+		dataOut = selectionSort(0,i);
 	}
-	fclose(fp);
-
-}
-
-void data_unload(data_inp A[])
-{
-	FILE *fp;
-	int i;
-
-	fp = fopen("testFile.txt","a");
-
-	if(fopen == NULL)
-	{
-		printf("No se ha podido crear el archivo");
-		exit(1);
-	}
-	//Saving ordered numbers into the file.
-	fprintf(fp,"------------\n");
-
-	for (i = 0; i < N; i = i + 1)
-	{
-		fprintf(fp,"%f\n",A[i]);
-	}
-	fclose(fp);
-
+    return 0;
 }

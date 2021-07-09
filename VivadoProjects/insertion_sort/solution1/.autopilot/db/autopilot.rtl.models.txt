@@ -1,2 +1,2 @@
-insertion_sort_fcmp_32ns_32ns_1_1
-insertion_sort
+insertionSort_A
+insertionSort

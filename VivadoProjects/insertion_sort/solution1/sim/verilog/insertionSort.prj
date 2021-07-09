@@ -1,0 +1,4 @@
+verilog xil_defaultlib "insertionSort.autotb.v"
+verilog xil_defaultlib "insertionSort.v"
+verilog xil_defaultlib "insertionSort_A.v"
+

@@ -60,7 +60,6 @@ IFLAG += -D__SIM_DDS__
 IFLAG += -g
 IFLAG += -DNT
 LFLAG += -Wl,--enable-auto-import 
-DFLAG += -DAUTOCC
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 
 
@@ -71,16 +70,14 @@ all: $(TARGET)
 
 
 
-AUTOCC := cmd //c apcc.bat  
-
 $(ObjDir)/insertion_sort_tb.o: ../../../../insertion_sort_tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../insertion_sort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Echo) "   Compiling ../../../../insertion_sort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/insertion_sort_tb.d
 
 $(ObjDir)/insertion_sort.o: ../../../../insertion_sort.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../insertion_sort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Echo) "   Compiling ../../../../insertion_sort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/insertion_sort.d

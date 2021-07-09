@@ -1,0 +1,4 @@
+verilog xil_defaultlib "bubbleSort.autotb.v"
+verilog xil_defaultlib "bubbleSort.v"
+verilog xil_defaultlib "bubbleSort_A.v"
+
