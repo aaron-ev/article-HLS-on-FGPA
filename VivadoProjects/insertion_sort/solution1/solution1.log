@@ -7,4 +7,47 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7a100tcsg324-1'
-@I [IMPL-8] Exporting RTL as an IP in IP-XACT.
+@I [HLS-10] Analyzing design file 'insertion_sort.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [XFORM-602] Inlining function 'insertionAlgorithm' into 'insertionSort' (insertion_sort.cpp:44) automatically.
+@I [XFORM-602] Inlining function 'insertionAlgorithm' into 'insertionSort' (insertion_sort.cpp:44) automatically.
+@I [HLS-111] Elapsed time: 32.247 seconds; current memory usage: 85.4 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'insertionSort' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'insertionSort' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.084 seconds; current memory usage: 86.5 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'insertionSort' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.048 seconds; current memory usage: 86.5 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'insertionSort' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'insertionSort/agg_result_data' to 'ap_vld'.
+@I [RTGEN-500] Setting interface mode on port 'insertionSort/agg_result_done_V' to 'ap_vld'.
+@I [RTGEN-500] Setting interface mode on port 'insertionSort/dataIn' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'insertionSort/posOutData' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on function 'insertionSort' to 'ap_ctrl_hs'.
+@W [RTGEN-101] Register 'count' is power-on initialization.
+@W [RTGEN-101] Register 'sOutData_done_V' is power-on initialization.
+@W [RTGEN-101] Register 'sOutData_data' is power-on initialization.
+@W [RTGEN-101] Register 'flagFill' is power-on initialization.
+@I [RTGEN-100] Finished creating RTL model for 'insertionSort'.
+@I [HLS-111] Elapsed time: 0.091 seconds; current memory usage: 86.5 MB.
+@I [RTMG-278] Implementing memory 'insertionSort_A_ram' using block RAMs with power-on initialization.
+@I [HLS-10] Finished generating all RTL models.
+@I [SYSC-301] Generating SystemC RTL for insertionSort.
+@I [VHDL-304] Generating VHDL RTL for insertionSort.
+@I [VLOG-307] Generating Verilog RTL for insertionSort.
+@I [HLS-112] Total elapsed time: 33.27 seconds; peak memory usage: 86.5 MB.

@@ -4,7 +4,7 @@
    Compiling apatb_heapSort.cpp
    Compiling (apcc) heapSort.c_pre.c.tb.c
 INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 11:29:04 -0700 2021
+INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 15:18:32 -0700 2021
 INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/sim/wrapc'
 clang: warning: argument unused during compilation: '-fno-builtin-isinf'
 clang: warning: argument unused during compilation: '-fno-builtin-isnan'
@@ -12,7 +12,7 @@ INFO: [APCC 202-3] Tmp directory is apcc_db
 INFO: [APCC 202-1] APCC is done.
    Compiling (apcc) heapSort_tb.c_pre.c.tb.c
 INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 11:29:15 -0700 2021
+INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 15:18:40 -0700 2021
 INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/sim/wrapc'
 clang: warning: argument unused during compilation: '-fno-builtin-isinf'
 clang: warning: argument unused during compilation: '-fno-builtin-isnan'
@@ -61,7 +61,7 @@ Built simulation snapshot heapSort
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 source C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/sim/verilog/xsim.dir/heapSort/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Fri Jul 09 11:29:33 2021...
+INFO: [Common 17-206] Exiting Webtalk at Fri Jul 09 15:19:05 2021...
 
 ****** xsim v2016.1 (64-bit)
   **** SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
@@ -120,7 +120,7 @@ source heapSort.tcl
 // RTL Simulation : 512 / 512 [0.00%] @ "3974715000"
 ////////////////////////////////////////////////////////////////////////////////////
 $finish called at time : 3974755 ns : File "C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/sim/verilog/heapSort.autotb.v" Line 319
-run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 58.184 ; gain = 0.020
+run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 58.176 ; gain = 0.348
 ## quit
-INFO: [Common 17-206] Exiting xsim at Fri Jul 09 11:29:53 2021...
+INFO: [Common 17-206] Exiting xsim at Fri Jul 09 15:19:29 2021...
 @I [SIM-1000] *** C/RTL co-simulation finished: PASS ***

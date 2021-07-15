@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="heapSort.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\heapSort.c"/>
+    <originFiles name="heapSort.cpp" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\heapSort.cpp"/>
   </source>
   <testbench>
-    <originFiles name="heapSort_tb.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\heapSort_tb.c"/>
+    <originFiles name="heapSort_tb.cpp" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\heapSort_tb.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

@@ -47,14 +47,14 @@
 			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/heapSort.c</name>
+			<name>source/heapSort.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort.c</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort.cpp</location>
 		</link>
 		<link>
-			<name>testbench/heapSort_tb.c</name>
+			<name>testbench/heapSort_tb.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort_tb.c</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort_tb.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

@@ -83,8 +83,10 @@ proc check_tvin_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "c.bubbleSort.autotvin_dataIn.dat"
-         "c.bubbleSort.autotvin_posOutData.dat"
+         "c.bubbleSort.autotvin_A.dat"
+         "c.bubbleSort.autotvin_indexOutputData.dat"
+         "c.bubbleSort.autotvin_operation.dat"
+         "c.bubbleSort.autotvout_A.dat"
          "c.bubbleSort.autotvout_ap_return.dat"
     }
     foreach rtlfile $rtlfilelist {
@@ -110,6 +112,7 @@ proc check_tvout_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
+         "rtl.bubbleSort.autotvout_A.dat"
          "rtl.bubbleSort.autotvout_ap_return.dat"
     }
     foreach rtlfile $rtlfilelist {

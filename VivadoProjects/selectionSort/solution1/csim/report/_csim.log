@@ -1,0 +1,12 @@
+   Compiling(apcc) ../../../../selectionSort_tb.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 20:41:35 -0700 2021
+INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+obj/selectionSort_tb.o: In function `main':
+C:\Users\aaron\Desktop\git_article\vivadoProjects\selectionSort\solution1\csim\build/apcc_db/selectionSort_tb.c:163: undefined reference to `hello'
+collect2: ld returned 1 exit status
+make: *** [csim.exe] Error 1
+CRITICAL WARNING: [SIM 1] CSim file generation failed: compilation error(s).

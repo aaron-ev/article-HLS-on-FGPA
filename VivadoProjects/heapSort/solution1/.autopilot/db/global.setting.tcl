@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7a100t:csg324:-1"
-set SourceFiles {sc {} c ../../heapSort.c}
+set SourceFiles {sc {} c ../../heapSort.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/solution1.directive}
-set TBFiles {verilog ../../heapSort_tb.c bc ../../heapSort_tb.c vhdl ../../heapSort_tb.c sc ../../heapSort_tb.c cas ../../heapSort_tb.c c {}}
+set TBFiles {verilog ../../heapSort_tb.cpp bc ../../heapSort_tb.cpp vhdl ../../heapSort_tb.cpp sc ../../heapSort_tb.cpp cas ../../heapSort_tb.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

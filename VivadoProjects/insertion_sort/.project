@@ -47,14 +47,14 @@
 			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/insertion_sort.c</name>
+			<name>source/insertion_sort.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort.c</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort.cpp</location>
 		</link>
 		<link>
-			<name>testbench/insertion_sort_tb.c</name>
+			<name>testbench/insertion_sort_tb.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort_tb.c</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort_tb.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

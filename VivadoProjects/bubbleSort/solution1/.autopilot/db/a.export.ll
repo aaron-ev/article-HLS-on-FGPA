@@ -2,92 +2,71 @@
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-w64-mingw32"
 
-@ptr_index = internal global i1 false
-@flagFill = internal unnamed_addr global i1 false
-@count = internal unnamed_addr global i32 0, align 4
+@llvm_global_ctors_1 = appending global [1 x void ()*] [void ()* @_GLOBAL__I_a]
+@llvm_global_ctors_0 = appending global [1 x i32] [i32 65535]
 @bubbleSort_str = internal unnamed_addr constant [11 x i8] c"bubbleSort\00"
-@A = internal global [256 x i16] zeroinitializer, align 16
-
-declare i32 @llvm.part.select.i32(i32, i32, i32) nounwind readnone
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
-define signext i16 @bubbleSort(i16 signext %dataIn, i8 signext %posOutData) nounwind uwtable {
-  call void (...)* @_ssdm_op_SpecBitsMap(i16 %dataIn) nounwind, !map !0
-  call void (...)* @_ssdm_op_SpecBitsMap(i8 %posOutData) nounwind, !map !6
-  call void (...)* @_ssdm_op_SpecBitsMap(i16 0) nounwind, !map !10
+define signext i16 @bubbleSort([5 x i16]* %A, i8 signext %indexOutputData, i8 signext %operation) nounwind uwtable {
+codeRepl:
+  call void (...)* @_ssdm_op_SpecBitsMap([5 x i16]* %A) nounwind, !map !7
+  call void (...)* @_ssdm_op_SpecBitsMap(i8 %indexOutputData) nounwind, !map !13
+  call void (...)* @_ssdm_op_SpecBitsMap(i8 %operation) nounwind, !map !19
+  call void (...)* @_ssdm_op_SpecBitsMap(i16 0) nounwind, !map !23
   call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @bubbleSort_str) nounwind
-  %posOutData_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %posOutData) nounwind
-  %dataIn_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %dataIn) nounwind
-  %count_load = load i32* @count, align 4
-  %tmp = call i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32 %count_load, i32 8, i32 31)
-  %icmp = icmp slt i24 %tmp, 1
-  br i1 %icmp, label %1, label %2
+  %operation_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %operation) nounwind
+  %indexOutputData_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %indexOutputData) nounwind
+  switch i8 %operation_read, label %._crit_edge8 [
+    i8 0, label %.preheader
+    i8 1, label %3
+  ]
 
-; <label>:1                                       ; preds = %0
-  %tmp_1 = sext i32 %count_load to i64
-  %A_addr = getelementptr inbounds [256 x i16]* @A, i64 0, i64 %tmp_1
-  store i16 %dataIn_read, i16* %A_addr, align 2
-  %tmp_2 = add nsw i32 %count_load, 1
-  store i32 %tmp_2, i32* @count, align 4
-  br label %6
-
-; <label>:2                                       ; preds = %0
-  %flagFill_load = load i1* @flagFill, align 1
-  br i1 %flagFill_load, label %._crit_edge, label %.preheader
-
-.preheader:                                       ; preds = %2, %5
-  %indvars_iv_i = phi i9 [ %i, %5 ], [ 255, %2 ]
-  %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %indvars_iv_i, i32 8)
-  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 256, i64 256, i64 256) nounwind
-  br i1 %tmp_3, label %bubbleAlgorithm.exit, label %.preheader.i
+.preheader:                                       ; preds = %codeRepl, %2
+  %indvars_iv_i = phi i4 [ %i, %2 ], [ 4, %codeRepl ]
+  %tmp = call i1 @_ssdm_op_BitSelect.i1.i4.i32(i4 %indvars_iv_i, i32 3)
+  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind
+  br i1 %tmp, label %._crit_edge8, label %.preheader.i
 
 .preheader.i:                                     ; preds = %.preheader, %._crit_edge.i
-  %j_i = phi i8 [ %j, %._crit_edge.i ], [ 0, %.preheader ]
-  %j_i_cast = zext i8 %j_i to i9
-  %exitcond_i = icmp eq i9 %j_i_cast, %indvars_iv_i
-  %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 255, i64 0) nounwind
-  %j = add i8 %j_i, 1
-  br i1 %exitcond_i, label %5, label %3
+  %j_i = phi i3 [ %j, %._crit_edge.i ], [ 0, %.preheader ]
+  %j_i_cast = zext i3 %j_i to i4
+  %exitcond_i = icmp eq i4 %j_i_cast, %indvars_iv_i
+  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 4, i64 0) nounwind
+  %j = add i3 %j_i, 1
+  br i1 %exitcond_i, label %2, label %0
 
-; <label>:3                                       ; preds = %.preheader.i
-  %tmp_5_i = zext i8 %j_i to i64
-  %A_addr_1 = getelementptr [256 x i16]* @A, i64 0, i64 %tmp_5_i
+; <label>:0                                       ; preds = %.preheader.i
+  %tmp_2_i = zext i3 %j_i to i64
+  %A_addr_1 = getelementptr [5 x i16]* %A, i64 0, i64 %tmp_2_i
   %temp = load i16* %A_addr_1, align 2
-  %tmp_8_i = zext i8 %j to i64
-  %A_addr_2 = getelementptr [256 x i16]* @A, i64 0, i64 %tmp_8_i
-  %A_load_1 = load i16* %A_addr_2, align 2
-  %tmp_9_i = icmp sgt i16 %temp, %A_load_1
-  br i1 %tmp_9_i, label %4, label %._crit_edge.i
+  %tmp_5_i = zext i3 %j to i64
+  %A_addr_2 = getelementptr [5 x i16]* %A, i64 0, i64 %tmp_5_i
+  %A_load_2 = load i16* %A_addr_2, align 2
+  %tmp_6_i = icmp sgt i16 %temp, %A_load_2
+  br i1 %tmp_6_i, label %1, label %._crit_edge.i
 
-; <label>:4                                       ; preds = %3
-  store i16 %A_load_1, i16* %A_addr_1, align 2
+; <label>:1                                       ; preds = %0
+  store i16 %A_load_2, i16* %A_addr_1, align 2
   store i16 %temp, i16* %A_addr_2, align 2
   br label %._crit_edge.i
 
-._crit_edge.i:                                    ; preds = %4, %3
+._crit_edge.i:                                    ; preds = %1, %0
   br label %.preheader.i
 
-; <label>:5                                       ; preds = %.preheader.i
-  %i = add i9 %indvars_iv_i, -1
+; <label>:2                                       ; preds = %.preheader.i
+  %i = add i4 %indvars_iv_i, -1
   br label %.preheader
 
-bubbleAlgorithm.exit:                             ; preds = %.preheader
-  store i1 true, i1* @flagFill, align 1
-  br label %._crit_edge
+; <label>:3                                       ; preds = %codeRepl
+  %tmp_1 = sext i8 %indexOutputData_read to i64
+  %A_addr = getelementptr [5 x i16]* %A, i64 0, i64 %tmp_1
+  %A_load = load i16* %A_addr, align 2
+  br label %._crit_edge8
 
-._crit_edge:                                      ; preds = %bubbleAlgorithm.exit, %2
-  %mem_index_gep4_cast = sext i8 %posOutData_read to i11
-  %adjSize = zext i11 %mem_index_gep4_cast to i64
-  %tmp_4 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %posOutData_read, i32 7)
-  %gepindex2 = select i1 %tmp_4, i64 255, i64 %adjSize
-  %A_addr_3 = getelementptr [256 x i16]* @A, i64 0, i64 %gepindex2
-  %A_load = load i16* %A_addr_3, align 2
-  br label %6
-
-; <label>:6                                       ; preds = %._crit_edge, %1
-  %p_0 = phi i16 [ 0, %1 ], [ %A_load, %._crit_edge ]
-  ret i16 %p_0
+._crit_edge8:                                     ; preds = %.preheader, %3, %codeRepl
+  %p_s = phi i16 [ %A_load, %3 ], [ undef, %codeRepl ], [ 0, %.preheader ]
+  ret i16 %p_s
 }
 
 define weak void @_ssdm_op_SpecTopModule(...) {
@@ -110,52 +89,46 @@ entry:
   ret i8 %0
 }
 
-define weak i16 @_ssdm_op_Read.ap_auto.i16(i16) {
+define weak i1 @_ssdm_op_BitSelect.i1.i4.i32(i4, i32) nounwind readnone {
 entry:
-  ret i16 %0
+  %empty = trunc i32 %1 to i4
+  %empty_3 = shl i4 1, %empty
+  %empty_4 = and i4 %0, %empty_3
+  %empty_5 = icmp ne i4 %empty_4, 0
+  ret i1 %empty_5
 }
 
-define weak i24 @_ssdm_op_PartSelect.i24.i32.i32.i32(i32, i32, i32) nounwind readnone {
-entry:
-  %empty = call i32 @llvm.part.select.i32(i32 %0, i32 %1, i32 %2)
-  %empty_5 = trunc i32 %empty to i24
-  ret i24 %empty_5
-}
-
-define weak i1 @_ssdm_op_BitSelect.i1.i9.i32(i9, i32) nounwind readnone {
-entry:
-  %empty = trunc i32 %1 to i9
-  %empty_6 = shl i9 1, %empty
-  %empty_7 = and i9 %0, %empty_6
-  %empty_8 = icmp ne i9 %empty_7, 0
-  ret i1 %empty_8
-}
-
-define weak i1 @_ssdm_op_BitSelect.i1.i8.i32(i8, i32) nounwind readnone {
-entry:
-  %empty = trunc i32 %1 to i8
-  %empty_9 = shl i8 1, %empty
-  %empty_10 = and i8 %0, %empty_9
-  %empty_11 = icmp ne i8 %empty_10, 0
-  ret i1 %empty_11
-}
+declare void @_GLOBAL__I_a() nounwind
 
 !hls.encrypted.func = !{}
-!llvm.map.gv = !{}
+!llvm.map.gv = !{!0}
 
-!0 = metadata !{metadata !1}
-!1 = metadata !{i32 0, i32 15, metadata !2}
-!2 = metadata !{metadata !3}
-!3 = metadata !{metadata !"dataIn", metadata !4, metadata !"short", i32 0, i32 15}
-!4 = metadata !{metadata !5}
-!5 = metadata !{i32 0, i32 0, i32 0}
-!6 = metadata !{metadata !7}
-!7 = metadata !{i32 0, i32 7, metadata !8}
-!8 = metadata !{metadata !9}
-!9 = metadata !{metadata !"posOutData", metadata !4, metadata !"char", i32 0, i32 7}
-!10 = metadata !{metadata !11}
-!11 = metadata !{i32 0, i32 15, metadata !12}
-!12 = metadata !{metadata !13}
-!13 = metadata !{metadata !"return", metadata !14, metadata !"data_inp", i32 0, i32 15}
-!14 = metadata !{metadata !15}
-!15 = metadata !{i32 0, i32 1, i32 0}
+!0 = metadata !{metadata !1, [1 x i32]* @llvm_global_ctors_0}
+!1 = metadata !{metadata !2}
+!2 = metadata !{i32 0, i32 31, metadata !3}
+!3 = metadata !{metadata !4}
+!4 = metadata !{metadata !"llvm.global_ctors.0", metadata !5, metadata !"", i32 0, i32 31}
+!5 = metadata !{metadata !6}
+!6 = metadata !{i32 0, i32 0, i32 1}
+!7 = metadata !{metadata !8}
+!8 = metadata !{i32 0, i32 15, metadata !9}
+!9 = metadata !{metadata !10}
+!10 = metadata !{metadata !"A", metadata !11, metadata !"short", i32 0, i32 15}
+!11 = metadata !{metadata !12}
+!12 = metadata !{i32 0, i32 4, i32 1}
+!13 = metadata !{metadata !14}
+!14 = metadata !{i32 0, i32 7, metadata !15}
+!15 = metadata !{metadata !16}
+!16 = metadata !{metadata !"indexOutputData", metadata !17, metadata !"char", i32 0, i32 7}
+!17 = metadata !{metadata !18}
+!18 = metadata !{i32 0, i32 0, i32 0}
+!19 = metadata !{metadata !20}
+!20 = metadata !{i32 0, i32 7, metadata !21}
+!21 = metadata !{metadata !22}
+!22 = metadata !{metadata !"operation", metadata !17, metadata !"char", i32 0, i32 7}
+!23 = metadata !{metadata !24}
+!24 = metadata !{i32 0, i32 15, metadata !25}
+!25 = metadata !{metadata !26}
+!26 = metadata !{metadata !"return", metadata !27, metadata !"data_inp", i32 0, i32 15}
+!27 = metadata !{metadata !28}
+!28 = metadata !{i32 0, i32 1, i32 0}

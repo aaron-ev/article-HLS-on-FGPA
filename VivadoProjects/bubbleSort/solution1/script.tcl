@@ -5,8 +5,8 @@
 ############################################################
 open_project bubbleSort
 set_top bubbleSort
-add_files bubbleSort.c
-add_files -tb mergeSort_tb.c
+add_files bubbleSort/bubbleSort.cpp
+add_files -tb bubbleSort/bubbleSort_tb.cpp
 open_solution "solution1"
 set_part {xc7a100tcsg324-1} -tool vivado
 create_clock -period 10 -name default

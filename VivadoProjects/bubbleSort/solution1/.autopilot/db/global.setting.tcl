@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7a100t:csg324:-1"
-set SourceFiles {sc {} c ../../bubbleSort.c}
+set SourceFiles {sc {} c ../bubbleSort.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/solution1.directive}
-set TBFiles {verilog ../../mergeSort_tb.c bc ../../mergeSort_tb.c vhdl ../../mergeSort_tb.c sc ../../mergeSort_tb.c cas ../../mergeSort_tb.c c {}}
+set TBFiles {verilog ../bubbleSort_tb.cpp bc ../bubbleSort_tb.cpp vhdl ../bubbleSort_tb.cpp sc ../bubbleSort_tb.cpp cas ../bubbleSort_tb.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7a100t:csg324:-1"
-set SourceFiles {sc {} c ../../insertion_sort.c}
+set SourceFiles {sc {} c ../../insertion_sort.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {C:/Users/aaron/Desktop/git_article/vivadoProjects/insertion_sort/solution1/solution1.directive}
-set TBFiles {verilog ../../insertion_sort_tb.c bc ../../insertion_sort_tb.c vhdl ../../insertion_sort_tb.c sc ../../insertion_sort_tb.c cas ../../insertion_sort_tb.c c {}}
+set TBFiles {verilog ../../insertion_sort_tb.cpp bc ../../insertion_sort_tb.cpp vhdl ../../insertion_sort_tb.cpp sc ../../insertion_sort_tb.cpp cas ../../insertion_sort_tb.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

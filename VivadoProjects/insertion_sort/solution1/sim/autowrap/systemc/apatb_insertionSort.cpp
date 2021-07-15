@@ -4,6 +4,8 @@
 // Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 
+#define AP_INT_MAX_W 32678
+
 #include <systemc>
 #include <iostream>
 #include <cstdlib>
@@ -26,30 +28,40 @@ using namespace sc_dt;
 
 
 // [dump_struct_tree [build_nameSpaceTree] dumpedStructList] ---------->
+    typedef struct  {
+        short data;
+        ap_fixed<1, 0, (ap_q_mode) 5, (ap_o_mode)3, 0> done;
+       } outData_s;
+
 
 
 // [dump_enumeration [get_enumeration_list]] ---------->
 
 
+// wrapc file define: "agg_result_data"
+#define AUTOTB_TVOUT_agg_result_data  "../tv/cdatafile/c.insertionSort.autotvout_agg_result_data.dat"
+// wrapc file define: "agg_result_done_V"
+#define AUTOTB_TVOUT_agg_result_done_V  "../tv/cdatafile/c.insertionSort.autotvout_agg_result_done_V.dat"
 // wrapc file define: "dataIn"
 #define AUTOTB_TVIN_dataIn  "../tv/cdatafile/c.insertionSort.autotvin_dataIn.dat"
 // wrapc file define: "posOutData"
 #define AUTOTB_TVIN_posOutData  "../tv/cdatafile/c.insertionSort.autotvin_posOutData.dat"
-// wrapc file define: "ap_return"
-#define AUTOTB_TVOUT_ap_return  "../tv/cdatafile/c.insertionSort.autotvout_ap_return.dat"
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
-// tvout file define: "ap_return"
-#define AUTOTB_TVOUT_PC_ap_return  "../tv/rtldatafile/rtl.insertionSort.autotvout_ap_return.dat"
+// tvout file define: "agg_result_data"
+#define AUTOTB_TVOUT_PC_agg_result_data  "../tv/rtldatafile/rtl.insertionSort.autotvout_agg_result_data.dat"
+// tvout file define: "agg_result_done_V"
+#define AUTOTB_TVOUT_PC_agg_result_done_V  "../tv/rtldatafile/rtl.insertionSort.autotvout_agg_result_done_V.dat"
 
 class INTER_TCL_FILE {
 	public:
 		INTER_TCL_FILE(const char* name) {
 			mName = name;
+			agg_result_data_depth = 0;
+			agg_result_done_V_depth = 0;
 			dataIn_depth = 0;
 			posOutData_depth = 0;
-			ap_return_depth = 0;
 			trans_num =0;
 		}
 
@@ -69,9 +81,10 @@ class INTER_TCL_FILE {
 
 		string get_depth_list () {
 			stringstream total_list;
+			total_list << "{agg_result_data " << agg_result_data_depth << "}\n";
+			total_list << "{agg_result_done_V " << agg_result_done_V_depth << "}\n";
 			total_list << "{dataIn " << dataIn_depth << "}\n";
 			total_list << "{posOutData " << posOutData_depth << "}\n";
-			total_list << "{ap_return " << ap_return_depth << "}\n";
 			return total_list.str();
 		}
 
@@ -79,9 +92,10 @@ class INTER_TCL_FILE {
 			(*class_num) = (*class_num) > num ? (*class_num) : num;
 		}
 	public:
+		int agg_result_data_depth;
+		int agg_result_done_V_depth;
 		int dataIn_depth;
 		int posOutData_depth;
-		int ap_return_depth;
 		int trans_num;
 
 	private:
@@ -89,17 +103,14 @@ class INTER_TCL_FILE {
 		const char* mName;
 };
 
-extern "C" short insertionSort (
-short dataIn,
-short posOutData);
 
 #define insertionSort AESL_ORIG_DUT_insertionSort
-extern "C" short insertionSort (
+extern outData_s insertionSort (
 short dataIn,
 short posOutData);
 #undef insertionSort
 
-short insertionSort (
+outData_s insertionSort (
 short dataIn,
 short posOutData)
 {
@@ -115,21 +126,21 @@ short posOutData)
 		string AESL_num;
 		static AESL_FILE_HANDLER aesl_fh;
 
-		short AESL_return;
+		outData_s AESL_return;
 
-		// output port post check: "ap_return"
-		aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_token); // [[transaction]]
+		// output port post check: "agg_result_data"
+		aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_data, AESL_token); // [[transaction]]
 		if (AESL_token != "[[transaction]]")
 		{
 			exit(1);
 		}
-		aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_num); // transaction number
+		aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_data, AESL_num); // transaction number
 
 		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
 		{
-			aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_token); // data
+			aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_data, AESL_token); // data
 
-			sc_bv<16> ap_return_pc_buffer;
+			sc_bv<16> *agg_result_data_pc_buffer = new sc_bv<16>[1];
 			int i = 0;
 
 			while (AESL_token != "[[/transaction]]")
@@ -145,7 +156,7 @@ short posOutData)
 					{
 						if (!err)
 						{
-							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'ap_return', possible cause: There are uninitialized variables in the C design." << endl;
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'agg_result_data', possible cause: There are uninitialized variables in the C design." << endl;
 							err = true;
 						}
 						AESL_token.replace(x_found, 1, "0");
@@ -167,7 +178,7 @@ short posOutData)
 					{
 						if (!err)
 						{
-							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'ap_return', possible cause: There are uninitialized variables in the C design." << endl;
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'agg_result_data', possible cause: There are uninitialized variables in the C design." << endl;
 							err = true;
 						}
 						AESL_token.replace(x_found, 1, "0");
@@ -181,13 +192,13 @@ short posOutData)
 				// push token into output port buffer
 				if (AESL_token != "")
 				{
-					ap_return_pc_buffer = AESL_token.c_str();
+					agg_result_data_pc_buffer[i] = AESL_token.c_str();
 					i++;
 				}
 
-				aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_token); // data or [[/transaction]]
+				aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_data, AESL_token); // data or [[/transaction]]
 
-				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_ap_return))
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_agg_result_data))
 				{
 					exit(1);
 				}
@@ -196,25 +207,27 @@ short posOutData)
 			// ***********************************
 			if (i > 0)
 			{
-				// RTL Name: ap_return
+				// RTL Name: agg_result_data
 				{
 					// bitslice(15, 0)
 					// {
-						// celement: return(15, 0)
+						// celement: agg.result.data(15, 0)
 						// {
-							sc_lv<16> return_lv0_0_1_0;
+							sc_lv<16>* agg_result_data_lv0_0_0_1 = new sc_lv<16>[1];
 						// }
 					// }
 
 					// bitslice(15, 0)
 					{
-						// celement: return(15, 0)
+						int hls_map_index = 0;
+						// celement: agg.result.data(15, 0)
 						{
-							// carray: (0) => (1) @ (0)
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
-								if (&(AESL_return) != NULL) // check the null address if the c port is array or others
+								if (&(AESL_return.data) != NULL) // check the null address if the c port is array or others
 								{
-									return_lv0_0_1_0.range(15, 0) = sc_bv<16>(ap_return_pc_buffer.range(15, 0));
+									agg_result_data_lv0_0_0_1[hls_map_index++].range(15, 0) = sc_bv<16>(agg_result_data_pc_buffer[hls_map_index].range(15, 0));
 								}
 							}
 						}
@@ -222,25 +235,163 @@ short posOutData)
 
 					// bitslice(15, 0)
 					{
-						// celement: return(15, 0)
+						int hls_map_index = 0;
+						// celement: agg.result.data(15, 0)
 						{
-							// carray: (0) => (1) @ (0)
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 							{
-								// sub                    : 
-								// ori_name               : AESL_return
-								// sub_1st_elem           : 
-								// ori_name_1st_elem      : AESL_return
-								// output_left_conversion : AESL_return
-								// output_type_conversion : (return_lv0_0_1_0).to_uint64()
-								if (&(AESL_return) != NULL) // check the null address if the c port is array or others
+								// sub                    : i_0
+								// ori_name               : AESL_return.data
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : AESL_return.data
+								// output_left_conversion : AESL_return.data
+								// output_type_conversion : (agg_result_data_lv0_0_0_1[hls_map_index++]).to_uint64()
+								if (&(AESL_return.data) != NULL) // check the null address if the c port is array or others
 								{
-									AESL_return = (return_lv0_0_1_0).to_uint64();
+									AESL_return.data = (agg_result_data_lv0_0_0_1[hls_map_index++]).to_uint64();
 								}
 							}
 						}
 					}
 				}
 			}
+
+			// release memory allocation
+			delete [] agg_result_data_pc_buffer;
+		}
+
+		// output port post check: "agg_result_done_V"
+		aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_done_V, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_done_V, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_done_V, AESL_token); // data
+
+			sc_bv<1> *agg_result_done_V_pc_buffer = new sc_bv<1>[1];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'agg_result_done_V', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'agg_result_done_V', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					agg_result_done_V_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_agg_result_done_V, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_agg_result_done_V))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: agg_result_done_V
+				{
+					// bitslice(0, 0)
+					// {
+						// celement: agg.result.done.V(0, 0)
+						// {
+							sc_lv<1>* agg_result_done_V_lv0_0_0_1 = new sc_lv<1>[1];
+						// }
+					// }
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: agg.result.done.V(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								if (&(AESL_return.done) != NULL) // check the null address if the c port is array or others
+								{
+									agg_result_done_V_lv0_0_0_1[hls_map_index++].range(0, 0) = sc_bv<1>(agg_result_done_V_pc_buffer[hls_map_index].range(0, 0));
+								}
+							}
+						}
+					}
+
+					// bitslice(0, 0)
+					{
+						int hls_map_index = 0;
+						// celement: agg.result.done.V(0, 0)
+						{
+							// carray: (0) => (0) @ (1)
+							for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : AESL_return.done
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : AESL_return.done
+								// output_left_conversion : (AESL_return.done).range()
+								// output_type_conversion : (agg_result_done_V_lv0_0_0_1[hls_map_index++]).to_string(SC_BIN).c_str()
+								if (&(AESL_return.done) != NULL) // check the null address if the c port is array or others
+								{
+									(AESL_return.done).range() = (agg_result_done_V_lv0_0_0_1[hls_map_index++]).to_string(SC_BIN).c_str();
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] agg_result_done_V_pc_buffer;
 		}
 
 		AESL_transaction_pc++;
@@ -254,6 +405,14 @@ short posOutData)
 
 		static AESL_FILE_HANDLER aesl_fh;
 
+		// "agg_result_data"
+		char* tvout_agg_result_data = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_agg_result_data);
+
+		// "agg_result_done_V"
+		char* tvout_agg_result_done_V = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_agg_result_done_V);
+
 		// "dataIn"
 		char* tvin_dataIn = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_dataIn);
@@ -261,10 +420,6 @@ short posOutData)
 		// "posOutData"
 		char* tvin_posOutData = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_posOutData);
-
-		// "ap_return"
-		char* tvout_ap_return = new char[50];
-		aesl_fh.touch(AUTOTB_TVOUT_ap_return);
 
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
@@ -357,35 +512,37 @@ short posOutData)
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		short AESL_return = AESL_ORIG_DUT_insertionSort(dataIn, posOutData);
+		outData_s AESL_return = AESL_ORIG_DUT_insertionSort(dataIn, posOutData);
 
 		CodeState = DUMP_OUTPUTS;
 
 		// [[transaction]]
-		sprintf(tvout_ap_return, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
+		sprintf(tvout_agg_result_data, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_agg_result_data, tvout_agg_result_data);
 
-		sc_bv<16> ap_return_tvout_wrapc_buffer;
+		sc_bv<16>* agg_result_data_tvout_wrapc_buffer = new sc_bv<16>[1];
 
-		// RTL Name: ap_return
+		// RTL Name: agg_result_data
 		{
 			// bitslice(15, 0)
 			{
-				// celement: return(15, 0)
+				int hls_map_index = 0;
+				// celement: agg.result.data(15, 0)
 				{
-					// carray: (0) => (1) @ (0)
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
-						// sub                   : 
-						// ori_name              : AESL_return
-						// sub_1st_elem          : 
-						// ori_name_1st_elem     : AESL_return
-						// regulate_c_name       : return
-						// input_type_conversion : AESL_return
-						if (&(AESL_return) != NULL) // check the null address if the c port is array or others
+						// sub                   : i_0
+						// ori_name              : AESL_return.data
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : AESL_return.data
+						// regulate_c_name       : agg_result_data
+						// input_type_conversion : AESL_return.data
+						if (&(AESL_return.data) != NULL) // check the null address if the c port is array or others
 						{
-							sc_lv<16> return_tmp_mem;
-							return_tmp_mem = AESL_return;
-							ap_return_tvout_wrapc_buffer.range(15, 0) = return_tmp_mem.range(15, 0);
+							sc_lv<16> agg_result_data_tmp_mem;
+							agg_result_data_tmp_mem = AESL_return.data;
+							agg_result_data_tvout_wrapc_buffer[hls_map_index++].range(15, 0) = agg_result_data_tmp_mem.range(15, 0);
 						}
 					}
 				}
@@ -395,21 +552,73 @@ short posOutData)
 		// dump tv to file
 		for (int i = 0; i < 1; i++)
 		{
-			sprintf(tvout_ap_return, "%s\n", (ap_return_tvout_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
+			sprintf(tvout_agg_result_data, "%s\n", (agg_result_data_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_agg_result_data, tvout_agg_result_data);
 		}
 
-		tcl_file.set_num(1, &tcl_file.ap_return_depth);
-		sprintf(tvout_ap_return, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
+		tcl_file.set_num(1, &tcl_file.agg_result_data_depth);
+		sprintf(tvout_agg_result_data, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_agg_result_data, tvout_agg_result_data);
+
+		// release memory allocation
+		delete [] agg_result_data_tvout_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvout_agg_result_done_V, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_agg_result_done_V, tvout_agg_result_done_V);
+
+		sc_bv<1>* agg_result_done_V_tvout_wrapc_buffer = new sc_bv<1>[1];
+
+		// RTL Name: agg_result_done_V
+		{
+			// bitslice(0, 0)
+			{
+				int hls_map_index = 0;
+				// celement: agg.result.done.V(0, 0)
+				{
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : AESL_return.done
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : AESL_return.done
+						// regulate_c_name       : agg_result_done_V
+						// input_type_conversion : (AESL_return.done).range().to_string(SC_BIN).c_str()
+						if (&(AESL_return.done) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<1> agg_result_done_V_tmp_mem;
+							agg_result_done_V_tmp_mem = (AESL_return.done).range().to_string(SC_BIN).c_str();
+							agg_result_done_V_tvout_wrapc_buffer[hls_map_index++].range(0, 0) = agg_result_done_V_tmp_mem.range(0, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvout_agg_result_done_V, "%s\n", (agg_result_done_V_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_agg_result_done_V, tvout_agg_result_done_V);
+		}
+
+		tcl_file.set_num(1, &tcl_file.agg_result_done_V_depth);
+		sprintf(tvout_agg_result_done_V, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_agg_result_done_V, tvout_agg_result_done_V);
+
+		// release memory allocation
+		delete [] agg_result_done_V_tvout_wrapc_buffer;
 
 		CodeState = DELETE_CHAR_BUFFERS;
+		// release memory allocation: "agg_result_data"
+		delete [] tvout_agg_result_data;
+		// release memory allocation: "agg_result_done_V"
+		delete [] tvout_agg_result_done_V;
 		// release memory allocation: "dataIn"
 		delete [] tvin_dataIn;
 		// release memory allocation: "posOutData"
 		delete [] tvin_posOutData;
-		// release memory allocation: "ap_return"
-		delete [] tvout_ap_return;
 
 		AESL_transaction++;
 

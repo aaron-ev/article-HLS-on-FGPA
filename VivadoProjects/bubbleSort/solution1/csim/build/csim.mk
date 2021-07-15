@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../mergeSort_tb.c ../../../../bubbleSort.c
+HLS_SOURCES = ../../../../bubbleSort_tb.cpp ../../../../bubbleSort.cpp
 
 TARGET := csim.exe
 
@@ -70,14 +70,14 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/mergeSort_tb.o: ../../../../mergeSort_tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../mergeSort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/bubbleSort_tb.o: ../../../../bubbleSort_tb.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../bubbleSort_tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
--include $(ObjDir)/mergeSort_tb.d
+-include $(ObjDir)/bubbleSort_tb.d
 
-$(ObjDir)/bubbleSort.o: ../../../../bubbleSort.c $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../bubbleSort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/bubbleSort.o: ../../../../bubbleSort.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../bubbleSort.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/bubbleSort.d

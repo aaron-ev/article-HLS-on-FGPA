@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bubbleSort'" level="0">
-<item name = "Date">Fri Jul 09 11:21:41 2021
+<item name = "Date">Wed Jul 14 18:07:21 2021
 </item>
 <item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
 <item name = "Project">bubbleSort</item>
@@ -15,14 +15,14 @@
 <section name = "" level="1">
 <item name = "Target clock period (ns)">10.00</item>
 <item name = "Clock uncertainty (ns)">1.25</item>
-<item name = "Estimated clock period (ns)">5.48</item>
+<item name = "Estimated clock period (ns)">5.16</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1, 131075, 2, 131076, none</column>
+<column name="">1, 52, 2, 53, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,8 +33,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">512, 131072, 2 ~ 512, -, -, 256, no</column>
-<column name=" + Loop 1.1">0, 510, 2, -, -, 0 ~ 255, no</column>
+<column name="- Loop 1">10, 50, 2 ~ 10, -, -, 5, no</column>
+<column name=" + Loop 1.1">0, 8, 2, -, -, 0 ~ 4, no</column>
 </table>
 </item>
 </section>
@@ -47,14 +47,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 131</column>
+<column name="Expression">-, -, 0, 15</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, -, -, -</column>
-<column name="Memory">1, -, 0, 0</column>
-<column name="Multiplexer">-, -, -, 66</column>
-<column name="Register">-, -, 97, -</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 30</column>
+<column name="Register">-, -, 38, -</column>
 <specialColumn name="Available">270, 240, 126800, 63400</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, ~0, ~0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -69,7 +69,6 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="A_U">bubbleSort_A, 1, 0, 0, 256, 16, 1, 4096</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -78,38 +77,31 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_248_p2">+, 0, 0, 9, 9, 2</column>
-<column name="j_fu_232_p2">+, 0, 0, 8, 8, 1</column>
-<column name="tmp_2_fu_173_p2">+, 0, 0, 32, 32, 1</column>
-<column name="exitcond_i_fu_226_p2">icmp, 0, 0, 3, 9, 9</column>
-<column name="icmp_fu_158_p2">icmp, 0, 0, 9, 24, 1</column>
-<column name="tmp_9_i_fu_254_p2">icmp, 0, 0, 6, 16, 16</column>
-<column name="gepindex2_fu_213_p3">select, 0, 0, 64, 1, 8</column>
+<column name="i_fu_164_p2">+, 0, 0, 4, 4, 2</column>
+<column name="j_fu_148_p2">+, 0, 0, 3, 3, 1</column>
+<column name="exitcond_i_fu_142_p2">icmp, 0, 0, 2, 4, 4</column>
+<column name="tmp_6_i_fu_170_p2">icmp, 0, 0, 6, 16, 16</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="A_address0">8, 5, 8, 40</column>
-<column name="A_address1">8, 3, 8, 24</column>
-<column name="A_d0">16, 3, 16, 48</column>
+<column name="A_address0">3, 4, 3, 12</column>
+<column name="A_address1">3, 3, 3, 9</column>
 <column name="ap_NS_fsm">1, 7, 1, 7</column>
-<column name="indvars_iv_i_reg_110">9, 2, 9, 18</column>
-<column name="j_i_reg_122">8, 2, 8, 16</column>
-<column name="p_0_reg_133">16, 2, 16, 32</column>
+<column name="indvars_iv_i_reg_87">4, 2, 4, 8</column>
+<column name="j_i_reg_99">3, 2, 3, 6</column>
+<column name="p_s_reg_110">16, 2, 16, 32</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="A_addr_1_reg_289">8, 0, 8, 0</column>
-<column name="A_addr_2_reg_295">8, 0, 8, 0</column>
+<column name="A_addr_1_reg_200">3, 0, 3, 0</column>
+<column name="A_addr_2_reg_206">3, 0, 3, 0</column>
 <column name="ap_CS_fsm">6, 0, 6, 0</column>
-<column name="count">32, 0, 32, 0</column>
-<column name="flagFill">1, 0, 1, 0</column>
-<column name="flagFill_load_reg_269">1, 0, 1, 0</column>
-<column name="indvars_iv_i_reg_110">9, 0, 9, 0</column>
-<column name="j_i_reg_122">8, 0, 8, 0</column>
-<column name="j_reg_284">8, 0, 8, 0</column>
-<column name="p_0_reg_133">16, 0, 16, 0</column>
+<column name="indvars_iv_i_reg_87">4, 0, 4, 0</column>
+<column name="j_i_reg_99">3, 0, 3, 0</column>
+<column name="j_reg_195">3, 0, 3, 0</column>
+<column name="p_s_reg_110">16, 0, 16, 0</column>
 </table>
 </item>
 </section>
@@ -126,18 +118,28 @@
 <column name="ap_idle">out, 1, ap_ctrl_hs, bubbleSort, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, bubbleSort, return value</column>
 <column name="ap_return">out, 16, ap_ctrl_hs, bubbleSort, return value</column>
-<column name="dataIn">in, 16, ap_none, dataIn, scalar</column>
-<column name="posOutData">in, 8, ap_none, posOutData, scalar</column>
+<column name="A_address0">out, 3, ap_memory, A, array</column>
+<column name="A_ce0">out, 1, ap_memory, A, array</column>
+<column name="A_we0">out, 1, ap_memory, A, array</column>
+<column name="A_d0">out, 16, ap_memory, A, array</column>
+<column name="A_q0">in, 16, ap_memory, A, array</column>
+<column name="A_address1">out, 3, ap_memory, A, array</column>
+<column name="A_ce1">out, 1, ap_memory, A, array</column>
+<column name="A_we1">out, 1, ap_memory, A, array</column>
+<column name="A_d1">out, 16, ap_memory, A, array</column>
+<column name="A_q1">in, 16, ap_memory, A, array</column>
+<column name="indexOutputData">in, 8, ap_none, indexOutputData, scalar</column>
+<column name="operation">in, 8, ap_none, operation, scalar</column>
 </table>
 </item>
 </section>
 
 <section name = "Critical Path" level="0">
-<item name = "Max Delay">5.48</item>
+<item name = "Max Delay">5.16</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'temp', bubbleSort.c:16->bubbleSort.c:44">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
-<column name="'tmp_9_i', bubbleSort.c:16->bubbleSort.c:44">icmp, 2.77, 5.48, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'temp', bubbleSort/bubbleSort.cpp:15->bubbleSort/bubbleSort.cpp:39">load, 2.39, 2.39, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
+<column name="'tmp_6_i', bubbleSort/bubbleSort.cpp:15->bubbleSort/bubbleSort.cpp:39">icmp, 2.77, 5.16, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

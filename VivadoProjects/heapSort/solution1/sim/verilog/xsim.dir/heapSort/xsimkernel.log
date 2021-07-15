@@ -1,7 +1,7 @@
-Running: xsim.dir/heapSort/xsimk.exe -simmode gui -wdb heapSort.wdb -simrunnum 0 -socket 62151
+Running: xsim.dir/heapSort/xsimk.exe -simmode gui -wdb heapSort.wdb -simrunnum 0 -socket 54437
 Design successfully loaded
-Design Loading Memory Usage: 33684 KB (Peak: 33684 KB)
-Design Loading CPU Usage: 1139 ms
+Design Loading Memory Usage: 33304 KB (Peak: 33304 KB)
+Design Loading CPU Usage: 1843 ms
 Simulation completed
-Simulation Memory Usage: 37804 KB (Peak: 37804 KB)
-Simulation CPU Usage: 12186 ms
+Simulation Memory Usage: 37532 KB (Peak: 37532 KB)
+Simulation CPU Usage: 13452 ms

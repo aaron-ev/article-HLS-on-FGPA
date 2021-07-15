@@ -1,7 +1,0 @@
-Running: xsim.dir/insertionSort/xsimk.exe -simmode gui -wdb insertionSort.wdb -simrunnum 0 -socket 53656
-Design successfully loaded
-Design Loading Memory Usage: 32840 KB (Peak: 32840 KB)
-Design Loading CPU Usage: 1108 ms
-Simulation completed
-Simulation Memory Usage: 36976 KB (Peak: 36976 KB)
-Simulation CPU Usage: 1827 ms

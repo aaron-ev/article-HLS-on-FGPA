@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../insertion_sort_tb.c ../../../../insertion_sort.c
+HLS_SOURCES = ../../../../insertion_sort_tb.cpp ../../../../insertion_sort.cpp
 
 TARGET := csim.exe
 
@@ -70,14 +70,14 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/insertion_sort_tb.o: ../../../../insertion_sort_tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../insertion_sort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/insertion_sort_tb.o: ../../../../insertion_sort_tb.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../insertion_sort_tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/insertion_sort_tb.d
 
-$(ObjDir)/insertion_sort.o: ../../../../insertion_sort.c $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../insertion_sort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/insertion_sort.o: ../../../../insertion_sort.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../insertion_sort.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/insertion_sort.d

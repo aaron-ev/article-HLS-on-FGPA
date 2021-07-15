@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'insertionSort'" level="0">
-<item name = "Date">Thu Jul 08 12:21:58 2021
+<item name = "Date">Fri Jul 09 21:09:17 2021
 </item>
 <item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
 <item name = "Project">insertion_sort</item>
@@ -47,12 +47,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 136</column>
+<column name="Expression">-, -, 0, 114</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, -, -, -</column>
 <column name="Memory">1, -, 0, 0</column>
-<column name="Multiplexer">-, -, -, 67</column>
-<column name="Register">-, -, 99, -</column>
+<column name="Multiplexer">-, -, -, 69</column>
+<column name="Register">-, -, 102, -</column>
 <specialColumn name="Available">270, 240, 126800, 63400</specialColumn>
 <specialColumn name="Utilization (%)">~0, 0, ~0, ~0</specialColumn>
 </table>
@@ -78,14 +78,14 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_247_p2">+, 0, 0, 9, 9, 1</column>
-<column name="j_fu_221_p2">+, 0, 0, 9, 9, 2</column>
-<column name="tmp_2_fu_170_p2">+, 0, 0, 32, 32, 1</column>
-<column name="exitcond_i_fu_182_p2">icmp, 0, 0, 4, 9, 10</column>
-<column name="icmp_fu_155_p2">icmp, 0, 0, 9, 24, 1</column>
-<column name="tmp_7_i_fu_253_p2">icmp, 0, 0, 6, 16, 16</column>
-<column name="tmp_i_fu_231_p2">icmp, 0, 0, 3, 9, 1</column>
-<column name="gepindex2_fu_208_p3">select, 0, 0, 64, 1, 8</column>
+<column name="i_fu_307_p2">+, 0, 0, 9, 9, 1</column>
+<column name="j_fu_281_p2">+, 0, 0, 9, 9, 2</column>
+<column name="tmp_2_fu_220_p2">+, 0, 0, 16, 16, 1</column>
+<column name="exitcond_i_fu_236_p2">icmp, 0, 0, 4, 9, 10</column>
+<column name="icmp_fu_201_p2">icmp, 0, 0, 3, 8, 1</column>
+<column name="tmp_7_i_fu_313_p2">icmp, 0, 0, 6, 16, 16</column>
+<column name="tmp_i_fu_291_p2">icmp, 0, 0, 3, 9, 1</column>
+<column name="gepindex2_fu_268_p3">select, 0, 0, 64, 1, 8</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -94,23 +94,29 @@
 <column name="A_address1">8, 3, 8, 24</column>
 <column name="A_d0">16, 3, 16, 48</column>
 <column name="ap_NS_fsm">1, 7, 1, 7</column>
-<column name="i_i_reg_108">9, 2, 9, 18</column>
-<column name="j_0_in_i_reg_120">9, 2, 9, 18</column>
-<column name="p_0_reg_130">16, 2, 16, 32</column>
+<column name="i_i_reg_132">9, 2, 9, 18</column>
+<column name="j_0_in_i_reg_144">9, 2, 9, 18</column>
+<column name="sOutData_done_V_loc_reg_154">1, 2, 1, 2</column>
+<column name="storemerge1_reg_166">16, 2, 16, 32</column>
+<column name="storemerge_reg_176">1, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="A_addr_1_reg_288">8, 0, 8, 0</column>
-<column name="A_addr_2_reg_294">8, 0, 8, 0</column>
+<column name="A_addr_1_reg_365">8, 0, 8, 0</column>
+<column name="A_addr_2_reg_371">8, 0, 8, 0</column>
 <column name="ap_CS_fsm">6, 0, 6, 0</column>
-<column name="count">32, 0, 32, 0</column>
+<column name="count">16, 0, 16, 0</column>
 <column name="flagFill">1, 0, 1, 0</column>
-<column name="flagFill_load_reg_268">1, 0, 1, 0</column>
-<column name="i_i_reg_108">9, 0, 9, 0</column>
-<column name="j_0_in_i_reg_120">9, 0, 9, 0</column>
-<column name="j_reg_280">9, 0, 9, 0</column>
-<column name="p_0_reg_130">16, 0, 16, 0</column>
+<column name="flagFill_load_reg_340">1, 0, 1, 0</column>
+<column name="i_i_reg_132">9, 0, 9, 0</column>
+<column name="j_0_in_i_reg_144">9, 0, 9, 0</column>
+<column name="j_reg_357">9, 0, 9, 0</column>
+<column name="sOutData_data">16, 0, 16, 0</column>
+<column name="sOutData_done_V">1, 0, 1, 0</column>
+<column name="sOutData_done_V_loc_reg_154">1, 0, 1, 0</column>
+<column name="storemerge1_reg_166">16, 0, 16, 0</column>
+<column name="storemerge_reg_176">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -126,7 +132,10 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, insertionSort, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, insertionSort, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, insertionSort, return value</column>
-<column name="ap_return">out, 16, ap_ctrl_hs, insertionSort, return value</column>
+<column name="agg_result_data">out, 16, ap_vld, agg_result_data, pointer</column>
+<column name="agg_result_data_ap_vld">out, 1, ap_vld, agg_result_data, pointer</column>
+<column name="agg_result_done_V">out, 1, ap_vld, agg_result_done_V, pointer</column>
+<column name="agg_result_done_V_ap_vld">out, 1, ap_vld, agg_result_done_V, pointer</column>
 <column name="dataIn">in, 16, ap_none, dataIn, scalar</column>
 <column name="posOutData">in, 8, ap_none, posOutData, scalar</column>
 </table>
@@ -137,8 +146,8 @@
 <item name = "Max Delay">5.48</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'temp', insertion_sort.c:23->insertion_sort.c:51">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
-<column name="'tmp_7_i', insertion_sort.c:23->insertion_sort.c:51">icmp, 2.77, 5.48, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'temp', insertion_sort.cpp:11->insertion_sort.cpp:44">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
+<column name="'tmp_7_i', insertion_sort.cpp:11->insertion_sort.cpp:44">icmp, 2.77, 5.48, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

@@ -1,0 +1,366 @@
+
+
+================================================================
+== Vivado HLS Report for 'selectionSort'
+================================================================
+* Date:           Fri Jul 09 21:04:39 2021
+
+* Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
+* Project:        selectionSort
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a100tcsg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.85|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+--------+-----+--------+---------+
+    |    Latency   |   Interval   | Pipeline|
+    | min |   max  | min |   max  |   Type  |
+    +-----+--------+-----+--------+---------+
+    |    1|  131328|    2|  131329|   none  |
+    +-----+--------+-----+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+--------+----------+-----------+-----------+---------+----------+
+        |             |    Latency    | Iteration|  Initiation Interval  |   Trip  |          |
+        |  Loop Name  |  min |   max  |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-------------+------+--------+----------+-----------+-----------+---------+----------+
+        |- Loop 1     |  1785|  131325|  7 ~ 515 |          -|          -|      255|    no    |
+        | + Loop 1.1  |     2|     510|         2|          -|          -| 1 ~ 255 |    no    |
+        +-------------+------+--------+----------+-----------+-----------+---------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 9
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (!icmp)
+	9  / (icmp)
+2 --> 
+	3  / (!flagFill_load & !exitcond3_i)
+	8  / (flagFill_load) | (exitcond3_i)
+3 --> 
+	4  / true
+4 --> 
+	5  / (!exitcond_i)
+	6  / (exitcond_i)
+5 --> 
+	4  / true
+6 --> 
+	7  / true
+7 --> 
+	2  / true
+8 --> 
+	9  / true
+9 --> 
+* FSM state operations: 
+
+ <State 1>: 2.71ns
+ST_1: stg_10 [1/1] 0.00ns
+codeRepl:0  call void (...)* @_ssdm_op_SpecBitsMap(i16* %agg_result_data), !map !7
+
+ST_1: stg_11 [1/1] 0.00ns
+codeRepl:1  call void (...)* @_ssdm_op_SpecBitsMap(i1* %agg_result_done_V), !map !11
+
+ST_1: stg_12 [1/1] 0.00ns
+codeRepl:2  call void (...)* @_ssdm_op_SpecBitsMap(i16 %dataIn), !map !15
+
+ST_1: stg_13 [1/1] 0.00ns
+codeRepl:3  call void (...)* @_ssdm_op_SpecBitsMap(i8 %posOutData), !map !21
+
+ST_1: posOutData_read [1/1] 0.00ns
+codeRepl:4  %posOutData_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %posOutData)
+
+ST_1: dataIn_read [1/1] 0.00ns
+codeRepl:5  %dataIn_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %dataIn)
+
+ST_1: stg_16 [1/1] 0.00ns
+codeRepl:6  call void (...)* @_ssdm_op_SpecTopModule([14 x i8]* @selectionSort_str) nounwind
+
+ST_1: count_load [1/1] 0.00ns
+codeRepl:7  %count_load = load i16* @count, align 2
+
+ST_1: tmp [1/1] 0.00ns
+codeRepl:8  %tmp = call i8 @_ssdm_op_PartSelect.i8.i16.i32.i32(i16 %count_load, i32 8, i32 15)
+
+ST_1: icmp [1/1] 2.47ns
+codeRepl:9  %icmp = icmp slt i8 %tmp, 1
+
+ST_1: sOutData_done_V_load [1/1] 0.00ns
+codeRepl:10  %sOutData_done_V_load = load i1* @sOutData_done_V, align 1
+
+ST_1: stg_21 [1/1] 0.00ns
+codeRepl:11  br i1 %icmp, label %0, label %1
+
+ST_1: flagFill_load [1/1] 0.00ns
+:0  %flagFill_load = load i1* @flagFill, align 1
+
+ST_1: stg_23 [1/1] 1.57ns
+:1  br i1 %flagFill_load, label %._crit_edge7, label %.preheader
+
+ST_1: tmp_1 [1/1] 0.00ns
+:0  %tmp_1 = sext i16 %count_load to i64
+
+ST_1: A_addr [1/1] 0.00ns
+:1  %A_addr = getelementptr inbounds [256 x i16]* @A, i64 0, i64 %tmp_1
+
+ST_1: stg_26 [1/1] 2.71ns
+:2  store i16 %dataIn_read, i16* %A_addr, align 2
+
+ST_1: tmp_2 [1/1] 1.91ns
+:3  %tmp_2 = add i16 %count_load, 1
+
+ST_1: stg_28 [1/1] 0.00ns
+:4  store i16 %tmp_2, i16* @count, align 2
+
+ST_1: sOutData_data_load [1/1] 0.00ns
+:5  %sOutData_data_load = load i16* @sOutData_data, align 2
+
+ST_1: stg_30 [1/1] 1.57ns
+:6  br label %4
+
+
+ <State 2>: 4.08ns
+ST_2: index_min [1/1] 0.00ns
+.preheader:0  %index_min = phi i8 [ %i, %3 ], [ 0, %1 ]
+
+ST_2: index_min_cast1 [1/1] 0.00ns
+.preheader:1  %index_min_cast1 = zext i8 %index_min to i16
+
+ST_2: exitcond3_i [1/1] 2.47ns
+.preheader:2  %exitcond3_i = icmp eq i8 %index_min, -1
+
+ST_2: empty [1/1] 0.00ns
+.preheader:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 255, i64 255, i64 255)
+
+ST_2: i [1/1] 1.67ns
+.preheader:4  %i = add i8 %index_min, 1
+
+ST_2: stg_36 [1/1] 0.00ns
+.preheader:5  br i1 %exitcond3_i, label %selectionAlgorithm.exit, label %2
+
+ST_2: tmp_i [1/1] 0.00ns
+:0  %tmp_i = zext i8 %index_min to i64
+
+ST_2: A_addr_1 [1/1] 0.00ns
+:1  %A_addr_1 = getelementptr [256 x i16]* @A, i64 0, i64 %tmp_i
+
+ST_2: min_2 [2/2] 2.71ns
+:2  %min_2 = load i16* %A_addr_1, align 2
+
+ST_2: stg_40 [1/1] 0.00ns
+selectionAlgorithm.exit:0  store i1 true, i1* @sOutData_done_V, align 2
+
+ST_2: stg_41 [1/1] 0.00ns
+selectionAlgorithm.exit:1  store i1 true, i1* @flagFill, align 1
+
+ST_2: stg_42 [1/1] 1.57ns
+selectionAlgorithm.exit:2  br label %._crit_edge7
+
+ST_2: mem_index_gep5_cast [1/1] 0.00ns
+._crit_edge7:1  %mem_index_gep5_cast = sext i8 %posOutData_read to i11
+
+ST_2: adjSize [1/1] 0.00ns
+._crit_edge7:2  %adjSize = zext i11 %mem_index_gep5_cast to i64
+
+ST_2: tmp_3 [1/1] 0.00ns
+._crit_edge7:3  %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %posOutData_read, i32 7)
+
+ST_2: gepindex2 [1/1] 1.37ns
+._crit_edge7:4  %gepindex2 = select i1 %tmp_3, i64 255, i64 %adjSize
+
+ST_2: A_addr_4 [1/1] 0.00ns
+._crit_edge7:5  %A_addr_4 = getelementptr [256 x i16]* @A, i64 0, i64 %gepindex2
+
+ST_2: A_load_2 [2/2] 2.71ns
+._crit_edge7:6  %A_load_2 = load i16* %A_addr_4, align 2
+
+
+ <State 3>: 4.28ns
+ST_3: min_2 [1/2] 2.71ns
+:2  %min_2 = load i16* %A_addr_1, align 2
+
+ST_3: stg_50 [1/1] 1.57ns
+:3  br label %.backedge.i
+
+
+ <State 4>: 4.62ns
+ST_4: j_0_in_i [1/1] 0.00ns
+.backedge.i:0  %j_0_in_i = phi i16 [ %index_min_cast1, %2 ], [ %index_min_2, %.backedge.i.backedge ]
+
+ST_4: min1_i [1/1] 0.00ns
+.backedge.i:1  %min1_i = phi i16 [ %min_2, %2 ], [ %min_i_min1_i, %.backedge.i.backedge ]
+
+ST_4: index_min1_i [1/1] 0.00ns
+.backedge.i:2  %index_min1_i = phi i16 [ %index_min_cast1, %2 ], [ %j_i_index_min1_i, %.backedge.i.backedge ]
+
+ST_4: index_min_2 [1/1] 1.91ns
+.backedge.i:3  %index_min_2 = add i16 %j_0_in_i, 1
+
+ST_4: exitcond_i [1/1] 2.77ns
+.backedge.i:4  %exitcond_i = icmp eq i16 %j_0_in_i, 255
+
+ST_4: empty_4 [1/1] 0.00ns
+.backedge.i:5  %empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 255, i64 0)
+
+ST_4: stg_57 [1/1] 0.00ns
+.backedge.i:6  br i1 %exitcond_i, label %3, label %.backedge.i.backedge
+
+ST_4: tmp_7_i [1/1] 0.00ns
+.backedge.i.backedge:0  %tmp_7_i = sext i16 %index_min_2 to i64
+
+ST_4: A_addr_3 [1/1] 0.00ns
+.backedge.i.backedge:1  %A_addr_3 = getelementptr [256 x i16]* @A, i64 0, i64 %tmp_7_i
+
+ST_4: min [2/2] 2.71ns
+.backedge.i.backedge:2  %min = load i16* %A_addr_3, align 2
+
+ST_4: tmp_5_i [1/1] 0.00ns
+:0  %tmp_5_i = sext i16 %index_min1_i to i64
+
+ST_4: A_addr_2 [1/1] 0.00ns
+:1  %A_addr_2 = getelementptr [256 x i16]* @A, i64 0, i64 %tmp_5_i
+
+ST_4: A_load [2/2] 2.71ns
+:2  %A_load = load i16* %A_addr_2, align 2
+
+
+ <State 5>: 6.85ns
+ST_5: min [1/2] 2.71ns
+.backedge.i.backedge:2  %min = load i16* %A_addr_3, align 2
+
+ST_5: tmp_8_i [1/1] 2.77ns
+.backedge.i.backedge:3  %tmp_8_i = icmp slt i16 %min, %min1_i
+
+ST_5: min_i_min1_i [1/1] 1.37ns
+.backedge.i.backedge:4  %min_i_min1_i = select i1 %tmp_8_i, i16 %min, i16 %min1_i
+
+ST_5: j_i_index_min1_i [1/1] 1.37ns
+.backedge.i.backedge:5  %j_i_index_min1_i = select i1 %tmp_8_i, i16 %index_min_2, i16 %index_min1_i
+
+ST_5: stg_68 [1/1] 0.00ns
+.backedge.i.backedge:6  br label %.backedge.i
+
+
+ <State 6>: 5.42ns
+ST_6: A_load [1/2] 2.71ns
+:2  %A_load = load i16* %A_addr_2, align 2
+
+ST_6: stg_70 [1/1] 2.71ns
+:3  store i16 %A_load, i16* %A_addr_1, align 2
+
+
+ <State 7>: 2.71ns
+ST_7: stg_71 [1/1] 2.71ns
+:4  store i16 %min_2, i16* %A_addr_2, align 2
+
+ST_7: stg_72 [1/1] 0.00ns
+:5  br label %.preheader
+
+
+ <State 8>: 4.28ns
+ST_8: sOutData_done_V_loc [1/1] 0.00ns
+._crit_edge7:0  %sOutData_done_V_loc = phi i1 [ true, %selectionAlgorithm.exit ], [ %sOutData_done_V_load, %1 ]
+
+ST_8: A_load_2 [1/2] 2.71ns
+._crit_edge7:6  %A_load_2 = load i16* %A_addr_4, align 2
+
+ST_8: stg_75 [1/1] 0.00ns
+._crit_edge7:7  store i16 %A_load_2, i16* @sOutData_data, align 2
+
+ST_8: stg_76 [1/1] 1.57ns
+._crit_edge7:8  br label %4
+
+
+ <State 9>: 0.00ns
+ST_9: storemerge1 [1/1] 0.00ns
+:0  %storemerge1 = phi i16 [ %A_load_2, %._crit_edge7 ], [ %sOutData_data_load, %0 ]
+
+ST_9: storemerge [1/1] 0.00ns
+:1  %storemerge = phi i1 [ %sOutData_done_V_loc, %._crit_edge7 ], [ %sOutData_done_V_load, %0 ]
+
+ST_9: stg_79 [1/1] 0.00ns
+:2  call void @_ssdm_op_Write.ap_auto.i16P(i16* %agg_result_data, i16 %storemerge1)
+
+ST_9: stg_80 [1/1] 0.00ns
+:3  call void @_ssdm_op_Write.ap_auto.i1P(i1* %agg_result_done_V, i1 %storemerge)
+
+ST_9: stg_81 [1/1] 0.00ns
+:4  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

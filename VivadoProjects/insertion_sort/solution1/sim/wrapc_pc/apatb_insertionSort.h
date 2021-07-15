@@ -4,6 +4,6 @@
 // Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 
-extern short insertionSort (
+extern outData_s insertionSort (
 short dataIn,
 short posOutData);

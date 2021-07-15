@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="bubbleSort.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\bubbleSort.c"/>
+    <originFiles name="bubbleSort.cpp" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\bubbleSort\bubbleSort.cpp"/>
   </source>
   <testbench>
-    <originFiles name="mergeSort_tb.c" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\mergeSort_tb.c"/>
+    <originFiles name="bubbleSort_tb.cpp" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\bubbleSort\bubbleSort_tb.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

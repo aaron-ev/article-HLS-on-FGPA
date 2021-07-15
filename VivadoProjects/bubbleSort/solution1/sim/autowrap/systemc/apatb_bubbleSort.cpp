@@ -31,15 +31,20 @@ using namespace sc_dt;
 // [dump_enumeration [get_enumeration_list]] ---------->
 
 
-// wrapc file define: "dataIn"
-#define AUTOTB_TVIN_dataIn  "../tv/cdatafile/c.bubbleSort.autotvin_dataIn.dat"
-// wrapc file define: "posOutData"
-#define AUTOTB_TVIN_posOutData  "../tv/cdatafile/c.bubbleSort.autotvin_posOutData.dat"
+// wrapc file define: "A"
+#define AUTOTB_TVIN_A  "../tv/cdatafile/c.bubbleSort.autotvin_A.dat"
+#define AUTOTB_TVOUT_A  "../tv/cdatafile/c.bubbleSort.autotvout_A.dat"
+// wrapc file define: "indexOutputData"
+#define AUTOTB_TVIN_indexOutputData  "../tv/cdatafile/c.bubbleSort.autotvin_indexOutputData.dat"
+// wrapc file define: "operation"
+#define AUTOTB_TVIN_operation  "../tv/cdatafile/c.bubbleSort.autotvin_operation.dat"
 // wrapc file define: "ap_return"
 #define AUTOTB_TVOUT_ap_return  "../tv/cdatafile/c.bubbleSort.autotvout_ap_return.dat"
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
+// tvout file define: "A"
+#define AUTOTB_TVOUT_PC_A  "../tv/rtldatafile/rtl.bubbleSort.autotvout_A.dat"
 // tvout file define: "ap_return"
 #define AUTOTB_TVOUT_PC_ap_return  "../tv/rtldatafile/rtl.bubbleSort.autotvout_ap_return.dat"
 
@@ -47,8 +52,9 @@ class INTER_TCL_FILE {
 	public:
 		INTER_TCL_FILE(const char* name) {
 			mName = name;
-			dataIn_depth = 0;
-			posOutData_depth = 0;
+			A_depth = 0;
+			indexOutputData_depth = 0;
+			operation_depth = 0;
 			ap_return_depth = 0;
 			trans_num =0;
 		}
@@ -69,8 +75,9 @@ class INTER_TCL_FILE {
 
 		string get_depth_list () {
 			stringstream total_list;
-			total_list << "{dataIn " << dataIn_depth << "}\n";
-			total_list << "{posOutData " << posOutData_depth << "}\n";
+			total_list << "{A " << A_depth << "}\n";
+			total_list << "{indexOutputData " << indexOutputData_depth << "}\n";
+			total_list << "{operation " << operation_depth << "}\n";
 			total_list << "{ap_return " << ap_return_depth << "}\n";
 			return total_list.str();
 		}
@@ -79,8 +86,9 @@ class INTER_TCL_FILE {
 			(*class_num) = (*class_num) > num ? (*class_num) : num;
 		}
 	public:
-		int dataIn_depth;
-		int posOutData_depth;
+		int A_depth;
+		int indexOutputData_depth;
+		int operation_depth;
 		int ap_return_depth;
 		int trans_num;
 
@@ -89,19 +97,18 @@ class INTER_TCL_FILE {
 		const char* mName;
 };
 
-extern "C" short bubbleSort (
-short dataIn,
-char posOutData);
 
 #define bubbleSort AESL_ORIG_DUT_bubbleSort
-extern "C" short bubbleSort (
-short dataIn,
-char posOutData);
+extern short bubbleSort (
+short A[5],
+char indexOutputData,
+char operation);
 #undef bubbleSort
 
 short bubbleSort (
-short dataIn,
-char posOutData)
+short A[5],
+char indexOutputData,
+char operation)
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -116,6 +123,139 @@ char posOutData)
 		static AESL_FILE_HANDLER aesl_fh;
 
 		short AESL_return;
+
+		// output port post check: "A"
+		aesl_fh.read(AUTOTB_TVOUT_PC_A, AESL_token); // [[transaction]]
+		if (AESL_token != "[[transaction]]")
+		{
+			exit(1);
+		}
+		aesl_fh.read(AUTOTB_TVOUT_PC_A, AESL_num); // transaction number
+
+		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
+		{
+			aesl_fh.read(AUTOTB_TVOUT_PC_A, AESL_token); // data
+
+			sc_bv<16> *A_pc_buffer = new sc_bv<16>[5];
+			int i = 0;
+
+			while (AESL_token != "[[/transaction]]")
+			{
+				bool no_x = false;
+				bool err = false;
+
+				// search and replace 'X' with "0" from the 1st char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('X');
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'A', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				no_x = false;
+
+				// search and replace 'x' with "0" from the 3rd char of token
+				while (!no_x)
+				{
+					size_t x_found = AESL_token.find('x', 2);
+
+					if (x_found != string::npos)
+					{
+						if (!err)
+						{
+							cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'X' on port 'A', possible cause: There are uninitialized variables in the C design." << endl;
+							err = true;
+						}
+						AESL_token.replace(x_found, 1, "0");
+					}
+					else
+					{
+						no_x = true;
+					}
+				}
+
+				// push token into output port buffer
+				if (AESL_token != "")
+				{
+					A_pc_buffer[i] = AESL_token.c_str();
+					i++;
+				}
+
+				aesl_fh.read(AUTOTB_TVOUT_PC_A, AESL_token); // data or [[/transaction]]
+
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_A))
+				{
+					exit(1);
+				}
+			}
+
+			// ***********************************
+			if (i > 0)
+			{
+				// RTL Name: A
+				{
+					// bitslice(15, 0)
+					// {
+						// celement: A(15, 0)
+						// {
+							sc_lv<16>* A_lv0_0_4_1 = new sc_lv<16>[5];
+						// }
+					// }
+
+					// bitslice(15, 0)
+					{
+						int hls_map_index = 0;
+						// celement: A(15, 0)
+						{
+							// carray: (0) => (4) @ (1)
+							for (int i_0 = 0; i_0 <= 4; i_0 += 1)
+							{
+								if (&(A[0]) != NULL) // check the null address if the c port is array or others
+								{
+									A_lv0_0_4_1[hls_map_index++].range(15, 0) = sc_bv<16>(A_pc_buffer[hls_map_index].range(15, 0));
+								}
+							}
+						}
+					}
+
+					// bitslice(15, 0)
+					{
+						int hls_map_index = 0;
+						// celement: A(15, 0)
+						{
+							// carray: (0) => (4) @ (1)
+							for (int i_0 = 0; i_0 <= 4; i_0 += 1)
+							{
+								// sub                    : i_0
+								// ori_name               : A[i_0]
+								// sub_1st_elem           : 0
+								// ori_name_1st_elem      : A[0]
+								// output_left_conversion : A[i_0]
+								// output_type_conversion : (A_lv0_0_4_1[hls_map_index++]).to_uint64()
+								if (&(A[0]) != NULL) // check the null address if the c port is array or others
+								{
+									A[i_0] = (A_lv0_0_4_1[hls_map_index++]).to_uint64();
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// release memory allocation
+			delete [] A_pc_buffer;
+		}
 
 		// output port post check: "ap_return"
 		aesl_fh.read(AUTOTB_TVOUT_PC_ap_return, AESL_token); // [[transaction]]
@@ -254,13 +394,19 @@ char posOutData)
 
 		static AESL_FILE_HANDLER aesl_fh;
 
-		// "dataIn"
-		char* tvin_dataIn = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_dataIn);
+		// "A"
+		char* tvin_A = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_A);
+		char* tvout_A = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_A);
 
-		// "posOutData"
-		char* tvin_posOutData = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_posOutData);
+		// "indexOutputData"
+		char* tvin_indexOutputData = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_indexOutputData);
+
+		// "operation"
+		char* tvin_operation = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_operation);
 
 		// "ap_return"
 		char* tvout_ap_return = new char[50];
@@ -271,30 +417,32 @@ char posOutData)
 		int leading_zero;
 
 		// [[transaction]]
-		sprintf(tvin_dataIn, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_dataIn, tvin_dataIn);
+		sprintf(tvin_A, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
 
-		sc_bv<16> dataIn_tvin_wrapc_buffer;
+		sc_bv<16>* A_tvin_wrapc_buffer = new sc_bv<16>[5];
 
-		// RTL Name: dataIn
+		// RTL Name: A
 		{
 			// bitslice(15, 0)
 			{
-				// celement: dataIn(15, 0)
+				int hls_map_index = 0;
+				// celement: A(15, 0)
 				{
-					// carray: (0) => (0) @ (0)
+					// carray: (0) => (4) @ (1)
+					for (int i_0 = 0; i_0 <= 4; i_0 += 1)
 					{
-						// sub                   : 
-						// ori_name              : dataIn
-						// sub_1st_elem          : 
-						// ori_name_1st_elem     : dataIn
-						// regulate_c_name       : dataIn
-						// input_type_conversion : dataIn
-						if (&(dataIn) != NULL) // check the null address if the c port is array or others
+						// sub                   : i_0
+						// ori_name              : A[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : A[0]
+						// regulate_c_name       : A
+						// input_type_conversion : A[i_0]
+						if (&(A[0]) != NULL) // check the null address if the c port is array or others
 						{
-							sc_lv<16> dataIn_tmp_mem;
-							dataIn_tmp_mem = dataIn;
-							dataIn_tvin_wrapc_buffer.range(15, 0) = dataIn_tmp_mem.range(15, 0);
+							sc_lv<16> A_tmp_mem;
+							A_tmp_mem = A[i_0];
+							A_tvin_wrapc_buffer[hls_map_index++].range(15, 0) = A_tmp_mem.range(15, 0);
 						}
 					}
 				}
@@ -302,41 +450,44 @@ char posOutData)
 		}
 
 		// dump tv to file
-		for (int i = 0; i < 1; i++)
+		for (int i = 0; i < 5; i++)
 		{
-			sprintf(tvin_dataIn, "%s\n", (dataIn_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_dataIn, tvin_dataIn);
+			sprintf(tvin_A, "%s\n", (A_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
 		}
 
-		tcl_file.set_num(1, &tcl_file.dataIn_depth);
-		sprintf(tvin_dataIn, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_dataIn, tvin_dataIn);
+		tcl_file.set_num(5, &tcl_file.A_depth);
+		sprintf(tvin_A, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
+
+		// release memory allocation
+		delete [] A_tvin_wrapc_buffer;
 
 		// [[transaction]]
-		sprintf(tvin_posOutData, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_posOutData, tvin_posOutData);
+		sprintf(tvin_indexOutputData, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_indexOutputData, tvin_indexOutputData);
 
-		sc_bv<8> posOutData_tvin_wrapc_buffer;
+		sc_bv<8> indexOutputData_tvin_wrapc_buffer;
 
-		// RTL Name: posOutData
+		// RTL Name: indexOutputData
 		{
 			// bitslice(7, 0)
 			{
-				// celement: posOutData(7, 0)
+				// celement: indexOutputData(7, 0)
 				{
 					// carray: (0) => (0) @ (0)
 					{
 						// sub                   : 
-						// ori_name              : posOutData
+						// ori_name              : indexOutputData
 						// sub_1st_elem          : 
-						// ori_name_1st_elem     : posOutData
-						// regulate_c_name       : posOutData
-						// input_type_conversion : posOutData
-						if (&(posOutData) != NULL) // check the null address if the c port is array or others
+						// ori_name_1st_elem     : indexOutputData
+						// regulate_c_name       : indexOutputData
+						// input_type_conversion : indexOutputData
+						if (&(indexOutputData) != NULL) // check the null address if the c port is array or others
 						{
-							sc_lv<8> posOutData_tmp_mem;
-							posOutData_tmp_mem = posOutData;
-							posOutData_tvin_wrapc_buffer.range(7, 0) = posOutData_tmp_mem.range(7, 0);
+							sc_lv<8> indexOutputData_tmp_mem;
+							indexOutputData_tmp_mem = indexOutputData;
+							indexOutputData_tvin_wrapc_buffer.range(7, 0) = indexOutputData_tmp_mem.range(7, 0);
 						}
 					}
 				}
@@ -346,20 +497,109 @@ char posOutData)
 		// dump tv to file
 		for (int i = 0; i < 1; i++)
 		{
-			sprintf(tvin_posOutData, "%s\n", (posOutData_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_posOutData, tvin_posOutData);
+			sprintf(tvin_indexOutputData, "%s\n", (indexOutputData_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_indexOutputData, tvin_indexOutputData);
 		}
 
-		tcl_file.set_num(1, &tcl_file.posOutData_depth);
-		sprintf(tvin_posOutData, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_posOutData, tvin_posOutData);
+		tcl_file.set_num(1, &tcl_file.indexOutputData_depth);
+		sprintf(tvin_indexOutputData, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_indexOutputData, tvin_indexOutputData);
+
+		// [[transaction]]
+		sprintf(tvin_operation, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_operation, tvin_operation);
+
+		sc_bv<8> operation_tvin_wrapc_buffer;
+
+		// RTL Name: operation
+		{
+			// bitslice(7, 0)
+			{
+				// celement: operation(7, 0)
+				{
+					// carray: (0) => (0) @ (0)
+					{
+						// sub                   : 
+						// ori_name              : operation
+						// sub_1st_elem          : 
+						// ori_name_1st_elem     : operation
+						// regulate_c_name       : operation
+						// input_type_conversion : operation
+						if (&(operation) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<8> operation_tmp_mem;
+							operation_tmp_mem = operation;
+							operation_tvin_wrapc_buffer.range(7, 0) = operation_tmp_mem.range(7, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 1; i++)
+		{
+			sprintf(tvin_operation, "%s\n", (operation_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_operation, tvin_operation);
+		}
+
+		tcl_file.set_num(1, &tcl_file.operation_depth);
+		sprintf(tvin_operation, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_operation, tvin_operation);
 
 // [call_c_dut] ---------->
 
 		CodeState = CALL_C_DUT;
-		short AESL_return = AESL_ORIG_DUT_bubbleSort(dataIn, posOutData);
+		short AESL_return = AESL_ORIG_DUT_bubbleSort(A, indexOutputData, operation);
 
 		CodeState = DUMP_OUTPUTS;
+
+		// [[transaction]]
+		sprintf(tvout_A, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
+
+		sc_bv<16>* A_tvout_wrapc_buffer = new sc_bv<16>[5];
+
+		// RTL Name: A
+		{
+			// bitslice(15, 0)
+			{
+				int hls_map_index = 0;
+				// celement: A(15, 0)
+				{
+					// carray: (0) => (4) @ (1)
+					for (int i_0 = 0; i_0 <= 4; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : A[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : A[0]
+						// regulate_c_name       : A
+						// input_type_conversion : A[i_0]
+						if (&(A[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<16> A_tmp_mem;
+							A_tmp_mem = A[i_0];
+							A_tvout_wrapc_buffer[hls_map_index++].range(15, 0) = A_tmp_mem.range(15, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 5; i++)
+		{
+			sprintf(tvout_A, "%s\n", (A_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
+		}
+
+		tcl_file.set_num(5, &tcl_file.A_depth);
+		sprintf(tvout_A, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
+
+		// release memory allocation
+		delete [] A_tvout_wrapc_buffer;
 
 		// [[transaction]]
 		sprintf(tvout_ap_return, "[[transaction]] %d\n", AESL_transaction);
@@ -404,10 +644,13 @@ char posOutData)
 		aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
 
 		CodeState = DELETE_CHAR_BUFFERS;
-		// release memory allocation: "dataIn"
-		delete [] tvin_dataIn;
-		// release memory allocation: "posOutData"
-		delete [] tvin_posOutData;
+		// release memory allocation: "A"
+		delete [] tvin_A;
+		delete [] tvout_A;
+		// release memory allocation: "indexOutputData"
+		delete [] tvin_indexOutputData;
+		// release memory allocation: "operation"
+		delete [] tvin_operation;
 		// release memory allocation: "ap_return"
 		delete [] tvout_ap_return;
 

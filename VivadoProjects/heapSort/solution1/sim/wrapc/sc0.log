@@ -2,7 +2,7 @@
    Compiling apatb_heapSort.cpp
    Compiling (apcc) heapSort.c_pre.c.tb.c
 INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 11:29:04 -0700 2021
+INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 15:18:32 -0700 2021
 INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/sim/wrapc'
 clang: warning: argument unused during compilation: '-fno-builtin-isinf'
 clang: warning: argument unused during compilation: '-fno-builtin-isnan'
@@ -10,7 +10,7 @@ INFO: [APCC 202-3] Tmp directory is apcc_db
 INFO: [APCC 202-1] APCC is done.
    Compiling (apcc) heapSort_tb.c_pre.c.tb.c
 INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado_HLS/2016.1/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 11:29:15 -0700 2021
+INFO: [HLS 200-10] For user 'aaron' on host 'desktop-92aekaj' (Windows NT_amd64 version 6.2) on Fri Jul 09 15:18:40 -0700 2021
 INFO: [HLS 200-10] In directory 'C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/solution1/sim/wrapc'
 clang: warning: argument unused during compilation: '-fno-builtin-isinf'
 clang: warning: argument unused during compilation: '-fno-builtin-isnan'

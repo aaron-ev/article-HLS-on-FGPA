@@ -48,19 +48,15 @@ IFLAG += -D__RTL_SIMULATION__
 IFLAG += -D__xilinx_ip_top=
 DFLAG += -DAESL_PIPELINE
 LFLAG += -Wl,--enable-auto-import
-DFLAG += -DAUTOCC
-DFLAG += -DAESL_EXTERN_C
 
 include ./Makefile.rules
 
 all : $(TARGET)
 
-AUTOCC := cmd //c apcc.bat
+$(ObjDir)/bubbleSort_tb.cpp_pre.cpp.tb.o : bubbleSort_tb.cpp_pre.cpp.tb.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling bubbleSort_tb.cpp_pre.cpp.tb.cpp" $(AVE_DIR_DLOG)
+	$(Verb) gcc -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG)  $< -o $@; \
 
-$(ObjDir)/mergeSort_tb.c_pre.c.tb.o : mergeSort_tb.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) mergeSort_tb.c_pre.c.tb.c" $(AVE_DIR_DLOG)
-	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG)  $< -o $@; \
-
-$(ObjDir)/bubbleSort.c_pre.c.tb.o : bubbleSort.c_pre.c.tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling (apcc) bubbleSort.c_pre.c.tb.c" $(AVE_DIR_DLOG)
-	$(Verb) $(AUTOCC) -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG)  $< -o $@; \
+$(ObjDir)/bubbleSort.cpp_pre.cpp.tb.o : bubbleSort.cpp_pre.cpp.tb.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling bubbleSort.cpp_pre.cpp.tb.cpp" $(AVE_DIR_DLOG)
+	$(Verb) gcc -fno-builtin-isinf -fno-builtin-isnan -c $(IFLAG) $(DFLAG)  $< -o $@; \

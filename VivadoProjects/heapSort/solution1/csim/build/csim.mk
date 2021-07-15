@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../heapSort_tb.c ../../../../heapSort.c
+HLS_SOURCES = ../../../../heapSort_tb.cpp ../../../../heapSort.cpp
 
 TARGET := csim.exe
 
@@ -70,14 +70,14 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/heapSort_tb.o: ../../../../heapSort_tb.c $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../heapSort_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/heapSort_tb.o: ../../../../heapSort_tb.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../heapSort_tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/heapSort_tb.d
 
-$(ObjDir)/heapSort.o: ../../../../heapSort.c $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../heapSort.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/heapSort.o: ../../../../heapSort.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../heapSort.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/heapSort.d
