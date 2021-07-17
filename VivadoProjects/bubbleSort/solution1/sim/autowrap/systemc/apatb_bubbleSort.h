@@ -5,6 +5,4 @@
 // ==============================================================
 
 extern short bubbleSort (
-short A[5],
-char indexOutputData,
-char operation);
+char indexOutputData);

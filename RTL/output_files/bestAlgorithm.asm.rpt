@@ -1,5 +1,5 @@
 Assembler report for bestAlgorithm
-Wed Jul 14 11:44:48 2021
+Fri Jul 16 14:21:27 2021
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -37,9 +37,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jul 14 11:44:48 2021 ;
+; Assembler Status      ; Successful - Fri Jul 16 14:21:27 2021 ;
 ; Revision Name         ; bestAlgorithm                         ;
-; Top-level Entity Name ; bubbleSort                            ;
+; Top-level Entity Name ; insertionSort                         ;
 ; Family                ; Cyclone IV GX                         ;
 ; Device                ; EP4CGX22CF19C6                        ;
 +-----------------------+---------------------------------------+
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                        ;
 +----------------+--------------------------------------------------------------------------------+
 ; Device         ; EP4CGX22CF19C6                                                                 ;
-; JTAG usercode  ; 0x001A6ACA                                                                     ;
-; Checksum       ; 0x001A6ACA                                                                     ;
+; JTAG usercode  ; 0x0017C0BF                                                                     ;
+; Checksum       ; 0x0017C0BF                                                                     ;
 +----------------+--------------------------------------------------------------------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Jul 14 11:44:36 2021
+    Info: Processing started: Fri Jul 16 14:21:22 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off bestAlgorithm -c bestAlgorithm
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4620 megabytes
-    Info: Processing ended: Wed Jul 14 11:44:48 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 4616 megabytes
+    Info: Processing ended: Fri Jul 16 14:21:27 2021
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

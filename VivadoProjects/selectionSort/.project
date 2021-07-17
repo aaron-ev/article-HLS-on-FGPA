@@ -37,156 +37,6 @@
 			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/allocator.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/allocator.h</location>
-		</link>
-		<link>
-			<name>.reference/atomicity.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/ext/atomicity.h</location>
-		</link>
-		<link>
-			<name>.reference/basic_string.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/basic_string.h</location>
-		</link>
-		<link>
-			<name>.reference/basic_string.tcc</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/basic_string.tcc</location>
-		</link>
-		<link>
-			<name>.reference/binders.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/backward/binders.h</location>
-		</link>
-		<link>
-			<name>.reference/c++config.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/mingw32/bits/c++config.h</location>
-		</link>
-		<link>
-			<name>.reference/c++locale.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/mingw32/bits/c++locale.h</location>
-		</link>
-		<link>
-			<name>.reference/char_traits.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/char_traits.h</location>
-		</link>
-		<link>
-			<name>.reference/cpp_type_traits.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/cpp_type_traits.h</location>
-		</link>
-		<link>
-			<name>.reference/cwchar</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/cwchar</location>
-		</link>
-		<link>
-			<name>.reference/exception</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/exception</location>
-		</link>
-		<link>
-			<name>.reference/functexcept.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/functexcept.h</location>
-		</link>
-		<link>
-			<name>.reference/iosfwd</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/iosfwd</location>
-		</link>
-		<link>
-			<name>.reference/locale_classes.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/locale_classes.h</location>
-		</link>
-		<link>
-			<name>.reference/localefwd.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/localefwd.h</location>
-		</link>
-		<link>
-			<name>.reference/move.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/move.h</location>
-		</link>
-		<link>
-			<name>.reference/new</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/new</location>
-		</link>
-		<link>
-			<name>.reference/new_allocator.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/ext/new_allocator.h</location>
-		</link>
-		<link>
-			<name>.reference/numeric_traits.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/ext/numeric_traits.h</location>
-		</link>
-		<link>
-			<name>.reference/ostream_insert.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/ostream_insert.h</location>
-		</link>
-		<link>
-			<name>.reference/postypes.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/postypes.h</location>
-		</link>
-		<link>
-			<name>.reference/selectionSort.h</name>
-			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.h</location>
-		</link>
-		<link>
-			<name>.reference/stl_algobase.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stl_algobase.h</location>
-		</link>
-		<link>
-			<name>.reference/stl_function.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stl_function.h</location>
-		</link>
-		<link>
-			<name>.reference/stl_iterator.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stl_iterator.h</location>
-		</link>
-		<link>
-			<name>.reference/stl_iterator_base_funcs.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stl_iterator_base_funcs.h</location>
-		</link>
-		<link>
-			<name>.reference/stl_iterator_base_types.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stl_iterator_base_types.h</location>
-		</link>
-		<link>
-			<name>.reference/stl_pair.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stl_pair.h</location>
-		</link>
-		<link>
-			<name>.reference/stringfwd.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/bits/stringfwd.h</location>
-		</link>
-		<link>
-			<name>.reference/type_traits.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado_HLS/2016.1/msys/lib/gcc/mingw32/4.6.2/include/c++/ext/type_traits.h</location>
-		</link>
-		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/solution1/.tcls</location>
@@ -194,12 +44,12 @@
 		<link>
 			<name>source/selectionSort.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.cpp</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.cpp</location>
 		</link>
 		<link>
 			<name>testbench/selectionSort_tb.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort_tb.cpp</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort_tb.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

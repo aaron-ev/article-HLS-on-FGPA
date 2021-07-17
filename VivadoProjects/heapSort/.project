@@ -39,7 +39,7 @@
 		<link>
 			<name>.reference/heapSort.h</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort.h</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/heapSort.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
@@ -49,12 +49,12 @@
 		<link>
 			<name>source/heapSort.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort.cpp</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/heapSort.cpp</location>
 		</link>
 		<link>
 			<name>testbench/heapSort_tb.cpp</name>
 			<type>1</type>
-			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort_tb.cpp</location>
+			<location>C:/Users/aaron/Desktop/git_article/vivadoProjects/heapSort/heapSort_tb.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

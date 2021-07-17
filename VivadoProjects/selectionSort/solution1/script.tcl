@@ -5,8 +5,8 @@
 ############################################################
 open_project selectionSort
 set_top selectionSort
-add_files selectionSort.cpp
-add_files -tb selectionSort_tb.cpp
+add_files selectionSort/selectionSort.cpp
+add_files -tb selectionSort/selectionSort_tb.cpp
 open_solution "solution1"
 set_part {xc7a100tcsg324-1} -tool vivado
 create_clock -period 10 -name default

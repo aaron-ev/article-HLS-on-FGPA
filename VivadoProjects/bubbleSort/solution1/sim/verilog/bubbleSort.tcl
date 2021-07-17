@@ -18,7 +18,7 @@ set return_group [add_wave_group return(wire) -into $coutputgroup]
 add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/ap_return -into $return_group -radix hex
 set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
 set operation_group [add_wave_group operation(wire) -into $cinputgroup]
-add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/operation -into $operation_group -radix hex
+add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/operation_V -into $operation_group -radix hex
 set indexOutputData_group [add_wave_group indexOutputData(wire) -into $cinputgroup]
 add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/indexOutputData -into $indexOutputData_group -radix hex
 set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
@@ -37,9 +37,9 @@ set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
 add_wave /apatb_bubbleSort_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
 add_wave /apatb_bubbleSort_top/ready_cnt -into $tb_simstatus_group -radix hex
 add_wave /apatb_bubbleSort_top/done_cnt -into $tb_simstatus_group -radix hex
-add_wave /apatb_bubbleSort_top/LENGTH_A -into $tb_portdepth_group -radix hex
 add_wave /apatb_bubbleSort_top/LENGTH_indexOutputData -into $tb_portdepth_group -radix hex
-add_wave /apatb_bubbleSort_top/LENGTH_operation -into $tb_portdepth_group -radix hex
+add_wave /apatb_bubbleSort_top/LENGTH_operation_V -into $tb_portdepth_group -radix hex
+add_wave /apatb_bubbleSort_top/LENGTH_A -into $tb_portdepth_group -radix hex
 add_wave /apatb_bubbleSort_top/LENGTH_ap_return -into $tb_portdepth_group -radix hex
 set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
 set tb_A_group [add_wave_group A(memory) -into $tbcinoutgroup]
@@ -58,7 +58,7 @@ set tb_return_group [add_wave_group return(wire) -into $tbcoutputgroup]
 add_wave /apatb_bubbleSort_top/ap_return -into $tb_return_group -radix hex
 set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
 set tb_operation_group [add_wave_group operation(wire) -into $tbcinputgroup]
-add_wave /apatb_bubbleSort_top/operation -into $tb_operation_group -radix hex
+add_wave /apatb_bubbleSort_top/operation_V -into $tb_operation_group -radix hex
 set tb_indexOutputData_group [add_wave_group indexOutputData(wire) -into $tbcinputgroup]
 add_wave /apatb_bubbleSort_top/indexOutputData -into $tb_indexOutputData_group -radix hex
 save_wave_config bubbleSort.wcfg

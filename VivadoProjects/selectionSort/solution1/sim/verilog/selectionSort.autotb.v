@@ -17,31 +17,33 @@
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
 `define AUTOTB_CLOCK_PERIOD_DIV2 5.00
 
-`define AESL_DEPTH_agg_result_data 1
-`define AESL_DEPTH_agg_result_done_V 1
-`define AESL_DEPTH_dataIn 1
-`define AESL_DEPTH_posOutData 1
-`define AUTOTB_TVIN_dataIn  "../tv/cdatafile/c.selectionSort.autotvin_dataIn.dat"
-`define AUTOTB_TVIN_posOutData  "../tv/cdatafile/c.selectionSort.autotvin_posOutData.dat"
-`define AUTOTB_TVIN_dataIn_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvin_dataIn.dat"
-`define AUTOTB_TVIN_posOutData_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvin_posOutData.dat"
-`define AUTOTB_TVOUT_agg_result_data  "../tv/cdatafile/c.selectionSort.autotvout_agg_result_data.dat"
-`define AUTOTB_TVOUT_agg_result_done_V  "../tv/cdatafile/c.selectionSort.autotvout_agg_result_done_V.dat"
-`define AUTOTB_TVOUT_agg_result_data_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvout_agg_result_data.dat"
-`define AUTOTB_TVOUT_agg_result_done_V_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvout_agg_result_done_V.dat"
+`define AESL_DEPTH_indexOutputData 1
+`define AESL_DEPTH_operation_V 1
+`define AESL_MEM_A AESL_automem_A
+`define AESL_MEM_INST_A mem_inst_A
+`define AUTOTB_TVIN_indexOutputData  "../tv/cdatafile/c.selectionSort.autotvin_indexOutputData.dat"
+`define AUTOTB_TVIN_operation_V  "../tv/cdatafile/c.selectionSort.autotvin_operation_V.dat"
+`define AUTOTB_TVIN_A  "../tv/cdatafile/c.selectionSort.autotvin_A.dat"
+`define AUTOTB_TVIN_indexOutputData_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvin_indexOutputData.dat"
+`define AUTOTB_TVIN_operation_V_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvin_operation_V.dat"
+`define AUTOTB_TVIN_A_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvin_A.dat"
+`define AUTOTB_TVOUT_A  "../tv/cdatafile/c.selectionSort.autotvout_A.dat"
+`define AUTOTB_TVOUT_ap_return  "../tv/cdatafile/c.selectionSort.autotvout_ap_return.dat"
+`define AUTOTB_TVOUT_A_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvout_A.dat"
+`define AUTOTB_TVOUT_ap_return_out_wrapc  "../tv/rtldatafile/rtl.selectionSort.autotvout_ap_return.dat"
 module `AUTOTB_TOP;
 
-parameter AUTOTB_TRANSACTION_NUM = 4;
+parameter AUTOTB_TRANSACTION_NUM = 5;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 10;
-parameter LENGTH_agg_result_data = 1;
-parameter LENGTH_agg_result_done_V = 1;
-parameter LENGTH_dataIn = 1;
-parameter LENGTH_posOutData = 1;
+parameter LATENCY_ESTIMATION = 35;
+parameter LENGTH_indexOutputData = 1;
+parameter LENGTH_operation_V = 1;
+parameter LENGTH_A = 4;
+parameter LENGTH_ap_return = 1;
 
 task read_token;
     input integer fp;
-    output reg [215 : 0] token;
+    output reg [143 : 0] token;
     integer ret;
     begin
         token = "";
@@ -71,12 +73,14 @@ wire ap_start;
 wire ap_done;
 wire ap_idle;
 wire ap_ready;
-wire [15 : 0] agg_result_data;
-wire  agg_result_data_ap_vld;
-wire [0 : 0] agg_result_done_V;
-wire  agg_result_done_V_ap_vld;
-wire [15 : 0] dataIn;
-wire [7 : 0] posOutData;
+wire [7 : 0] indexOutputData;
+wire [0 : 0] operation_V;
+wire [1 : 0] A_address0;
+wire  A_ce0;
+wire  A_we0;
+wire [15 : 0] A_d0;
+wire [15 : 0] A_q0;
+wire [15 : 0] ap_return;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -94,12 +98,14 @@ reg interface_done = 0;
     .ap_done(ap_done),
     .ap_idle(ap_idle),
     .ap_ready(ap_ready),
-    .agg_result_data(agg_result_data),
-    .agg_result_data_ap_vld(agg_result_data_ap_vld),
-    .agg_result_done_V(agg_result_done_V),
-    .agg_result_done_V_ap_vld(agg_result_done_V_ap_vld),
-    .dataIn(dataIn),
-    .posOutData(posOutData));
+    .indexOutputData(indexOutputData),
+    .operation_V(operation_V),
+    .A_address0(A_address0),
+    .A_ce0(A_ce0),
+    .A_we0(A_we0),
+    .A_d0(A_d0),
+    .A_q0(A_q0),
+    .ap_return(ap_return));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
@@ -131,129 +137,23 @@ assign AESL_continue = continue;
             end
         end
     end
-reg AESL_REG_agg_result_data_ap_vld = 0;
-// The signal of port agg_result_data
-reg [15: 0] AESL_REG_agg_result_data = 0;
-always @(posedge AESL_clock)
-begin
-    if(AESL_reset)
-        AESL_REG_agg_result_data = 0; 
-    else if(agg_result_data_ap_vld) begin
-        AESL_REG_agg_result_data <= agg_result_data;
-        AESL_REG_agg_result_data_ap_vld <= 1;
-    end
-end 
-
-initial begin : write_file_process_agg_result_data
-    integer fp;
-    integer fp_size;
-    integer err;
-    integer ret;
-    integer i;
-    integer hls_stream_size;
-    integer rand;
-    integer agg_result_data_count;
-    reg [215:0] token;
-    integer transaction_idx;
-    reg [8 * 5:1] str;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVOUT_agg_result_data_out_wrapc,"w");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_agg_result_data_out_wrapc);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    $fdisplay(fp,"[[[runtime]]]");
-    transaction_idx = 0;
-    while (transaction_idx != AUTOTB_TRANSACTION_NUM) begin
-        @(posedge AESL_clock);
-          while(AESL_done !== 1) begin
-              @(posedge AESL_clock);
-          end
-        # 0.4;
-        $fdisplay(fp,"[[transaction]] %d", transaction_idx);
-        if(AESL_REG_agg_result_data_ap_vld)  begin
-          $fdisplay(fp,"0x%x", AESL_REG_agg_result_data);
-        AESL_REG_agg_result_data_ap_vld = 0;
-        end
-    transaction_idx = transaction_idx + 1;
-      $fdisplay(fp,"[[/transaction]]");
-    end
-    $fdisplay(fp,"[[[/runtime]]]");
-    $fclose(fp);
-end
-
-
-reg AESL_REG_agg_result_done_V_ap_vld = 0;
-// The signal of port agg_result_done_V
-reg [0: 0] AESL_REG_agg_result_done_V = 0;
-always @(posedge AESL_clock)
-begin
-    if(AESL_reset)
-        AESL_REG_agg_result_done_V = 0; 
-    else if(agg_result_done_V_ap_vld) begin
-        AESL_REG_agg_result_done_V <= agg_result_done_V;
-        AESL_REG_agg_result_done_V_ap_vld <= 1;
-    end
-end 
-
-initial begin : write_file_process_agg_result_done_V
-    integer fp;
-    integer fp_size;
-    integer err;
-    integer ret;
-    integer i;
-    integer hls_stream_size;
-    integer rand;
-    integer agg_result_done_V_count;
-    reg [215:0] token;
-    integer transaction_idx;
-    reg [8 * 5:1] str;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVOUT_agg_result_done_V_out_wrapc,"w");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_agg_result_done_V_out_wrapc);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    $fdisplay(fp,"[[[runtime]]]");
-    transaction_idx = 0;
-    while (transaction_idx != AUTOTB_TRANSACTION_NUM) begin
-        @(posedge AESL_clock);
-          while(AESL_done !== 1) begin
-              @(posedge AESL_clock);
-          end
-        # 0.4;
-        $fdisplay(fp,"[[transaction]] %d", transaction_idx);
-        if(AESL_REG_agg_result_done_V_ap_vld)  begin
-          $fdisplay(fp,"0x%x", AESL_REG_agg_result_done_V);
-        AESL_REG_agg_result_done_V_ap_vld = 0;
-        end
-    transaction_idx = transaction_idx + 1;
-      $fdisplay(fp,"[[/transaction]]");
-    end
-    $fdisplay(fp,"[[[/runtime]]]");
-    $fclose(fp);
-end
-
-
-// The signal of port dataIn
-reg [15: 0] AESL_REG_dataIn = 0;
-assign dataIn = AESL_REG_dataIn;
-initial begin : read_file_process_dataIn
+// The signal of port indexOutputData
+reg [7: 0] AESL_REG_indexOutputData = 0;
+assign indexOutputData = AESL_REG_indexOutputData;
+initial begin : read_file_process_indexOutputData
     integer fp;
     integer err;
     integer ret;
     integer rand;
-    reg [215  : 0] token;
+    reg [143  : 0] token;
     integer i;
     reg transaction_finish;
     integer transaction_idx;
     transaction_idx = 0;
     wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_dataIn,"r");
+    fp = $fopen(`AUTOTB_TVIN_indexOutputData,"r");
     if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_dataIn);
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_indexOutputData);
         $display("ERROR: Simulation using HLS TB failed.");
         $finish;
     end
@@ -276,7 +176,7 @@ initial begin : read_file_process_dataIn
                 # 0.2;
             end
         if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_dataIn);
+            ret = $sscanf(token, "0x%x", AESL_REG_indexOutputData);
               if (ret != 1) begin
                   $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -291,23 +191,23 @@ initial begin : read_file_process_dataIn
 end
 
 
-// The signal of port posOutData
-reg [7: 0] AESL_REG_posOutData = 0;
-assign posOutData = AESL_REG_posOutData;
-initial begin : read_file_process_posOutData
+// The signal of port operation_V
+reg [0: 0] AESL_REG_operation_V = 0;
+assign operation_V = AESL_REG_operation_V;
+initial begin : read_file_process_operation_V
     integer fp;
     integer err;
     integer ret;
     integer rand;
-    reg [215  : 0] token;
+    reg [143  : 0] token;
     integer i;
     reg transaction_finish;
     integer transaction_idx;
     transaction_idx = 0;
     wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_posOutData,"r");
+    fp = $fopen(`AUTOTB_TVIN_operation_V,"r");
     if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_posOutData);
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_operation_V);
         $display("ERROR: Simulation using HLS TB failed.");
         $finish;
     end
@@ -330,7 +230,7 @@ initial begin : read_file_process_posOutData
                 # 0.2;
             end
         if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_posOutData);
+            ret = $sscanf(token, "0x%x", AESL_REG_operation_V);
               if (ret != 1) begin
                   $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -344,6 +244,81 @@ initial begin : read_file_process_posOutData
     $fclose(fp);
 end
 
+
+//------------------------arrayA Instantiation--------------
+
+// The input and output of arrayA
+wire    arrayA_ce0, arrayA_ce1;
+wire    arrayA_we0, arrayA_we1;
+wire    [1 : 0]    arrayA_address0, arrayA_address1;
+wire    [15 : 0]    arrayA_din0, arrayA_din1;
+wire    [15 : 0]    arrayA_dout0, arrayA_dout1;
+wire    arrayA_ready;
+wire    arrayA_done;
+
+`AESL_MEM_A `AESL_MEM_INST_A(
+    .clk        (AESL_clock),
+    .rst        (AESL_reset),
+    .ce0        (arrayA_ce0),
+    .we0        (arrayA_we0),
+    .address0   (arrayA_address0),
+    .din0       (arrayA_din0),
+    .dout0      (arrayA_dout0),
+    .ce1        (arrayA_ce1),
+    .we1        (arrayA_we1),
+    .address1   (arrayA_address1),
+    .din1       (arrayA_din1),
+    .dout1      (arrayA_dout1),
+    .ready      (arrayA_ready),
+    .done    (arrayA_done)
+);
+
+// Assignment between dut and arrayA
+assign arrayA_address0 = A_address0;
+assign arrayA_ce0 = A_ce0;
+assign A_q0 = arrayA_dout0;
+assign arrayA_we0 = A_we0;
+assign arrayA_din0 = A_d0;
+assign arrayA_we1 = 0;
+assign arrayA_din1 = 0;
+assign arrayA_ready= ready;
+assign arrayA_done = interface_done;
+
+
+initial begin : write_file_process_ap_return
+    integer fp;
+    integer fp_size;
+    integer err;
+    integer ret;
+    integer i;
+    integer hls_stream_size;
+    integer rand;
+    integer ap_return_count;
+    reg [143:0] token;
+    integer transaction_idx;
+    reg [8 * 5:1] str;
+    wait(AESL_reset === 0);
+    fp = $fopen(`AUTOTB_TVOUT_ap_return_out_wrapc,"w");
+    if(fp == 0) begin       // Failed to open file
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_ap_return_out_wrapc);
+        $display("ERROR: Simulation using HLS TB failed.");
+        $finish;
+    end
+    $fdisplay(fp,"[[[runtime]]]");
+    transaction_idx = 0;
+    while (transaction_idx != AUTOTB_TRANSACTION_NUM) begin
+        @(posedge AESL_clock);
+          while(AESL_done !== 1) begin
+              @(posedge AESL_clock);
+          end
+        $fdisplay(fp,"[[transaction]] %d", transaction_idx);
+          $fdisplay(fp,"0x%x", ap_return);
+    transaction_idx = transaction_idx + 1;
+      $fdisplay(fp,"[[/transaction]]");
+    end
+    $fdisplay(fp,"[[[/runtime]]]");
+    $fclose(fp);
+end
 
 initial begin : generate_AESL_ready_cnt_proc
     AESL_ready_cnt = 0;
@@ -407,18 +382,18 @@ initial begin
 end
 
 
-reg end_dataIn;
-reg [31:0] size_dataIn;
-reg [31:0] size_dataIn_backup;
-reg end_posOutData;
-reg [31:0] size_posOutData;
-reg [31:0] size_posOutData_backup;
-reg end_agg_result_data;
-reg [31:0] size_agg_result_data;
-reg [31:0] size_agg_result_data_backup;
-reg end_agg_result_done_V;
-reg [31:0] size_agg_result_done_V;
-reg [31:0] size_agg_result_done_V_backup;
+reg end_indexOutputData;
+reg [31:0] size_indexOutputData;
+reg [31:0] size_indexOutputData_backup;
+reg end_operation_V;
+reg [31:0] size_operation_V;
+reg [31:0] size_operation_V_backup;
+reg end_A;
+reg [31:0] size_A;
+reg [31:0] size_A_backup;
+reg end_ap_return;
+reg [31:0] size_ap_return;
+reg [31:0] size_ap_return_backup;
 
 initial begin : initial_process
     integer rand;
@@ -519,6 +494,36 @@ begin
           interface_done = 0;
   end
 end
+
+reg dump_tvout_finish_A;
+
+initial begin : dump_tvout_runtime_sign_A
+    integer fp;
+    dump_tvout_finish_A = 0;
+    fp = $fopen(`AUTOTB_TVOUT_A_out_wrapc, "w");
+    if (fp == 0) begin
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_A_out_wrapc);
+        $display("ERROR: Simulation using HLS TB failed.");
+        $finish;
+    end
+    $fdisplay(fp,"[[[runtime]]]");
+    $fclose(fp);
+    wait (done_cnt == AUTOTB_TRANSACTION_NUM);
+    // last transaction is saved at negedge right after last done
+    @ (posedge AESL_clock);
+    @ (posedge AESL_clock);
+    @ (posedge AESL_clock);
+    fp = $fopen(`AUTOTB_TVOUT_A_out_wrapc, "a");
+    if (fp == 0) begin
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_A_out_wrapc);
+        $display("ERROR: Simulation using HLS TB failed.");
+        $finish;
+    end
+    $fdisplay(fp,"[[[/runtime]]]");
+    $fclose(fp);
+    dump_tvout_finish_A = 1;
+end
+
 
 ////////////////////////////////////////////
 // progress and performance

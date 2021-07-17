@@ -1,5 +1,5 @@
-#pragma line 1 "selectionSort.cpp"
-#pragma line 1 "selectionSort.cpp" 1
+#pragma line 1 "selectionSort/selectionSort.cpp"
+#pragma line 1 "selectionSort/selectionSort.cpp" 1
 #pragma line 1 "<built-in>" 1
 #pragma line 1 "<built-in>" 3
 #pragma line 152 "<built-in>" 3
@@ -204,10 +204,10 @@ extern "C" {
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 #pragma line 7 "<command line>" 2
 #pragma line 1 "<built-in>" 2
-#pragma line 1 "selectionSort.cpp" 2
+#pragma line 1 "selectionSort/selectionSort.cpp" 2
 #pragma empty_line
 #pragma empty_line
-#pragma line 1 "./selectionSort.h" 1
+#pragma line 1 "selectionSort/selectionSort.h" 1
 /*******************************************************************************/
 #pragma empty_line
 #pragma empty_line
@@ -32164,9 +32164,9 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
 #pragma empty_line
 #pragma empty_line
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
-#pragma line 5 "./selectionSort.h" 2
+#pragma line 5 "selectionSort/selectionSort.h" 2
 #pragma empty_line
-#pragma line 1 "./window_fn_class.h" 1
+#pragma line 1 "selectionSort/window_fn_class.h" 1
 /*******************************************************************************
 Vendor: Xilinx 
 Associated Filename: window_fn_class.h
@@ -32843,7 +32843,7 @@ namespace std {
 #pragma empty_line
 }
 #pragma line 615 "C:/Xilinx/Vivado_HLS/2016.1/win64/tools/clang/bin\\..\\lib\\clang\\3.1/../../../include/c++/4.5.2\\cmath" 2 3
-#pragma line 49 "./window_fn_class.h" 2
+#pragma line 49 "selectionSort/window_fn_class.h" 2
 using namespace std;
 #pragma empty_line
 // Create a unique namespace which can help avoid name clashes
@@ -32931,33 +32931,47 @@ winfn_loop:
 }
 #pragma empty_line
 }; // namespace xhls_window_fn
-#pragma line 6 "./selectionSort.h" 2
+#pragma line 6 "selectionSort/selectionSort.h" 2
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+// Macros para realizar una palabra de 1 bit solamente
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
-typedef ap_fixed <1,0>fp_bit1;
+#pragma empty_line
+// Operations
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+// La siguiente linea es tomada del manual para crear variables en punto fijo
+typedef ap_fixed <1,1>fp_bit1;
+#pragma empty_line
 typedef short data_inp;
 #pragma empty_line
-typedef struct
+void selectionAlgorithm(void);
+data_inp selectionSort(char indexOutputData);
+//write random values to the global array
+void writeValues(void);
+//read sorted values
+void readValues(void);
+#pragma line 4 "selectionSort/selectionSort.cpp" 2
+#pragma empty_line
+extern data_inp A[256 /* Total de numeros  a ordenar*/];
+extern fp_bit1 operation;
+#pragma empty_line
+ void selectionAlgorithm(void)
 {
- data_inp data;
- fp_bit1 done;
-}outData_s;
-#pragma empty_line
-outData_s selectionSort(data_inp dataIn,char posOutData);
-fp_bit1 selectionAlgorithm(data_inp A[256 /* Number of elements to order*/]);
-#pragma line 4 "selectionSort.cpp" 2
-#pragma empty_line
-fp_bit1 selectionAlgorithm (data_inp A[256 /* Number of elements to order*/])
-{_ssdm_SpecArrayDimSize(A,256);
- data_inp i,j;
-    for (i = 0; i < 256 /* Number of elements to order*/ - 1; i++)
+ short i,j;
+    for (i = 0; i < 256 /* Total de numeros  a ordenar*/ - 1; i++)
     {
      data_inp min = A[i];
      data_inp index_min = i;
-        for (j = i + 1; j < 256 /* Number of elements to order*/; j++)
+        for (j = i + 1; j < 256 /* Total de numeros  a ordenar*/; j++)
         {
             if (A[j] < min)
             {
@@ -32970,35 +32984,13 @@ fp_bit1 selectionAlgorithm (data_inp A[256 /* Number of elements to order*/])
         A[i] = A[index_min];
         A[index_min] = temp;
     }
-    fp_bit1 done;
-    done.V = 1;
-    return done;
 }
 #pragma empty_line
-outData_s selectionSort(data_inp dataIn,char posOutData)
+data_inp selectionSort(char indexOutputData)
 {
- static data_inp *ptr;
- static data_inp A[256 /* Number of elements to order*/];
- static char flagFill = 0;
- static data_inp count = 0;
- static outData_s sOutData = {0,0};
-#pragma empty_line
- if(count < 256 /* Number of elements to order*/)
+ switch(operation.V)
  {
-  A[count] = dataIn;
-  count++;
-  return sOutData;
+  case 0: selectionAlgorithm(); return 0;
+  default: return A[indexOutputData];
  }
- else
- {
-  if(flagFill == 0)
-  {
-   ptr = A;
-   sOutData.done = selectionAlgorithm(A);
-   flagFill = 1;
-  }
- }
- sOutData.data = ptr[posOutData];
-#pragma empty_line
- return sOutData;
 }

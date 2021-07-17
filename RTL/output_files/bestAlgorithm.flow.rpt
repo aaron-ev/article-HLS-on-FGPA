@@ -1,5 +1,5 @@
 Flow report for bestAlgorithm
-Wed Jul 14 11:45:19 2021
+Fri Jul 16 14:21:38 2021
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,16 +40,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Jul 14 11:45:19 2021      ;
+; Flow Status                        ; Successful - Fri Jul 16 14:21:38 2021      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; bestAlgorithm                              ;
-; Top-level Entity Name              ; bubbleSort                                 ;
+; Top-level Entity Name              ; insertionSort                              ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 326 / 21,280 ( 2 % )                       ;
-;     Total combinational functions  ; 312 / 21,280 ( 1 % )                       ;
-;     Dedicated logic registers      ; 178 / 21,280 ( < 1 % )                     ;
-; Total registers                    ; 178                                        ;
-; Total pins                         ; 49 / 167 ( 29 % )                          ;
+; Total logic elements               ; 69 / 21,280 ( < 1 % )                      ;
+;     Total combinational functions  ; 69 / 21,280 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 34 / 21,280 ( < 1 % )                      ;
+; Total registers                    ; 34                                         ;
+; Total pins                         ; 103 / 167 ( 62 % )                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 774,144 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 80 ( 0 % )                             ;
@@ -68,26 +68,26 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/14/2021 11:43:51 ;
+; Start date & time ; 07/16/2021 14:21:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bestAlgorithm       ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589201.162628823106708 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; bubbleSort  ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; bubbleSort  ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; bubbleSort  ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; bubbleSort                     ; bestAlgorithm ; --          ; --             ;
-+-------------------------------------+--------------------------------+---------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++-------------------------------------+--------------------------------+---------------+---------------+----------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name   ; Section Id     ;
++-------------------------------------+--------------------------------+---------------+---------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 10995770589201.162647046319520 ; --            ; --            ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --            ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>        ; --            ; --             ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; insertionSort ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; insertionSort ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; insertionSort ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --            ; --             ;
+; TOP_LEVEL_ENTITY                    ; insertionSort                  ; bestAlgorithm ; --            ; --             ;
++-------------------------------------+--------------------------------+---------------+---------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 4630 MB             ; 00:00:07                           ;
-; Fitter                    ; 00:00:35     ; 1.0                     ; 5016 MB             ; 00:00:30                           ;
-; Assembler                 ; 00:00:12     ; 1.0                     ; 4620 MB             ; 00:00:11                           ;
-; TimeQuest Timing Analyzer ; 00:00:17     ; 1.0                     ; 4614 MB             ; 00:00:13                           ;
-; EDA Netlist Writer        ; 00:00:11     ; 1.0                     ; 4579 MB             ; 00:00:10                           ;
-; Total                     ; 00:01:23     ; --                      ; --                  ; 00:01:11                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4633 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:14     ; 1.0                     ; 5007 MB             ; 00:00:14                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4616 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 4621 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4567 MB             ; 00:00:03                           ;
+; Total                     ; 00:00:32     ; --                      ; --                  ; 00:00:31                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -2,12 +2,12 @@
 # xsim v2016.1 (64-bit)
 # SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
 # IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
-# Start of session at: Wed Jul 14 18:08:50 2021
-# Process ID: 19680
-# Current directory: C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog
+# Start of session at: Thu Jul 15 20:52:41 2021
+# Process ID: 14564
+# Current directory: C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog
 # Command line: xsim.exe -mode tcl -source {xsim.dir/bubbleSort/xsim_script.tcl}
-# Log file: C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/xsim.log
-# Journal file: C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog\xsim.jou
+# Log file: C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/xsim.log
+# Journal file: C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog\xsim.jou
 #-----------------------------------------------------------
 source xsim.dir/bubbleSort/xsim_script.tcl
 source bubbleSort.tcl

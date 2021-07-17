@@ -11,12 +11,7 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Register 'flagFill' is power-on initialization." projectName="selectionSort" solutionName="solution1" date="2021-07-09T21:04:40.450-0700" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'sOutData_data' is power-on initialization." projectName="selectionSort" solutionName="solution1" date="2021-07-09T21:04:40.442-0700" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'sOutData_done_V' is power-on initialization." projectName="selectionSort" solutionName="solution1" date="2021-07-09T21:04:40.436-0700" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'count' is power-on initialization." projectName="selectionSort" solutionName="solution1" date="2021-07-09T21:04:40.430-0700" type="Warning"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>

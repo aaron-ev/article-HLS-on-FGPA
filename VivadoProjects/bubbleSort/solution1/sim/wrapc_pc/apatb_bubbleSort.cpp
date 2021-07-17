@@ -26,18 +26,22 @@ using namespace sc_dt;
 
 
 // [dump_struct_tree [build_nameSpaceTree] dumpedStructList] ---------->
+extern ap_fixed<1, 1, (ap_q_mode) 5, (ap_o_mode)3, 0> operation;
+
+extern short A[16];
+
 
 
 // [dump_enumeration [get_enumeration_list]] ---------->
 
 
+// wrapc file define: "indexOutputData"
+#define AUTOTB_TVIN_indexOutputData  "../tv/cdatafile/c.bubbleSort.autotvin_indexOutputData.dat"
+// wrapc file define: "operation_V"
+#define AUTOTB_TVIN_operation_V  "../tv/cdatafile/c.bubbleSort.autotvin_operation_V.dat"
 // wrapc file define: "A"
 #define AUTOTB_TVIN_A  "../tv/cdatafile/c.bubbleSort.autotvin_A.dat"
 #define AUTOTB_TVOUT_A  "../tv/cdatafile/c.bubbleSort.autotvout_A.dat"
-// wrapc file define: "indexOutputData"
-#define AUTOTB_TVIN_indexOutputData  "../tv/cdatafile/c.bubbleSort.autotvin_indexOutputData.dat"
-// wrapc file define: "operation"
-#define AUTOTB_TVIN_operation  "../tv/cdatafile/c.bubbleSort.autotvin_operation.dat"
 // wrapc file define: "ap_return"
 #define AUTOTB_TVOUT_ap_return  "../tv/cdatafile/c.bubbleSort.autotvout_ap_return.dat"
 
@@ -52,9 +56,9 @@ class INTER_TCL_FILE {
 	public:
 		INTER_TCL_FILE(const char* name) {
 			mName = name;
-			A_depth = 0;
 			indexOutputData_depth = 0;
-			operation_depth = 0;
+			operation_V_depth = 0;
+			A_depth = 0;
 			ap_return_depth = 0;
 			trans_num =0;
 		}
@@ -75,9 +79,9 @@ class INTER_TCL_FILE {
 
 		string get_depth_list () {
 			stringstream total_list;
-			total_list << "{A " << A_depth << "}\n";
 			total_list << "{indexOutputData " << indexOutputData_depth << "}\n";
-			total_list << "{operation " << operation_depth << "}\n";
+			total_list << "{operation_V " << operation_V_depth << "}\n";
+			total_list << "{A " << A_depth << "}\n";
 			total_list << "{ap_return " << ap_return_depth << "}\n";
 			return total_list.str();
 		}
@@ -86,9 +90,9 @@ class INTER_TCL_FILE {
 			(*class_num) = (*class_num) > num ? (*class_num) : num;
 		}
 	public:
-		int A_depth;
 		int indexOutputData_depth;
-		int operation_depth;
+		int operation_V_depth;
+		int A_depth;
 		int ap_return_depth;
 		int trans_num;
 
@@ -100,15 +104,11 @@ class INTER_TCL_FILE {
 
 #define bubbleSort AESL_ORIG_DUT_bubbleSort
 extern short bubbleSort (
-short A[5],
-char indexOutputData,
-char operation);
+char indexOutputData);
 #undef bubbleSort
 
 short bubbleSort (
-short A[5],
-char indexOutputData,
-char operation)
+char indexOutputData)
 {
 	refine_signal_handler();
 	fstream wrapc_switch_file_token;
@@ -136,7 +136,7 @@ char operation)
 		{
 			aesl_fh.read(AUTOTB_TVOUT_PC_A, AESL_token); // data
 
-			sc_bv<16> *A_pc_buffer = new sc_bv<16>[5];
+			sc_bv<16> *A_pc_buffer = new sc_bv<16>[16];
 			int i = 0;
 
 			while (AESL_token != "[[/transaction]]")
@@ -209,7 +209,7 @@ char operation)
 					// {
 						// celement: A(15, 0)
 						// {
-							sc_lv<16>* A_lv0_0_4_1 = new sc_lv<16>[5];
+							sc_lv<16>* A_lv0_0_15_1 = new sc_lv<16>[16];
 						// }
 					// }
 
@@ -218,12 +218,12 @@ char operation)
 						int hls_map_index = 0;
 						// celement: A(15, 0)
 						{
-							// carray: (0) => (4) @ (1)
-							for (int i_0 = 0; i_0 <= 4; i_0 += 1)
+							// carray: (0) => (15) @ (1)
+							for (int i_0 = 0; i_0 <= 15; i_0 += 1)
 							{
 								if (&(A[0]) != NULL) // check the null address if the c port is array or others
 								{
-									A_lv0_0_4_1[hls_map_index++].range(15, 0) = sc_bv<16>(A_pc_buffer[hls_map_index].range(15, 0));
+									A_lv0_0_15_1[hls_map_index++].range(15, 0) = sc_bv<16>(A_pc_buffer[hls_map_index].range(15, 0));
 								}
 							}
 						}
@@ -234,18 +234,18 @@ char operation)
 						int hls_map_index = 0;
 						// celement: A(15, 0)
 						{
-							// carray: (0) => (4) @ (1)
-							for (int i_0 = 0; i_0 <= 4; i_0 += 1)
+							// carray: (0) => (15) @ (1)
+							for (int i_0 = 0; i_0 <= 15; i_0 += 1)
 							{
 								// sub                    : i_0
 								// ori_name               : A[i_0]
 								// sub_1st_elem           : 0
 								// ori_name_1st_elem      : A[0]
 								// output_left_conversion : A[i_0]
-								// output_type_conversion : (A_lv0_0_4_1[hls_map_index++]).to_uint64()
+								// output_type_conversion : (A_lv0_0_15_1[hls_map_index++]).to_uint64()
 								if (&(A[0]) != NULL) // check the null address if the c port is array or others
 								{
-									A[i_0] = (A_lv0_0_4_1[hls_map_index++]).to_uint64();
+									A[i_0] = (A_lv0_0_15_1[hls_map_index++]).to_uint64();
 								}
 							}
 						}
@@ -394,19 +394,19 @@ char operation)
 
 		static AESL_FILE_HANDLER aesl_fh;
 
+		// "indexOutputData"
+		char* tvin_indexOutputData = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_indexOutputData);
+
+		// "operation_V"
+		char* tvin_operation_V = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_operation_V);
+
 		// "A"
 		char* tvin_A = new char[50];
 		aesl_fh.touch(AUTOTB_TVIN_A);
 		char* tvout_A = new char[50];
 		aesl_fh.touch(AUTOTB_TVOUT_A);
-
-		// "indexOutputData"
-		char* tvin_indexOutputData = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_indexOutputData);
-
-		// "operation"
-		char* tvin_operation = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_operation);
 
 		// "ap_return"
 		char* tvout_ap_return = new char[50];
@@ -415,53 +415,6 @@ char operation)
 		CodeState = DUMP_INPUTS;
 		static INTER_TCL_FILE tcl_file(INTER_TCL);
 		int leading_zero;
-
-		// [[transaction]]
-		sprintf(tvin_A, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
-
-		sc_bv<16>* A_tvin_wrapc_buffer = new sc_bv<16>[5];
-
-		// RTL Name: A
-		{
-			// bitslice(15, 0)
-			{
-				int hls_map_index = 0;
-				// celement: A(15, 0)
-				{
-					// carray: (0) => (4) @ (1)
-					for (int i_0 = 0; i_0 <= 4; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : A[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : A[0]
-						// regulate_c_name       : A
-						// input_type_conversion : A[i_0]
-						if (&(A[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> A_tmp_mem;
-							A_tmp_mem = A[i_0];
-							A_tvin_wrapc_buffer[hls_map_index++].range(15, 0) = A_tmp_mem.range(15, 0);
-						}
-					}
-				}
-			}
-		}
-
-		// dump tv to file
-		for (int i = 0; i < 5; i++)
-		{
-			sprintf(tvin_A, "%s\n", (A_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
-		}
-
-		tcl_file.set_num(5, &tcl_file.A_depth);
-		sprintf(tvin_A, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
-
-		// release memory allocation
-		delete [] A_tvin_wrapc_buffer;
 
 		// [[transaction]]
 		sprintf(tvin_indexOutputData, "[[transaction]] %d\n", AESL_transaction);
@@ -506,30 +459,32 @@ char operation)
 		aesl_fh.write(AUTOTB_TVIN_indexOutputData, tvin_indexOutputData);
 
 		// [[transaction]]
-		sprintf(tvin_operation, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_operation, tvin_operation);
+		sprintf(tvin_operation_V, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_operation_V, tvin_operation_V);
 
-		sc_bv<8> operation_tvin_wrapc_buffer;
+		sc_bv<1>* operation_V_tvin_wrapc_buffer = new sc_bv<1>[1];
 
-		// RTL Name: operation
+		// RTL Name: operation_V
 		{
-			// bitslice(7, 0)
+			// bitslice(0, 0)
 			{
-				// celement: operation(7, 0)
+				int hls_map_index = 0;
+				// celement: operation.V(0, 0)
 				{
-					// carray: (0) => (0) @ (0)
+					// carray: (0) => (0) @ (1)
+					for (int i_0 = 0; i_0 <= 0; i_0 += 1)
 					{
-						// sub                   : 
+						// sub                   : i_0
 						// ori_name              : operation
-						// sub_1st_elem          : 
+						// sub_1st_elem          : 0
 						// ori_name_1st_elem     : operation
-						// regulate_c_name       : operation
-						// input_type_conversion : operation
+						// regulate_c_name       : operation_V
+						// input_type_conversion : (operation).range().to_string(SC_BIN).c_str()
 						if (&(operation) != NULL) // check the null address if the c port is array or others
 						{
-							sc_lv<8> operation_tmp_mem;
-							operation_tmp_mem = operation;
-							operation_tvin_wrapc_buffer.range(7, 0) = operation_tmp_mem.range(7, 0);
+							sc_lv<1> operation_V_tmp_mem;
+							operation_V_tmp_mem = (operation).range().to_string(SC_BIN).c_str();
+							operation_V_tvin_wrapc_buffer[hls_map_index++].range(0, 0) = operation_V_tmp_mem.range(0, 0);
 						}
 					}
 				}
@@ -539,26 +494,22 @@ char operation)
 		// dump tv to file
 		for (int i = 0; i < 1; i++)
 		{
-			sprintf(tvin_operation, "%s\n", (operation_tvin_wrapc_buffer).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_operation, tvin_operation);
+			sprintf(tvin_operation_V, "%s\n", (operation_V_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_operation_V, tvin_operation_V);
 		}
 
-		tcl_file.set_num(1, &tcl_file.operation_depth);
-		sprintf(tvin_operation, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_operation, tvin_operation);
+		tcl_file.set_num(1, &tcl_file.operation_V_depth);
+		sprintf(tvin_operation_V, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_operation_V, tvin_operation_V);
 
-// [call_c_dut] ---------->
-
-		CodeState = CALL_C_DUT;
-		short AESL_return = AESL_ORIG_DUT_bubbleSort(A, indexOutputData, operation);
-
-		CodeState = DUMP_OUTPUTS;
+		// release memory allocation
+		delete [] operation_V_tvin_wrapc_buffer;
 
 		// [[transaction]]
-		sprintf(tvout_A, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
+		sprintf(tvin_A, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
 
-		sc_bv<16>* A_tvout_wrapc_buffer = new sc_bv<16>[5];
+		sc_bv<16>* A_tvin_wrapc_buffer = new sc_bv<16>[16];
 
 		// RTL Name: A
 		{
@@ -567,8 +518,62 @@ char operation)
 				int hls_map_index = 0;
 				// celement: A(15, 0)
 				{
-					// carray: (0) => (4) @ (1)
-					for (int i_0 = 0; i_0 <= 4; i_0 += 1)
+					// carray: (0) => (15) @ (1)
+					for (int i_0 = 0; i_0 <= 15; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : A[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : A[0]
+						// regulate_c_name       : A
+						// input_type_conversion : A[i_0]
+						if (&(A[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<16> A_tmp_mem;
+							A_tmp_mem = A[i_0];
+							A_tvin_wrapc_buffer[hls_map_index++].range(15, 0) = A_tmp_mem.range(15, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 16; i++)
+		{
+			sprintf(tvin_A, "%s\n", (A_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
+		}
+
+		tcl_file.set_num(16, &tcl_file.A_depth);
+		sprintf(tvin_A, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_A, tvin_A);
+
+		// release memory allocation
+		delete [] A_tvin_wrapc_buffer;
+
+// [call_c_dut] ---------->
+
+		CodeState = CALL_C_DUT;
+		short AESL_return = AESL_ORIG_DUT_bubbleSort(indexOutputData);
+
+		CodeState = DUMP_OUTPUTS;
+
+		// [[transaction]]
+		sprintf(tvout_A, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
+
+		sc_bv<16>* A_tvout_wrapc_buffer = new sc_bv<16>[16];
+
+		// RTL Name: A
+		{
+			// bitslice(15, 0)
+			{
+				int hls_map_index = 0;
+				// celement: A(15, 0)
+				{
+					// carray: (0) => (15) @ (1)
+					for (int i_0 = 0; i_0 <= 15; i_0 += 1)
 					{
 						// sub                   : i_0
 						// ori_name              : A[i_0]
@@ -588,13 +593,13 @@ char operation)
 		}
 
 		// dump tv to file
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 16; i++)
 		{
 			sprintf(tvout_A, "%s\n", (A_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
 			aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
 		}
 
-		tcl_file.set_num(5, &tcl_file.A_depth);
+		tcl_file.set_num(16, &tcl_file.A_depth);
 		sprintf(tvout_A, "[[/transaction]] \n");
 		aesl_fh.write(AUTOTB_TVOUT_A, tvout_A);
 
@@ -644,13 +649,13 @@ char operation)
 		aesl_fh.write(AUTOTB_TVOUT_ap_return, tvout_ap_return);
 
 		CodeState = DELETE_CHAR_BUFFERS;
+		// release memory allocation: "indexOutputData"
+		delete [] tvin_indexOutputData;
+		// release memory allocation: "operation_V"
+		delete [] tvin_operation_V;
 		// release memory allocation: "A"
 		delete [] tvin_A;
 		delete [] tvout_A;
-		// release memory allocation: "indexOutputData"
-		delete [] tvin_indexOutputData;
-		// release memory allocation: "operation"
-		delete [] tvin_operation;
 		// release memory allocation: "ap_return"
 		delete [] tvout_ap_return;
 

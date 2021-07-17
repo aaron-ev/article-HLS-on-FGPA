@@ -1,3 +1,2 @@
-heapSort_A
 heapSort_maxHeapify_noRecurv
 heapSort

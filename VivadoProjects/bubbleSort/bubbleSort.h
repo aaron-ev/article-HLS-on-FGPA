@@ -5,11 +5,11 @@
 #include <ap_int.h>
 #include "window_fn_class.h"
 
-#define N	      5	// Total de numeros  a ordenar
+#define N	      16	// Total de numeros  a ordenar
 
 // Macros para realizar una palabra de 1 bit solamente
 #define W_OUT  	  1
-#define IW_OUT 	  0
+#define IW_OUT 	  1
 
 #define FALSE     0
 #define TRUE      1
@@ -23,15 +23,13 @@
 typedef ap_fixed <W_OUT,IW_OUT>fp_bit1;
 
 typedef short data_inp;
-typedef struct
-{
-	data_inp data;
-	fp_bit1 done;
-}outData_s;
 
-fp_bit1 bubbleAlgorithm(data_inp A[N]);
-data_inp bubbleSort(data_inp A[N],char indexOutputData,char operation);
-
+void bubbleAlgorithm(void);
+data_inp bubbleSort(char indexOutputData);
+//write random values to the global array
+void writeValues(void);
+//read sorted values
+void readValues(void);
 #endif
 
 

@@ -7,12 +7,41 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7a100tcsg324-1'
-@I [COSIM-47] Using XSIM for RTL simulation.
-@I [COSIM-14] Instrumenting C test bench ...
-@I [COSIM-302] Starting C TB testing ... 
-@I [COSIM-333] Generating C post check test bench ...
-@I [COSIM-12] Generating RTL test bench ...
-@I [COSIM-323] Starting verilog simulation. 
-@I [COSIM-15] Starting XSIM ...
-@I [COSIM-316] Starting C post checking ...
-@I [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+@I [HLS-10] Analyzing design file 'bubbleSort/bubbleSort.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [XFORM-602] Inlining function 'bubbleAlgorithm' into 'bubbleSort' (bubbleSort/bubbleSort.cpp:31) automatically.
+@I [XFORM-602] Inlining function 'bubbleAlgorithm' into 'bubbleSort' (bubbleSort/bubbleSort.cpp:31) automatically.
+@I [HLS-111] Elapsed time: 23.025 seconds; current memory usage: 81.9 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'bubbleSort' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'bubbleSort' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.075 seconds; current memory usage: 83.3 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'bubbleSort' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.073 seconds; current memory usage: 83.3 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'bubbleSort' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'bubbleSort/indexOutputData' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'bubbleSort/operation_V' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'bubbleSort/A' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'bubbleSort' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Finished creating RTL model for 'bubbleSort'.
+@I [HLS-111] Elapsed time: 0.064 seconds; current memory usage: 83.3 MB.
+@I [HLS-10] Finished generating all RTL models.
+@I [SYSC-301] Generating SystemC RTL for bubbleSort.
+@I [VHDL-304] Generating VHDL RTL for bubbleSort.
+@I [VLOG-307] Generating Verilog RTL for bubbleSort.
+@I [HLS-112] Total elapsed time: 23.699 seconds; peak memory usage: 83.3 MB.

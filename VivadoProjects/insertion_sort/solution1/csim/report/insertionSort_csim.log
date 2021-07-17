@@ -1,9 +1,0 @@
-   Compiling ../../../../insertion_sort_tb.cpp in debug mode
-   Compiling ../../../../insertion_sort.cpp in debug mode
-   Generating csim.exe
-obj/insertion_sort_tb.o: In function `main':
-C:\Users\aaron\Desktop\git_article\vivadoProjects\insertion_sort\solution1\csim\build/../../../../insertion_sort_tb.cpp:13: undefined reference to `insertionSort(short, char)'
-C:\Users\aaron\Desktop\git_article\vivadoProjects\insertion_sort\solution1\csim\build/../../../../insertion_sort_tb.cpp:17: undefined reference to `insertionSort(short, char)'
-collect2: ld returned 1 exit status
-make: *** [csim.exe] Error 1
-CRITICAL WARNING: [SIM 1] CSim file generation failed: compilation error(s).

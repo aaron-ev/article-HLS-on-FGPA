@@ -30,8 +30,8 @@ localparam
     TV_OUT = "../tv/rtldatafile/rtl.bubbleSort.autotvout_A.dat"; 
 //------------------------Local signal-------------------
 parameter DATA_WIDTH = 32'd 16;
-parameter ADDR_WIDTH = 32'd 3;
-parameter DEPTH = 32'd 5;
+parameter ADDR_WIDTH = 32'd 4;
+parameter DEPTH = 32'd 16;
 
 // Input and Output
 input clk;

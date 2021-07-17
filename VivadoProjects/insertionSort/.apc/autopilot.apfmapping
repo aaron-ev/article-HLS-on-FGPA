@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="insertionSort.cpp" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\insertionSort\insertionSort.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="insertionSort_tb.cpp" path="C:\Users\aaron\Desktop\git_article\vivadoProjects\insertionSort\insertionSort_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

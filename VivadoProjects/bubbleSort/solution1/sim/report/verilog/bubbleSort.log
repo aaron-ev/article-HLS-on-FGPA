@@ -12,19 +12,19 @@
 @I [SIM-15] Starting XSIM ...
 @I [SIM-316] Starting C post checking ...
 
-C:\Users\aaron\Desktop\git_article\vivadoProjects\bubbleSort\solution1\sim\verilog>call xelab xil_defaultlib.apatb_bubbleSort_top -prj bubbleSort.prj --lib "ieee_proposed=./ieee_proposed" -s bubbleSort -debug wave 
+C:\Users\aaron\Desktop\bubbleSort\solution1\sim\verilog>call xelab xil_defaultlib.apatb_bubbleSort_top -prj bubbleSort.prj --lib "ieee_proposed=./ieee_proposed" -s bubbleSort -debug wave 
 Vivado Simulator 2016.1
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2016.1/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_bubbleSort_top -prj bubbleSort.prj --lib ieee_proposed=./ieee_proposed -s bubbleSort -debug wave 
 Multi-threading is on. Using 6 slave threads.
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/AESL_automem_A.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/AESL_automem_A.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_automem_A
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module apatb_bubbleSort_top
-INFO: [VRFC 10-2458] undeclared symbol ap_clk, assumed default net type wire [C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v:100]
-INFO: [VRFC 10-2458] undeclared symbol ap_rst, assumed default net type wire [C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v:101]
-INFO: [VRFC 10-2458] undeclared symbol ap_rst_n, assumed default net type wire [C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v:123]
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/bubbleSort.v" into library xil_defaultlib
+INFO: [VRFC 10-2458] undeclared symbol ap_clk, assumed default net type wire [C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v:100]
+INFO: [VRFC 10-2458] undeclared symbol ap_rst, assumed default net type wire [C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v:101]
+INFO: [VRFC 10-2458] undeclared symbol ap_rst_n, assumed default net type wire [C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v:123]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/bubbleSort.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bubbleSort
 Starting static elaboration
 Completed static elaboration
@@ -41,8 +41,8 @@ Built simulation snapshot bubbleSort
   **** IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/xsim.dir/bubbleSort/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Jul 14 18:08:48 2021...
+source C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/xsim.dir/bubbleSort/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jul 15 20:52:40 2021...
 
 ****** xsim v2016.1 (64-bit)
   **** SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
@@ -73,7 +73,7 @@ source bubbleSort.tcl
 ## add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/ap_return -into $return_group -radix hex
 ## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
 ## set operation_group [add_wave_group operation(wire) -into $cinputgroup]
-## add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/operation -into $operation_group -radix hex
+## add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/operation_V -into $operation_group -radix hex
 ## set indexOutputData_group [add_wave_group indexOutputData(wire) -into $cinputgroup]
 ## add_wave /apatb_bubbleSort_top/AESL_inst_bubbleSort/indexOutputData -into $indexOutputData_group -radix hex
 ## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
@@ -92,9 +92,9 @@ source bubbleSort.tcl
 ## add_wave /apatb_bubbleSort_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
 ## add_wave /apatb_bubbleSort_top/ready_cnt -into $tb_simstatus_group -radix hex
 ## add_wave /apatb_bubbleSort_top/done_cnt -into $tb_simstatus_group -radix hex
-## add_wave /apatb_bubbleSort_top/LENGTH_A -into $tb_portdepth_group -radix hex
 ## add_wave /apatb_bubbleSort_top/LENGTH_indexOutputData -into $tb_portdepth_group -radix hex
-## add_wave /apatb_bubbleSort_top/LENGTH_operation -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bubbleSort_top/LENGTH_operation_V -into $tb_portdepth_group -radix hex
+## add_wave /apatb_bubbleSort_top/LENGTH_A -into $tb_portdepth_group -radix hex
 ## add_wave /apatb_bubbleSort_top/LENGTH_ap_return -into $tb_portdepth_group -radix hex
 ## set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
 ## set tb_A_group [add_wave_group A(memory) -into $tbcinoutgroup]
@@ -113,7 +113,7 @@ source bubbleSort.tcl
 ## add_wave /apatb_bubbleSort_top/ap_return -into $tb_return_group -radix hex
 ## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
 ## set tb_operation_group [add_wave_group operation(wire) -into $tbcinputgroup]
-## add_wave /apatb_bubbleSort_top/operation -into $tb_operation_group -radix hex
+## add_wave /apatb_bubbleSort_top/operation_V -into $tb_operation_group -radix hex
 ## set tb_indexOutputData_group [add_wave_group indexOutputData(wire) -into $tbcinputgroup]
 ## add_wave /apatb_bubbleSort_top/indexOutputData -into $tb_indexOutputData_group -radix hex
 ## save_wave_config bubbleSort.wcfg
@@ -122,10 +122,10 @@ source bubbleSort.tcl
 // Inter-Transaction Progress: Completed Transaction / Total Transaction
 // Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
 ////////////////////////////////////////////////////////////////////////////////////
-// RTL Simulation : 0 / 6 [0.00%] @ "125000"
-// RTL Simulation : 6 / 6 [0.00%] @ "615000"
+// RTL Simulation : 0 / 17 [0.00%] @ "125000"
+// RTL Simulation : 17 / 17 [0.00%] @ "3365000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 655 ns : File "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v" Line 389
+$finish called at time : 3405 ns : File "C:/Users/aaron/Desktop/bubbleSort/solution1/sim/verilog/bubbleSort.autotb.v" Line 389
 ## quit
-INFO: [Common 17-206] Exiting xsim at Wed Jul 14 18:08:56 2021...
+INFO: [Common 17-206] Exiting xsim at Thu Jul 15 20:52:45 2021...
 @I [SIM-1000] *** C/RTL co-simulation finished: PASS ***

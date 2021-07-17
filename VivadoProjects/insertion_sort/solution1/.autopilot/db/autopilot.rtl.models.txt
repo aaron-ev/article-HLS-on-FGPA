@@ -1,2 +1,0 @@
-insertionSort_A
-insertionSort

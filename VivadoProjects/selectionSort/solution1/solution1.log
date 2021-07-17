@@ -7,14 +7,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7a100tcsg324-1'
-@I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-10] Analyzing design file 'selectionSort.cpp' ... 
+@I [HLS-10] Analyzing design file 'selectionSort/selectionSort.cpp' ... 
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-602] Inlining function 'selectionAlgorithm' into 'selectionSort' (selectionSort.cpp:49) automatically.
-@I [XFORM-602] Inlining function 'selectionAlgorithm' into 'selectionSort' (selectionSort.cpp:49) automatically.
-@I [HLS-111] Elapsed time: 22.609 seconds; current memory usage: 85.7 MB.
+@I [XFORM-602] Inlining function 'selectionAlgorithm' into 'selectionSort' (selectionSort/selectionSort.cpp:34) automatically.
+@I [XFORM-602] Inlining function 'selectionAlgorithm' into 'selectionSort' (selectionSort/selectionSort.cpp:34) automatically.
+@I [HLS-111] Elapsed time: 17.413 seconds; current memory usage: 82.1 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'selectionSort' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -22,7 +21,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.163 seconds; current memory usage: 87.1 MB.
+@I [HLS-111] Elapsed time: 0.036 seconds; current memory usage: 83.2 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'selectionSort' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -31,24 +30,18 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.382 seconds; current memory usage: 87.1 MB.
+@I [HLS-111] Elapsed time: 0.031 seconds; current memory usage: 83.2 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'selectionSort' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'selectionSort/agg_result_data' to 'ap_vld'.
-@I [RTGEN-500] Setting interface mode on port 'selectionSort/agg_result_done_V' to 'ap_vld'.
-@I [RTGEN-500] Setting interface mode on port 'selectionSort/dataIn' to 'ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'selectionSort/posOutData' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'selectionSort/indexOutputData' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'selectionSort/operation_V' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'selectionSort/A' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on function 'selectionSort' to 'ap_ctrl_hs'.
-@W [RTGEN-101] Register 'count' is power-on initialization.
-@W [RTGEN-101] Register 'sOutData_done_V' is power-on initialization.
-@W [RTGEN-101] Register 'sOutData_data' is power-on initialization.
-@W [RTGEN-101] Register 'flagFill' is power-on initialization.
 @I [RTGEN-100] Finished creating RTL model for 'selectionSort'.
-@I [HLS-111] Elapsed time: 0.155 seconds; current memory usage: 87 MB.
-@I [RTMG-278] Implementing memory 'selectionSort_A_ram' using block RAMs with power-on initialization.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 83.1 MB.
 @I [HLS-10] Finished generating all RTL models.
 @I [SYSC-301] Generating SystemC RTL for selectionSort.
 @I [VHDL-304] Generating VHDL RTL for selectionSort.
 @I [VLOG-307] Generating Verilog RTL for selectionSort.
-@I [HLS-112] Total elapsed time: 24.426 seconds; peak memory usage: 87.1 MB.
+@I [HLS-112] Total elapsed time: 17.885 seconds; peak memory usage: 83.2 MB.

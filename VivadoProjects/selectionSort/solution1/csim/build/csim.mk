@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../selectionSort_tb.cpp ../../../../selectionSort.cpp
+HLS_SOURCES = ../../../selectionSort_tb.cpp ../../../selectionSort.cpp
 
 TARGET := csim.exe
 
@@ -70,14 +70,14 @@ all: $(TARGET)
 
 
 
-$(ObjDir)/selectionSort_tb.o: ../../../../selectionSort_tb.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../selectionSort_tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/selectionSort_tb.o: ../../../selectionSort_tb.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../selectionSort_tb.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/selectionSort_tb.d
 
-$(ObjDir)/selectionSort.o: ../../../../selectionSort.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../selectionSort.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/selectionSort.o: ../../../selectionSort.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../selectionSort.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/selectionSort.d

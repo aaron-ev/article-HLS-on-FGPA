@@ -17,4 +17,37 @@
 [[transaction]] 5
 0x004
 [[/transaction]] 
+[[transaction]] 6
+0x005
+[[/transaction]] 
+[[transaction]] 7
+0x006
+[[/transaction]] 
+[[transaction]] 8
+0x007
+[[/transaction]] 
+[[transaction]] 9
+0x008
+[[/transaction]] 
+[[transaction]] 10
+0x009
+[[/transaction]] 
+[[transaction]] 11
+0x00a
+[[/transaction]] 
+[[transaction]] 12
+0x00b
+[[/transaction]] 
+[[transaction]] 13
+0x00c
+[[/transaction]] 
+[[transaction]] 14
+0x00d
+[[/transaction]] 
+[[transaction]] 15
+0x00e
+[[/transaction]] 
+[[transaction]] 16
+0x00f
+[[/transaction]] 
 [[[/runtime]]]

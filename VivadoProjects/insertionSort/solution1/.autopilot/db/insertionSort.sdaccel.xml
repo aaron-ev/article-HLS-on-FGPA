@@ -1,0 +1,146 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'insertionSort'" level="0">
+<item name = "Date">Fri Jul 16 14:38:32 2021
+</item>
+<item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
+<item name = "Project">insertionSort</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a100tcsg324-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">5.48</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">2, 130562, 3, 130563, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">1020, 130560, 4 ~ 512, -, -, 255, no</column>
+<column name=" + Loop 1.1">2, 510, 2, -, -, 1 ~ 255, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 28</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 51</column>
+<column name="Register">-, -, 65, -</column>
+<specialColumn name="Available">270, 240, 126800, 63400</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_fu_149_p2">+, 0, 0, 9, 9, 1</column>
+<column name="j_fu_121_p2">+, 0, 0, 9, 9, 2</column>
+<column name="exitcond_i_fu_115_p2">icmp, 0, 0, 4, 9, 10</column>
+<column name="tmp_5_i_fu_155_p2">icmp, 0, 0, 6, 16, 16</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="A_address0">8, 4, 8, 32</column>
+<column name="A_address1">8, 3, 8, 24</column>
+<column name="ap_NS_fsm">1, 7, 1, 7</column>
+<column name="i_i_reg_73">9, 2, 9, 18</column>
+<column name="j_0_in_i_reg_85">9, 2, 9, 18</column>
+<column name="p_0_reg_95">16, 2, 16, 32</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="A_addr_1_reg_180">8, 0, 8, 0</column>
+<column name="A_addr_2_reg_186">8, 0, 8, 0</column>
+<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="i_i_reg_73">9, 0, 9, 0</column>
+<column name="j_0_in_i_reg_85">9, 0, 9, 0</column>
+<column name="j_reg_172">9, 0, 9, 0</column>
+<column name="p_0_reg_95">16, 0, 16, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, insertionSort, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, insertionSort, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, insertionSort, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, insertionSort, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, insertionSort, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, insertionSort, return value</column>
+<column name="ap_return">out, 16, ap_ctrl_hs, insertionSort, return value</column>
+<column name="indexOutputData">in, 8, ap_none, indexOutputData, scalar</column>
+<column name="operation_V">in, 1, ap_none, operation_V, pointer</column>
+<column name="A_address0">out, 8, ap_memory, A, array</column>
+<column name="A_ce0">out, 1, ap_memory, A, array</column>
+<column name="A_we0">out, 1, ap_memory, A, array</column>
+<column name="A_d0">out, 16, ap_memory, A, array</column>
+<column name="A_q0">in, 16, ap_memory, A, array</column>
+<column name="A_address1">out, 8, ap_memory, A, array</column>
+<column name="A_ce1">out, 1, ap_memory, A, array</column>
+<column name="A_we1">out, 1, ap_memory, A, array</column>
+<column name="A_d1">out, 16, ap_memory, A, array</column>
+<column name="A_q1">in, 16, ap_memory, A, array</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">5.48</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'temp', insertionSort/insertionSort.cpp:13->insertionSort/insertionSort.cpp:28">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
+<column name="'tmp_5_i', insertionSort/insertionSort.cpp:13->insertionSort/insertionSort.cpp:28">icmp, 2.77, 5.48, -, -, -, -, -, -, -, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

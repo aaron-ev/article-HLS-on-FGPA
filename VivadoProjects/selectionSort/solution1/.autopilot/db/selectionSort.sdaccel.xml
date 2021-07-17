@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'selectionSort'" level="0">
-<item name = "Date">Fri Jul 09 21:04:40 2021
+<item name = "Date">Thu Jul 15 19:33:08 2021
 </item>
 <item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
 <item name = "Project">selectionSort</item>
@@ -22,7 +22,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1, 131328, 2, 131329, none</column>
+<column name="">2, 131327, 3, 131328, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,14 +47,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 154</column>
+<column name="Expression">-, -, 0, 71</column>
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, -, -, -</column>
-<column name="Memory">1, -, 0, 0</column>
-<column name="Multiplexer">-, -, -, 110</column>
-<column name="Register">-, -, 182, -</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 100</column>
+<column name="Register">-, -, 145, -</column>
 <specialColumn name="Available">270, 240, 126800, 63400</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, ~0, ~0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -69,7 +69,6 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="A_U">selectionSort_A, 1, 0, 0, 256, 16, 1, 4096</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -78,53 +77,41 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_273_p2">+, 0, 0, 8, 8, 1</column>
-<column name="index_min_2_fu_319_p2">+, 0, 0, 16, 16, 1</column>
-<column name="tmp_2_fu_247_p2">+, 0, 0, 16, 16, 1</column>
-<column name="exitcond3_i_fu_267_p2">icmp, 0, 0, 3, 8, 2</column>
-<column name="exitcond_i_fu_325_p2">icmp, 0, 0, 6, 16, 8</column>
-<column name="icmp_fu_228_p2">icmp, 0, 0, 3, 8, 1</column>
-<column name="tmp_8_i_fu_341_p2">icmp, 0, 0, 6, 16, 16</column>
-<column name="gepindex2_fu_310_p3">select, 0, 0, 64, 1, 8</column>
-<column name="j_i_index_min1_i_fu_355_p3">select, 0, 0, 16, 1, 16</column>
-<column name="min_i_min1_i_fu_347_p3">select, 0, 0, 16, 1, 16</column>
+<column name="i_fu_147_p2">+, 0, 0, 8, 8, 1</column>
+<column name="index_min_2_fu_158_p2">+, 0, 0, 16, 16, 1</column>
+<column name="exitcond1_i_fu_141_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="exitcond_i_fu_164_p2">icmp, 0, 0, 6, 16, 8</column>
+<column name="tmp_4_i_fu_180_p2">icmp, 0, 0, 6, 16, 16</column>
+<column name="j_i_index_min1_i_fu_186_p3">select, 0, 0, 16, 1, 16</column>
+<column name="min_i_min1_i_fu_193_p3">select, 0, 0, 16, 1, 16</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="A_address0">16, 8, 8, 64</column>
-<column name="A_d0">16, 4, 16, 64</column>
+<column name="A_address0">8, 7, 8, 56</column>
+<column name="A_d0">16, 3, 16, 48</column>
 <column name="ap_NS_fsm">4, 10, 1, 10</column>
-<column name="index_min1_i_reg_164">16, 2, 16, 32</column>
-<column name="index_min_reg_134">8, 2, 8, 16</column>
-<column name="j_0_in_i_reg_145">16, 2, 16, 32</column>
-<column name="min1_i_reg_154">16, 2, 16, 32</column>
-<column name="sOutData_done_V_loc_reg_174">1, 2, 1, 2</column>
-<column name="storemerge1_reg_186">16, 2, 16, 32</column>
-<column name="storemerge_reg_196">1, 2, 1, 2</column>
+<column name="index_min1_i_reg_88">16, 2, 16, 32</column>
+<column name="index_min_reg_77">8, 2, 8, 16</column>
+<column name="j_0_in_i_reg_108">16, 2, 16, 32</column>
+<column name="min1_i_reg_98">16, 2, 16, 32</column>
+<column name="p_0_reg_117">16, 2, 16, 32</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="A_addr_1_reg_406">8, 0, 8, 0</column>
-<column name="A_addr_2_reg_430">8, 0, 8, 0</column>
+<column name="A_addr_1_reg_223">8, 0, 8, 0</column>
+<column name="A_addr_2_reg_248">8, 0, 8, 0</column>
 <column name="ap_CS_fsm">9, 0, 9, 0</column>
-<column name="count">16, 0, 16, 0</column>
-<column name="flagFill">1, 0, 1, 0</column>
-<column name="flagFill_load_reg_383">1, 0, 1, 0</column>
-<column name="i_reg_401">8, 0, 8, 0</column>
-<column name="index_min1_i_reg_164">16, 0, 16, 0</column>
-<column name="index_min_2_reg_416">16, 0, 16, 0</column>
-<column name="index_min_cast1_reg_392">8, 0, 16, 8</column>
-<column name="index_min_reg_134">8, 0, 8, 0</column>
-<column name="j_0_in_i_reg_145">16, 0, 16, 0</column>
-<column name="min1_i_reg_154">16, 0, 16, 0</column>
-<column name="reg_207">16, 0, 16, 0</column>
-<column name="sOutData_data">16, 0, 16, 0</column>
-<column name="sOutData_done_V">1, 0, 1, 0</column>
-<column name="sOutData_done_V_loc_reg_174">1, 0, 1, 0</column>
-<column name="storemerge1_reg_186">16, 0, 16, 0</column>
-<column name="storemerge_reg_196">1, 0, 1, 0</column>
+<column name="i_reg_218">8, 0, 8, 0</column>
+<column name="index_min1_i_reg_88">16, 0, 16, 0</column>
+<column name="index_min_2_reg_234">16, 0, 16, 0</column>
+<column name="index_min_cast1_reg_209">8, 0, 16, 8</column>
+<column name="index_min_reg_77">8, 0, 8, 0</column>
+<column name="j_0_in_i_reg_108">16, 0, 16, 0</column>
+<column name="min1_i_reg_98">16, 0, 16, 0</column>
+<column name="min_2_reg_228">16, 0, 16, 0</column>
+<column name="p_0_reg_117">16, 0, 16, 0</column>
 </table>
 </item>
 </section>
@@ -140,12 +127,14 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, selectionSort, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, selectionSort, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, selectionSort, return value</column>
-<column name="agg_result_data">out, 16, ap_vld, agg_result_data, pointer</column>
-<column name="agg_result_data_ap_vld">out, 1, ap_vld, agg_result_data, pointer</column>
-<column name="agg_result_done_V">out, 1, ap_vld, agg_result_done_V, pointer</column>
-<column name="agg_result_done_V_ap_vld">out, 1, ap_vld, agg_result_done_V, pointer</column>
-<column name="dataIn">in, 16, ap_none, dataIn, scalar</column>
-<column name="posOutData">in, 8, ap_none, posOutData, scalar</column>
+<column name="ap_return">out, 16, ap_ctrl_hs, selectionSort, return value</column>
+<column name="indexOutputData">in, 8, ap_none, indexOutputData, scalar</column>
+<column name="operation_V">in, 1, ap_none, operation_V, pointer</column>
+<column name="A_address0">out, 8, ap_memory, A, array</column>
+<column name="A_ce0">out, 1, ap_memory, A, array</column>
+<column name="A_we0">out, 1, ap_memory, A, array</column>
+<column name="A_d0">out, 16, ap_memory, A, array</column>
+<column name="A_q0">in, 16, ap_memory, A, array</column>
 </table>
 </item>
 </section>
@@ -154,9 +143,9 @@
 <item name = "Max Delay">6.85</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'min', selectionSort.cpp:14->selectionSort.cpp:49">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
-<column name="'tmp_8_i', selectionSort.cpp:14->selectionSort.cpp:49">icmp, 2.77, 5.48, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'min_i_min1_i', selectionSort.cpp:14->selectionSort.cpp:49">select, 1.37, 6.85, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'min', selectionSort/selectionSort.cpp:17->selectionSort/selectionSort.cpp:34">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
+<column name="'tmp_4_i', selectionSort/selectionSort.cpp:17->selectionSort/selectionSort.cpp:34">icmp, 2.77, 5.48, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'j_i_index_min1_i', selectionSort/selectionSort.cpp:17->selectionSort/selectionSort.cpp:34">select, 1.37, 6.85, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'heapSort'" level="0">
-<item name = "Date">Fri Jul 09 21:29:40 2021
+<item name = "Date">Thu Jul 15 22:19:04 2021
 </item>
 <item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
 <item name = "Project">heapSort</item>
@@ -22,14 +22,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1, 690052, 2, 690053, none</column>
+<column name="">2, 690051, 3, 690052, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_heapSort_maxHeapify_noRecurv_fu_194">heapSort_maxHeapify_noRecurv, 1, 1793, 1, 1793, none</column>
+<column name="grp_heapSort_maxHeapify_noRecurv_fu_115">heapSort_maxHeapify_noRecurv, 1, 1793, 1, 1793, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -48,21 +48,21 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 100</column>
+<column name="Expression">-, -, 0, 17</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">-, -, 213, 282</column>
-<column name="Memory">1, -, 0, 0</column>
-<column name="Multiplexer">-, -, -, 109</column>
-<column name="Register">-, -, 131, -</column>
+<column name="Instance">-, -, 165, 197</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 107</column>
+<column name="Register">-, -, 94, -</column>
 <specialColumn name="Available">270, 240, 126800, 63400</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, ~0, ~0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="grp_heapSort_maxHeapify_noRecurv_fu_194">heapSort_maxHeapify_noRecurv, 0, 0, 213, 282</column>
+<column name="grp_heapSort_maxHeapify_noRecurv_fu_115">heapSort_maxHeapify_noRecurv, 0, 0, 165, 197</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -71,7 +71,6 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="A_U">heapSort_A, 1, 0, 0, 256, 16, 1, 4096</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -80,52 +79,40 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_2_fu_331_p2">+, 0, 0, 9, 9, 2</column>
-<column name="i_fu_268_p2">+, 0, 0, 8, 8, 2</column>
-<column name="tmp_15_fu_244_p2">+, 0, 0, 16, 16, 1</column>
-<column name="icmp_fu_225_p2">icmp, 0, 0, 3, 8, 1</column>
-<column name="gepindex2_fu_317_p3">select, 0, 0, 64, 1, 8</column>
+<column name="i_2_fu_177_p2">+, 0, 0, 9, 9, 2</column>
+<column name="i_fu_149_p2">+, 0, 0, 8, 8, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="A_address0">8, 5, 8, 40</column>
-<column name="A_address1">8, 5, 8, 40</column>
+<column name="A_address1">8, 4, 8, 32</column>
 <column name="A_ce0">1, 3, 1, 3</column>
 <column name="A_ce1">1, 3, 1, 3</column>
 <column name="A_d0">16, 3, 16, 48</column>
-<column name="A_d1">16, 4, 16, 64</column>
+<column name="A_d1">16, 3, 16, 48</column>
 <column name="A_we0">1, 3, 1, 3</column>
 <column name="A_we1">1, 3, 1, 3</column>
 <column name="ap_NS_fsm">4, 11, 1, 11</column>
-<column name="grp_heapSort_maxHeapify_noRecurv_fu_194_endA">10, 3, 10, 30</column>
-<column name="grp_heapSort_maxHeapify_noRecurv_fu_194_startA">8, 3, 8, 24</column>
-<column name="i_1_i_reg_149">9, 2, 9, 18</column>
-<column name="i_i_reg_137">8, 2, 8, 16</column>
-<column name="sOutData_done_V_loc_reg_161">1, 2, 1, 2</column>
-<column name="storemerge1_reg_173">16, 2, 16, 32</column>
-<column name="storemerge_reg_183">1, 2, 1, 2</column>
+<column name="grp_heapSort_maxHeapify_noRecurv_fu_115_endA">10, 3, 10, 30</column>
+<column name="grp_heapSort_maxHeapify_noRecurv_fu_115_startA">8, 3, 8, 24</column>
+<column name="i_1_i_reg_92">9, 2, 9, 18</column>
+<column name="i_i_reg_80">8, 2, 8, 16</column>
+<column name="p_0_reg_104">16, 2, 16, 32</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="A_addr_6_reg_378">8, 0, 8, 0</column>
+<column name="A_addr_6_reg_202">8, 0, 8, 0</column>
 <column name="ap_CS_fsm">10, 0, 10, 0</column>
-<column name="ap_reg_grp_heapSort_maxHeapify_noRecurv_fu_194_ap_start">1, 0, 1, 0</column>
-<column name="count">16, 0, 16, 0</column>
-<column name="flagFill">1, 0, 1, 0</column>
-<column name="flagFill_load_reg_358">1, 0, 1, 0</column>
-<column name="i_1_i_cast_cast_reg_388">9, 0, 10, 1</column>
-<column name="i_1_i_reg_149">9, 0, 9, 0</column>
-<column name="i_2_reg_393">9, 0, 9, 0</column>
-<column name="i_i_reg_137">8, 0, 8, 0</column>
-<column name="i_reg_370">8, 0, 8, 0</column>
-<column name="reg_205">16, 0, 16, 0</column>
-<column name="sOutData_data">16, 0, 16, 0</column>
-<column name="sOutData_done_V">1, 0, 1, 0</column>
-<column name="sOutData_done_V_loc_reg_161">1, 0, 1, 0</column>
-<column name="storemerge1_reg_173">16, 0, 16, 0</column>
-<column name="storemerge_reg_183">1, 0, 1, 0</column>
+<column name="ap_reg_grp_heapSort_maxHeapify_noRecurv_fu_115_ap_start">1, 0, 1, 0</column>
+<column name="i_1_i_cast_cast_reg_208">9, 0, 10, 1</column>
+<column name="i_1_i_reg_92">9, 0, 9, 0</column>
+<column name="i_2_reg_213">9, 0, 9, 0</column>
+<column name="i_i_reg_80">8, 0, 8, 0</column>
+<column name="i_reg_194">8, 0, 8, 0</column>
+<column name="p_0_reg_104">16, 0, 16, 0</column>
+<column name="reg_126">16, 0, 16, 0</column>
 </table>
 </item>
 </section>
@@ -141,12 +128,19 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, heapSort, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, heapSort, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, heapSort, return value</column>
-<column name="agg_result_data">out, 16, ap_vld, agg_result_data, pointer</column>
-<column name="agg_result_data_ap_vld">out, 1, ap_vld, agg_result_data, pointer</column>
-<column name="agg_result_done_V">out, 1, ap_vld, agg_result_done_V, pointer</column>
-<column name="agg_result_done_V_ap_vld">out, 1, ap_vld, agg_result_done_V, pointer</column>
-<column name="dataIn">in, 16, ap_none, dataIn, scalar</column>
-<column name="posOutData">in, 8, ap_none, posOutData, scalar</column>
+<column name="ap_return">out, 16, ap_ctrl_hs, heapSort, return value</column>
+<column name="indexOutputData">in, 8, ap_none, indexOutputData, scalar</column>
+<column name="operation_V">in, 1, ap_none, operation_V, pointer</column>
+<column name="A_address0">out, 8, ap_memory, A, array</column>
+<column name="A_ce0">out, 1, ap_memory, A, array</column>
+<column name="A_we0">out, 1, ap_memory, A, array</column>
+<column name="A_d0">out, 16, ap_memory, A, array</column>
+<column name="A_q0">in, 16, ap_memory, A, array</column>
+<column name="A_address1">out, 8, ap_memory, A, array</column>
+<column name="A_ce1">out, 1, ap_memory, A, array</column>
+<column name="A_we1">out, 1, ap_memory, A, array</column>
+<column name="A_d1">out, 16, ap_memory, A, array</column>
+<column name="A_q1">in, 16, ap_memory, A, array</column>
 </table>
 </item>
 </section>
@@ -155,8 +149,8 @@
 <item name = "Max Delay">5.42</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'A_load', heapSort.cpp:24->heapSort.cpp:82">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
-<column name="heapSort.cpp:24->heapSort.cpp:82">store, 2.71, 5.42, &apos;A_load&apos;, heapSort.cpp:24-&gt;heapSort.cpp:82, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
+<column name="'A_load_7', heapSort/heapSort.cpp:25->heapSort/heapSort.cpp:65">load, 2.71, 2.71, -, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
+<column name="heapSort/heapSort.cpp:25->heapSort/heapSort.cpp:65">store, 2.71, 5.42, &apos;A_load_7&apos;, heapSort/heapSort.cpp:25-&gt;heapSort/heapSort.cpp:65, -, -, -, -, -, &apos;A&apos;, -, -, -, -</column>
 </table>
 </item>
 </section>

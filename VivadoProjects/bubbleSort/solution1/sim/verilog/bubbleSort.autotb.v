@@ -17,28 +17,28 @@
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
 `define AUTOTB_CLOCK_PERIOD_DIV2 5.00
 
+`define AESL_DEPTH_indexOutputData 1
+`define AESL_DEPTH_operation_V 1
 `define AESL_MEM_A AESL_automem_A
 `define AESL_MEM_INST_A mem_inst_A
-`define AESL_DEPTH_indexOutputData 1
-`define AESL_DEPTH_operation 1
-`define AUTOTB_TVIN_A  "../tv/cdatafile/c.bubbleSort.autotvin_A.dat"
 `define AUTOTB_TVIN_indexOutputData  "../tv/cdatafile/c.bubbleSort.autotvin_indexOutputData.dat"
-`define AUTOTB_TVIN_operation  "../tv/cdatafile/c.bubbleSort.autotvin_operation.dat"
-`define AUTOTB_TVIN_A_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvin_A.dat"
+`define AUTOTB_TVIN_operation_V  "../tv/cdatafile/c.bubbleSort.autotvin_operation_V.dat"
+`define AUTOTB_TVIN_A  "../tv/cdatafile/c.bubbleSort.autotvin_A.dat"
 `define AUTOTB_TVIN_indexOutputData_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvin_indexOutputData.dat"
-`define AUTOTB_TVIN_operation_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvin_operation.dat"
+`define AUTOTB_TVIN_operation_V_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvin_operation_V.dat"
+`define AUTOTB_TVIN_A_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvin_A.dat"
 `define AUTOTB_TVOUT_A  "../tv/cdatafile/c.bubbleSort.autotvout_A.dat"
 `define AUTOTB_TVOUT_ap_return  "../tv/cdatafile/c.bubbleSort.autotvout_ap_return.dat"
 `define AUTOTB_TVOUT_A_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvout_A.dat"
 `define AUTOTB_TVOUT_ap_return_out_wrapc  "../tv/rtldatafile/rtl.bubbleSort.autotvout_ap_return.dat"
 module `AUTOTB_TOP;
 
-parameter AUTOTB_TRANSACTION_NUM = 6;
+parameter AUTOTB_TRANSACTION_NUM = 17;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 52;
-parameter LENGTH_A = 5;
+parameter LATENCY_ESTIMATION = 514;
 parameter LENGTH_indexOutputData = 1;
-parameter LENGTH_operation = 1;
+parameter LENGTH_operation_V = 1;
+parameter LENGTH_A = 16;
 parameter LENGTH_ap_return = 1;
 
 task read_token;
@@ -73,18 +73,18 @@ wire ap_start;
 wire ap_done;
 wire ap_idle;
 wire ap_ready;
-wire [2 : 0] A_address0;
+wire [7 : 0] indexOutputData;
+wire [0 : 0] operation_V;
+wire [3 : 0] A_address0;
 wire  A_ce0;
 wire  A_we0;
 wire [15 : 0] A_d0;
 wire [15 : 0] A_q0;
-wire [2 : 0] A_address1;
+wire [3 : 0] A_address1;
 wire  A_ce1;
 wire  A_we1;
 wire [15 : 0] A_d1;
 wire [15 : 0] A_q1;
-wire [7 : 0] indexOutputData;
-wire [7 : 0] operation;
 wire [15 : 0] ap_return;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
@@ -103,6 +103,8 @@ reg interface_done = 0;
     .ap_done(ap_done),
     .ap_idle(ap_idle),
     .ap_ready(ap_ready),
+    .indexOutputData(indexOutputData),
+    .operation_V(operation_V),
     .A_address0(A_address0),
     .A_ce0(A_ce0),
     .A_we0(A_we0),
@@ -113,8 +115,6 @@ reg interface_done = 0;
     .A_we1(A_we1),
     .A_d1(A_d1),
     .A_q1(A_q1),
-    .indexOutputData(indexOutputData),
-    .operation(operation),
     .ap_return(ap_return));
 
 // Assignment for control signal
@@ -147,49 +147,6 @@ assign AESL_continue = continue;
             end
         end
     end
-//------------------------arrayA Instantiation--------------
-
-// The input and output of arrayA
-wire    arrayA_ce0, arrayA_ce1;
-wire    arrayA_we0, arrayA_we1;
-wire    [2 : 0]    arrayA_address0, arrayA_address1;
-wire    [15 : 0]    arrayA_din0, arrayA_din1;
-wire    [15 : 0]    arrayA_dout0, arrayA_dout1;
-wire    arrayA_ready;
-wire    arrayA_done;
-
-`AESL_MEM_A `AESL_MEM_INST_A(
-    .clk        (AESL_clock),
-    .rst        (AESL_reset),
-    .ce0        (arrayA_ce0),
-    .we0        (arrayA_we0),
-    .address0   (arrayA_address0),
-    .din0       (arrayA_din0),
-    .dout0      (arrayA_dout0),
-    .ce1        (arrayA_ce1),
-    .we1        (arrayA_we1),
-    .address1   (arrayA_address1),
-    .din1       (arrayA_din1),
-    .dout1      (arrayA_dout1),
-    .ready      (arrayA_ready),
-    .done    (arrayA_done)
-);
-
-// Assignment between dut and arrayA
-assign arrayA_address0 = A_address0;
-assign arrayA_ce0 = A_ce0;
-assign A_q0 = arrayA_dout0;
-assign arrayA_we0 = A_we0;
-assign arrayA_din0 = A_d0;
-assign arrayA_address1 = A_address1;
-assign arrayA_ce1 = A_ce1;
-assign A_q1 = arrayA_dout1;
-assign arrayA_we1 = A_we1;
-assign arrayA_din1 = A_d1;
-assign arrayA_ready= ready;
-assign arrayA_done = interface_done;
-
-
 // The signal of port indexOutputData
 reg [7: 0] AESL_REG_indexOutputData = 0;
 assign indexOutputData = AESL_REG_indexOutputData;
@@ -244,10 +201,10 @@ initial begin : read_file_process_indexOutputData
 end
 
 
-// The signal of port operation
-reg [7: 0] AESL_REG_operation = 0;
-assign operation = AESL_REG_operation;
-initial begin : read_file_process_operation
+// The signal of port operation_V
+reg [0: 0] AESL_REG_operation_V = 0;
+assign operation_V = AESL_REG_operation_V;
+initial begin : read_file_process_operation_V
     integer fp;
     integer err;
     integer ret;
@@ -258,9 +215,9 @@ initial begin : read_file_process_operation
     integer transaction_idx;
     transaction_idx = 0;
     wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_operation,"r");
+    fp = $fopen(`AUTOTB_TVIN_operation_V,"r");
     if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_operation);
+        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_operation_V);
         $display("ERROR: Simulation using HLS TB failed.");
         $finish;
     end
@@ -283,7 +240,7 @@ initial begin : read_file_process_operation
                 # 0.2;
             end
         if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_operation);
+            ret = $sscanf(token, "0x%x", AESL_REG_operation_V);
               if (ret != 1) begin
                   $display("Failed to parse token!");
                 $display("ERROR: Simulation using HLS TB failed.");
@@ -296,6 +253,49 @@ initial begin : read_file_process_operation
     end
     $fclose(fp);
 end
+
+
+//------------------------arrayA Instantiation--------------
+
+// The input and output of arrayA
+wire    arrayA_ce0, arrayA_ce1;
+wire    arrayA_we0, arrayA_we1;
+wire    [3 : 0]    arrayA_address0, arrayA_address1;
+wire    [15 : 0]    arrayA_din0, arrayA_din1;
+wire    [15 : 0]    arrayA_dout0, arrayA_dout1;
+wire    arrayA_ready;
+wire    arrayA_done;
+
+`AESL_MEM_A `AESL_MEM_INST_A(
+    .clk        (AESL_clock),
+    .rst        (AESL_reset),
+    .ce0        (arrayA_ce0),
+    .we0        (arrayA_we0),
+    .address0   (arrayA_address0),
+    .din0       (arrayA_din0),
+    .dout0      (arrayA_dout0),
+    .ce1        (arrayA_ce1),
+    .we1        (arrayA_we1),
+    .address1   (arrayA_address1),
+    .din1       (arrayA_din1),
+    .dout1      (arrayA_dout1),
+    .ready      (arrayA_ready),
+    .done    (arrayA_done)
+);
+
+// Assignment between dut and arrayA
+assign arrayA_address0 = A_address0;
+assign arrayA_ce0 = A_ce0;
+assign A_q0 = arrayA_dout0;
+assign arrayA_we0 = A_we0;
+assign arrayA_din0 = A_d0;
+assign arrayA_address1 = A_address1;
+assign arrayA_ce1 = A_ce1;
+assign A_q1 = arrayA_dout1;
+assign arrayA_we1 = A_we1;
+assign arrayA_din1 = A_d1;
+assign arrayA_ready= ready;
+assign arrayA_done = interface_done;
 
 
 initial begin : write_file_process_ap_return
@@ -395,15 +395,15 @@ initial begin
 end
 
 
-reg end_A;
-reg [31:0] size_A;
-reg [31:0] size_A_backup;
 reg end_indexOutputData;
 reg [31:0] size_indexOutputData;
 reg [31:0] size_indexOutputData_backup;
-reg end_operation;
-reg [31:0] size_operation;
-reg [31:0] size_operation_backup;
+reg end_operation_V;
+reg [31:0] size_operation_V;
+reg [31:0] size_operation_V_backup;
+reg end_A;
+reg [31:0] size_A;
+reg [31:0] size_A_backup;
 reg end_ap_return;
 reg [31:0] size_ap_return;
 reg [31:0] size_ap_return_backup;

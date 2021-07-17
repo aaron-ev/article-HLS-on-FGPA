@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'selectionSort'" level="0">
-<item name = "Date">Fri Jul 09 21:04:39 2021
+<item name = "Date">Thu Jul 15 19:33:08 2021
 </item>
 <item name = "Version">2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)</item>
 <item name = "Project">selectionSort</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1, 131328, 2, 131329, none</column>
+<column name="">2, 131327, 3, 131328, none</column>
 </table>
 </item>
 <item name = "Detail">

@@ -4,6 +4,5 @@
 // Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 
-extern outData_s selectionSort (
-short dataIn,
-char posOutData);
+extern short selectionSort (
+char indexOutputData);

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'selectionSort'
 ================================================================
-* Date:           Fri Jul 09 21:04:40 2021
+* Date:           Thu Jul 15 19:33:08 2021
 
 * Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
 * Project:        selectionSort
@@ -29,7 +29,7 @@
     |    Latency   |   Interval   | Pipeline|
     | min |   max  | min |   max  |   Type  |
     +-----+--------+-----+--------+---------+
-    |    1|  131328|    2|  131329|   none  |
+    |    2|  131327|    3|  131328|   none  |
     +-----+--------+-----+--------+---------+
 
     + Detail: 
@@ -55,18 +55,18 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
 +-----------------+---------+-------+--------+-------+
 |DSP              |        -|      -|       -|      -|
-|Expression       |        -|      -|       0|    154|
+|Expression       |        -|      -|       0|     71|
 |FIFO             |        -|      -|       -|      -|
 |Instance         |        -|      -|       -|      -|
-|Memory           |        1|      -|       0|      0|
-|Multiplexer      |        -|      -|       -|    110|
-|Register         |        -|      -|     182|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    100|
+|Register         |        -|      -|     145|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        1|      0|     182|    264|
+|Total            |        0|      0|     145|    171|
 +-----------------+---------+-------+--------+-------+
 |Available        |      270|    240|  126800|  63400|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |    ~0   |      0|   ~0   |   ~0  |
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
@@ -77,13 +77,7 @@
     N/A
 
     * Memory: 
-    +-------+-----------------+---------+---+----+------+-----+------+-------------+
-    | Memory|      Module     | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
-    +-------+-----------------+---------+---+----+------+-----+------+-------------+
-    |A_U    |selectionSort_A  |        1|  0|   0|   256|   16|     1|         4096|
-    +-------+-----------------+---------+---+----+------+-----+------+-------------+
-    |Total  |                 |        1|  0|   0|   256|   16|     1|         4096|
-    +-------+-----------------+---------+---+----+------+-----+------+-------------+
+    N/A
 
     * FIFO: 
     N/A
@@ -92,64 +86,52 @@
     +----------------------------+----------+-------+---+----+------------+------------+
     |        Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------+----------+-------+---+----+------------+------------+
-    |i_fu_273_p2                 |     +    |      0|  0|   8|           8|           1|
-    |index_min_2_fu_319_p2       |     +    |      0|  0|  16|          16|           1|
-    |tmp_2_fu_247_p2             |     +    |      0|  0|  16|          16|           1|
-    |exitcond3_i_fu_267_p2       |   icmp   |      0|  0|   3|           8|           2|
-    |exitcond_i_fu_325_p2        |   icmp   |      0|  0|   6|          16|           8|
-    |icmp_fu_228_p2              |   icmp   |      0|  0|   3|           8|           1|
-    |tmp_8_i_fu_341_p2           |   icmp   |      0|  0|   6|          16|          16|
-    |gepindex2_fu_310_p3         |  select  |      0|  0|  64|           1|           8|
-    |j_i_index_min1_i_fu_355_p3  |  select  |      0|  0|  16|           1|          16|
-    |min_i_min1_i_fu_347_p3      |  select  |      0|  0|  16|           1|          16|
+    |i_fu_147_p2                 |     +    |      0|  0|   8|           8|           1|
+    |index_min_2_fu_158_p2       |     +    |      0|  0|  16|          16|           1|
+    |exitcond1_i_fu_141_p2       |   icmp   |      0|  0|   3|           8|           2|
+    |exitcond_i_fu_164_p2        |   icmp   |      0|  0|   6|          16|           8|
+    |tmp_4_i_fu_180_p2           |   icmp   |      0|  0|   6|          16|          16|
+    |j_i_index_min1_i_fu_186_p3  |  select  |      0|  0|  16|           1|          16|
+    |min_i_min1_i_fu_193_p3      |  select  |      0|  0|  16|           1|          16|
     +----------------------------+----------+-------+---+----+------------+------------+
-    |Total                       |          |      0|  0| 154|          91|          70|
+    |Total                       |          |      0|  0|  71|          66|          60|
     +----------------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
-    +-----------------------------+----+-----------+-----+-----------+
-    |             Name            | LUT| Input Size| Bits| Total Bits|
-    +-----------------------------+----+-----------+-----+-----------+
-    |A_address0                   |  16|          8|    8|         64|
-    |A_d0                         |  16|          4|   16|         64|
-    |ap_NS_fsm                    |   4|         10|    1|         10|
-    |index_min1_i_reg_164         |  16|          2|   16|         32|
-    |index_min_reg_134            |   8|          2|    8|         16|
-    |j_0_in_i_reg_145             |  16|          2|   16|         32|
-    |min1_i_reg_154               |  16|          2|   16|         32|
-    |sOutData_done_V_loc_reg_174  |   1|          2|    1|          2|
-    |storemerge1_reg_186          |  16|          2|   16|         32|
-    |storemerge_reg_196           |   1|          2|    1|          2|
-    +-----------------------------+----+-----------+-----+-----------+
-    |Total                        | 110|         36|   99|        286|
-    +-----------------------------+----+-----------+-----+-----------+
+    +---------------------+----+-----------+-----+-----------+
+    |         Name        | LUT| Input Size| Bits| Total Bits|
+    +---------------------+----+-----------+-----+-----------+
+    |A_address0           |   8|          7|    8|         56|
+    |A_d0                 |  16|          3|   16|         48|
+    |ap_NS_fsm            |   4|         10|    1|         10|
+    |index_min1_i_reg_88  |  16|          2|   16|         32|
+    |index_min_reg_77     |   8|          2|    8|         16|
+    |j_0_in_i_reg_108     |  16|          2|   16|         32|
+    |min1_i_reg_98        |  16|          2|   16|         32|
+    |p_0_reg_117          |  16|          2|   16|         32|
+    +---------------------+----+-----------+-----+-----------+
+    |Total                | 100|         30|   97|        258|
+    +---------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +-----------------------------+----+----+-----+-----------+
-    |             Name            | FF | LUT| Bits| Const Bits|
-    +-----------------------------+----+----+-----+-----------+
-    |A_addr_1_reg_406             |   8|   0|    8|          0|
-    |A_addr_2_reg_430             |   8|   0|    8|          0|
-    |ap_CS_fsm                    |   9|   0|    9|          0|
-    |count                        |  16|   0|   16|          0|
-    |flagFill                     |   1|   0|    1|          0|
-    |flagFill_load_reg_383        |   1|   0|    1|          0|
-    |i_reg_401                    |   8|   0|    8|          0|
-    |index_min1_i_reg_164         |  16|   0|   16|          0|
-    |index_min_2_reg_416          |  16|   0|   16|          0|
-    |index_min_cast1_reg_392      |   8|   0|   16|          8|
-    |index_min_reg_134            |   8|   0|    8|          0|
-    |j_0_in_i_reg_145             |  16|   0|   16|          0|
-    |min1_i_reg_154               |  16|   0|   16|          0|
-    |reg_207                      |  16|   0|   16|          0|
-    |sOutData_data                |  16|   0|   16|          0|
-    |sOutData_done_V              |   1|   0|    1|          0|
-    |sOutData_done_V_loc_reg_174  |   1|   0|    1|          0|
-    |storemerge1_reg_186          |  16|   0|   16|          0|
-    |storemerge_reg_196           |   1|   0|    1|          0|
-    +-----------------------------+----+----+-----+-----------+
-    |Total                        | 182|   0|  190|          8|
-    +-----------------------------+----+----+-----+-----------+
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |A_addr_1_reg_223         |   8|   0|    8|          0|
+    |A_addr_2_reg_248         |   8|   0|    8|          0|
+    |ap_CS_fsm                |   9|   0|    9|          0|
+    |i_reg_218                |   8|   0|    8|          0|
+    |index_min1_i_reg_88      |  16|   0|   16|          0|
+    |index_min_2_reg_234      |  16|   0|   16|          0|
+    |index_min_cast1_reg_209  |   8|   0|   16|          8|
+    |index_min_reg_77         |   8|   0|    8|          0|
+    |j_0_in_i_reg_108         |  16|   0|   16|          0|
+    |min1_i_reg_98            |  16|   0|   16|          0|
+    |min_2_reg_228            |  16|   0|   16|          0|
+    |p_0_reg_117              |  16|   0|   16|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 145|   0|  153|          8|
+    +-------------------------+----+----+-----+-----------+
 
 
 
@@ -157,20 +139,22 @@
 == Interface
 ================================================================
 * Summary: 
-+--------------------------+-----+-----+------------+-------------------+--------------+
-|         RTL Ports        | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
-+--------------------------+-----+-----+------------+-------------------+--------------+
-|ap_clk                    |  in |    1| ap_ctrl_hs |   selectionSort   | return value |
-|ap_rst                    |  in |    1| ap_ctrl_hs |   selectionSort   | return value |
-|ap_start                  |  in |    1| ap_ctrl_hs |   selectionSort   | return value |
-|ap_done                   | out |    1| ap_ctrl_hs |   selectionSort   | return value |
-|ap_idle                   | out |    1| ap_ctrl_hs |   selectionSort   | return value |
-|ap_ready                  | out |    1| ap_ctrl_hs |   selectionSort   | return value |
-|agg_result_data           | out |   16|   ap_vld   |  agg_result_data  |    pointer   |
-|agg_result_data_ap_vld    | out |    1|   ap_vld   |  agg_result_data  |    pointer   |
-|agg_result_done_V         | out |    1|   ap_vld   | agg_result_done_V |    pointer   |
-|agg_result_done_V_ap_vld  | out |    1|   ap_vld   | agg_result_done_V |    pointer   |
-|dataIn                    |  in |   16|   ap_none  |       dataIn      |    scalar    |
-|posOutData                |  in |    8|   ap_none  |     posOutData    |    scalar    |
-+--------------------------+-----+-----+------------+-------------------+--------------+
++-----------------+-----+-----+------------+-----------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++-----------------+-----+-----+------------+-----------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs |  selectionSort  | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs |  selectionSort  | return value |
+|ap_start         |  in |    1| ap_ctrl_hs |  selectionSort  | return value |
+|ap_done          | out |    1| ap_ctrl_hs |  selectionSort  | return value |
+|ap_idle          | out |    1| ap_ctrl_hs |  selectionSort  | return value |
+|ap_ready         | out |    1| ap_ctrl_hs |  selectionSort  | return value |
+|ap_return        | out |   16| ap_ctrl_hs |  selectionSort  | return value |
+|indexOutputData  |  in |    8|   ap_none  | indexOutputData |    scalar    |
+|operation_V      |  in |    1|   ap_none  |   operation_V   |    pointer   |
+|A_address0       | out |    8|  ap_memory |        A        |     array    |
+|A_ce0            | out |    1|  ap_memory |        A        |     array    |
+|A_we0            | out |    1|  ap_memory |        A        |     array    |
+|A_d0             | out |   16|  ap_memory |        A        |     array    |
+|A_q0             |  in |   16|  ap_memory |        A        |     array    |
++-----------------+-----+-----+------------+-----------------+--------------+
 

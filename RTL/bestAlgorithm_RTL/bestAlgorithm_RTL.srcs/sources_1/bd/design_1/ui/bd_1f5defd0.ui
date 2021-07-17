@@ -5,3 +5,4 @@ preplace inst bubbleSort_0 -pg 1 -lvl 1 -y -130 -defaultsOSRD
 levelinfo -pg 1 0 180 360 -top -250 -bot 250
 ",
 }
+0

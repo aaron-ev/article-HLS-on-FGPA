@@ -3,8 +3,8 @@
 #include "bubbleSort.h"
 
 extern data_inp A[N];
-
-fp_bit1 bubbleAlgorithm(data_inp A[N])
+extern fp_bit1 operation;
+void bubbleAlgorithm(void)
 {
         short i,j;
 
@@ -21,23 +21,15 @@ fp_bit1 bubbleAlgorithm(data_inp A[N])
                 }
             }
         }
-        fp_bit1 done;
-        done.V = 1;
-        return done;
 }
 
-data_inp bubbleSort(data_inp A[N],char indexOutputData,char operation)
+data_inp bubbleSort(char indexOutputData)
 {
-	static data_inp *ptr;
-	//static data_inp A[N];
-	static char flagFill = 0;
-	static data_inp count = 0;
-	static outData_s sOutData = {0,0};
 
-	switch(operation)
+	switch(operation.V)
 	{
-		case SORT: bubbleAlgorithm(A); return 0;
-		case READ: return A[indexOutputData];
+		case SORT: bubbleAlgorithm(); return 0;
+		default: return A[indexOutputData];
 	}
 
 }

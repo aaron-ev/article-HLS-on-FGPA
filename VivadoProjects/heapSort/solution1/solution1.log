@@ -7,16 +7,15 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [HLS-10] Setting target device to 'xc7a100tcsg324-1'
-@I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-10] Analyzing design file 'heapSort.cpp' ... 
+@I [HLS-10] Analyzing design file 'heapSort/heapSort.cpp' ... 
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-602] Inlining function 'heapSort_noRecurv' into 'heapSort' (heapSort.cpp:82) automatically.
-@I [XFORM-602] Inlining function 'heapSort_noRecurv' into 'heapSort' (heapSort.cpp:82) automatically.
+@I [XFORM-602] Inlining function 'heapSort_noRecurv' into 'heapSort' (heapSort/heapSort.cpp:65) automatically.
+@I [XFORM-602] Inlining function 'heapSort_noRecurv' into 'heapSort' (heapSort/heapSort.cpp:65) automatically.
 @W [XFORM-561] Updating loop upper bound from 32767 to 256 for loop 'Loop-0' in function 'maxHeapify_noRecurv'.
-@I [XFORM-401] Performing if-conversion on hyperblock from (heapSort.cpp:40:37) to (heapSort.cpp:47:9) in function 'maxHeapify_noRecurv'... converting 5 basic blocks.
-@I [HLS-111] Elapsed time: 32.826 seconds; current memory usage: 95.4 MB.
+@I [XFORM-401] Performing if-conversion on hyperblock from (heapSort/heapSort.cpp:38:37) to (heapSort/heapSort.cpp:45:9) in function 'maxHeapify_noRecurv'... converting 5 basic blocks.
+@I [HLS-111] Elapsed time: 15.727 seconds; current memory usage: 91.6 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'heapSort' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -24,7 +23,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.36 seconds; current memory usage: 96.7 MB.
+@I [HLS-111] Elapsed time: 0.036 seconds; current memory usage: 92.9 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'heapSort_maxHeapify_noRecurv' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -33,13 +32,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.178 seconds; current memory usage: 96.7 MB.
+@I [HLS-111] Elapsed time: 0.031 seconds; current memory usage: 92.9 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'heapSort' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.382 seconds; current memory usage: 97.1 MB.
+@I [HLS-111] Elapsed time: 0.042 seconds; current memory usage: 93.5 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'heapSort' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -48,29 +47,23 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.235 seconds; current memory usage: 97.2 MB.
+@I [HLS-111] Elapsed time: 0.027 seconds; current memory usage: 93.4 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'heapSort_maxHeapify_noRecurv' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'heapSort_maxHeapify_noRecurv'.
-@I [HLS-111] Elapsed time: 0.309 seconds; current memory usage: 97.1 MB.
+@I [HLS-111] Elapsed time: 0.054 seconds; current memory usage: 93.4 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'heapSort' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'heapSort/agg_result_data' to 'ap_vld'.
-@I [RTGEN-500] Setting interface mode on port 'heapSort/agg_result_done_V' to 'ap_vld'.
-@I [RTGEN-500] Setting interface mode on port 'heapSort/dataIn' to 'ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'heapSort/posOutData' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'heapSort/indexOutputData' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'heapSort/operation_V' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'heapSort/A' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on function 'heapSort' to 'ap_ctrl_hs'.
-@W [RTGEN-101] Register 'count' is power-on initialization.
-@W [RTGEN-101] Register 'sOutData_done_V' is power-on initialization.
-@W [RTGEN-101] Register 'sOutData_data' is power-on initialization.
-@W [RTGEN-101] Register 'flagFill' is power-on initialization.
 @I [RTGEN-100] Finished creating RTL model for 'heapSort'.
-@I [HLS-111] Elapsed time: 0.629 seconds; current memory usage: 97.3 MB.
-@I [RTMG-278] Implementing memory 'heapSort_A_ram' using block RAMs with power-on initialization.
+@I [HLS-111] Elapsed time: 0.168 seconds; current memory usage: 93.3 MB.
 @I [HLS-10] Finished generating all RTL models.
 @I [SYSC-301] Generating SystemC RTL for heapSort.
 @I [VHDL-304] Generating VHDL RTL for heapSort.
 @I [VLOG-307] Generating Verilog RTL for heapSort.
-@I [HLS-112] Total elapsed time: 36.458 seconds; peak memory usage: 97.3 MB.
+@I [HLS-112] Total elapsed time: 16.401 seconds; peak memory usage: 93.5 MB.

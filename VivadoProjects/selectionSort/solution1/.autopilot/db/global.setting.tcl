@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7a100t:csg324:-1"
-set SourceFiles {sc {} c ../../selectionSort.cpp}
+set SourceFiles {sc {} c ../selectionSort.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/solution1/solution1.directive}
-set TBFiles {verilog ../../selectionSort_tb.cpp bc ../../selectionSort_tb.cpp vhdl ../../selectionSort_tb.cpp sc ../../selectionSort_tb.cpp cas ../../selectionSort_tb.cpp c {}}
+set TBFiles {verilog ../selectionSort_tb.cpp bc ../selectionSort_tb.cpp vhdl ../selectionSort_tb.cpp sc ../selectionSort_tb.cpp cas ../selectionSort_tb.cpp c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

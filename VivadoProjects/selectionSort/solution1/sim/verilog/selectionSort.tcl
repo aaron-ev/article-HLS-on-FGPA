@@ -1,17 +1,21 @@
 
 log_wave -r /
 set designtopgroup [add_wave_group "Design Top Signals"]
+set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
+set A_group [add_wave_group A(memory) -into $cinoutgroup]
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/A_q0 -into $A_group -radix hex
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/A_d0 -into $A_group -radix hex
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/A_we0 -into $A_group -color #ffff00 -radix hex
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/A_ce0 -into $A_group -color #ffff00 -radix hex
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/A_address0 -into $A_group -radix hex
 set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
-set agg_group [add_wave_group agg(wire) -into $coutputgroup]
-add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/agg_result_done_V_ap_vld -into $agg_group -color #ffff00 -radix hex
-add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/agg_result_done_V -into $agg_group -radix hex
-add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/agg_result_data_ap_vld -into $agg_group -color #ffff00 -radix hex
-add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/agg_result_data -into $agg_group -radix hex
+set return_group [add_wave_group return(wire) -into $coutputgroup]
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/ap_return -into $return_group -radix hex
 set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
-set posOutData_group [add_wave_group posOutData(wire) -into $cinputgroup]
-add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/posOutData -into $posOutData_group -radix hex
-set dataIn_group [add_wave_group dataIn(wire) -into $cinputgroup]
-add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/dataIn -into $dataIn_group -radix hex
+set operation_group [add_wave_group operation(wire) -into $cinputgroup]
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/operation_V -into $operation_group -radix hex
+set indexOutputData_group [add_wave_group indexOutputData(wire) -into $cinputgroup]
+add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/indexOutputData -into $indexOutputData_group -radix hex
 set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
 add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/ap_start -into $blocksiggroup
 add_wave /apatb_selectionSort_top/AESL_inst_selectionSort/ap_done -into $blocksiggroup
@@ -28,21 +32,25 @@ set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
 add_wave /apatb_selectionSort_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
 add_wave /apatb_selectionSort_top/ready_cnt -into $tb_simstatus_group -radix hex
 add_wave /apatb_selectionSort_top/done_cnt -into $tb_simstatus_group -radix hex
-add_wave /apatb_selectionSort_top/LENGTH_agg_result_data -into $tb_portdepth_group -radix hex
-add_wave /apatb_selectionSort_top/LENGTH_agg_result_done_V -into $tb_portdepth_group -radix hex
-add_wave /apatb_selectionSort_top/LENGTH_dataIn -into $tb_portdepth_group -radix hex
-add_wave /apatb_selectionSort_top/LENGTH_posOutData -into $tb_portdepth_group -radix hex
+add_wave /apatb_selectionSort_top/LENGTH_indexOutputData -into $tb_portdepth_group -radix hex
+add_wave /apatb_selectionSort_top/LENGTH_operation_V -into $tb_portdepth_group -radix hex
+add_wave /apatb_selectionSort_top/LENGTH_A -into $tb_portdepth_group -radix hex
+add_wave /apatb_selectionSort_top/LENGTH_ap_return -into $tb_portdepth_group -radix hex
+set tbcinoutgroup [add_wave_group "C InOuts" -into $testbenchgroup]
+set tb_A_group [add_wave_group A(memory) -into $tbcinoutgroup]
+add_wave /apatb_selectionSort_top/A_q0 -into $tb_A_group -radix hex
+add_wave /apatb_selectionSort_top/A_d0 -into $tb_A_group -radix hex
+add_wave /apatb_selectionSort_top/A_we0 -into $tb_A_group -color #ffff00 -radix hex
+add_wave /apatb_selectionSort_top/A_ce0 -into $tb_A_group -color #ffff00 -radix hex
+add_wave /apatb_selectionSort_top/A_address0 -into $tb_A_group -radix hex
 set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
-set tb_agg_group [add_wave_group agg(wire) -into $tbcoutputgroup]
-add_wave /apatb_selectionSort_top/agg_result_done_V_ap_vld -into $tb_agg_group -color #ffff00 -radix hex
-add_wave /apatb_selectionSort_top/agg_result_done_V -into $tb_agg_group -radix hex
-add_wave /apatb_selectionSort_top/agg_result_data_ap_vld -into $tb_agg_group -color #ffff00 -radix hex
-add_wave /apatb_selectionSort_top/agg_result_data -into $tb_agg_group -radix hex
+set tb_return_group [add_wave_group return(wire) -into $tbcoutputgroup]
+add_wave /apatb_selectionSort_top/ap_return -into $tb_return_group -radix hex
 set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
-set tb_posOutData_group [add_wave_group posOutData(wire) -into $tbcinputgroup]
-add_wave /apatb_selectionSort_top/posOutData -into $tb_posOutData_group -radix hex
-set tb_dataIn_group [add_wave_group dataIn(wire) -into $tbcinputgroup]
-add_wave /apatb_selectionSort_top/dataIn -into $tb_dataIn_group -radix hex
+set tb_operation_group [add_wave_group operation(wire) -into $tbcinputgroup]
+add_wave /apatb_selectionSort_top/operation_V -into $tb_operation_group -radix hex
+set tb_indexOutputData_group [add_wave_group indexOutputData(wire) -into $tbcinputgroup]
+add_wave /apatb_selectionSort_top/indexOutputData -into $tb_indexOutputData_group -radix hex
 save_wave_config selectionSort.wcfg
 run all
 quit

@@ -1,7 +1,7 @@
 set depth_list {
-{agg_result_data 1}
-{agg_result_done_V 1}
-{dataIn 1}
-{posOutData 1}
+{indexOutputData 1}
+{operation_V 1}
+{A 4}
+{ap_return 1}
 }
-set trans_num 4
+set trans_num 5

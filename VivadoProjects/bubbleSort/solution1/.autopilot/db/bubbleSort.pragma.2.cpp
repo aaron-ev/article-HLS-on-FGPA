@@ -1,5 +1,5 @@
-# 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/.autopilot/db/bubbleSort.pragma.1.cpp"
-# 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/.autopilot/db/bubbleSort.pragma.1.cpp" 1
+# 1 "C:/Users/aaron/Desktop/bubbleSort/solution1/.autopilot/db/bubbleSort.pragma.1.cpp"
+# 1 "C:/Users/aaron/Desktop/bubbleSort/solution1/.autopilot/db/bubbleSort.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 152 "<built-in>" 3
@@ -204,7 +204,7 @@ extern "C" {
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 # 7 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/.autopilot/db/bubbleSort.pragma.1.cpp" 2
+# 1 "C:/Users/aaron/Desktop/bubbleSort/solution1/.autopilot/db/bubbleSort.pragma.1.cpp" 2
 # 1 "bubbleSort/bubbleSort.cpp"
 # 1 "bubbleSort/bubbleSort.cpp" 1
 # 1 "<built-in>" 1
@@ -32953,26 +32953,25 @@ winfn_loop:
 
 
 // La siguiente linea es tomada del manual para crear variables en punto fijo
-typedef ap_fixed <1,0>fp_bit1;
+typedef ap_fixed <1,1>fp_bit1;
 
 typedef short data_inp;
-typedef struct
-{
- data_inp data;
- fp_bit1 done;
-}outData_s;
 
-fp_bit1 bubbleAlgorithm(data_inp A[5 /* Total de numeros  a ordenar*/]);
-data_inp bubbleSort(data_inp A[5 /* Total de numeros  a ordenar*/],char indexOutputData,char operation);
+void bubbleAlgorithm(void);
+data_inp bubbleSort(char indexOutputData);
+//write random values to the global array
+void writeValues(void);
+//read sorted values
+void readValues(void);
 # 4 "bubbleSort/bubbleSort.cpp" 2
 
-extern data_inp A[5 /* Total de numeros  a ordenar*/];
-
-fp_bit1 bubbleAlgorithm(data_inp A[5 /* Total de numeros  a ordenar*/])
-{_ssdm_SpecArrayDimSize(A,5);
+extern data_inp A[16 /* Total de numeros  a ordenar*/];
+extern fp_bit1 operation;
+void bubbleAlgorithm(void)
+{
         short i,j;
 
-        for(i = 5 /* Total de numeros  a ordenar*/ - 1; i >= 0; i = i - 1)
+        for(i = 16 /* Total de numeros  a ordenar*/ - 1; i >= 0; i = i - 1)
         {
             for(j = 0; j < i; j = j + 1)
             {
@@ -32985,23 +32984,15 @@ fp_bit1 bubbleAlgorithm(data_inp A[5 /* Total de numeros  a ordenar*/])
                 }
             }
         }
-        fp_bit1 done;
-        done.V = 1;
-        return done;
 }
 
-data_inp bubbleSort(data_inp A[5 /* Total de numeros  a ordenar*/],char indexOutputData,char operation)
-{_ssdm_SpecArrayDimSize(A,5);
- static data_inp *ptr;
- //static data_inp A[N];
- static char flagFill = 0;
- static data_inp count = 0;
- static outData_s sOutData = {0,0};
+data_inp bubbleSort(char indexOutputData)
+{
 
- switch(operation)
+ switch(operation.V)
  {
-  case 0: bubbleAlgorithm(A); return 0;
-  case 1: return A[indexOutputData];
+  case 0: bubbleAlgorithm(); return 0;
+  default: return A[indexOutputData];
  }
 
 }

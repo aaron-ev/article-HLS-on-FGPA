@@ -1,10 +1,10 @@
-#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.cpp"
+#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.cpp"
 #pragma line 1 "<built-in>"
 #pragma line 1 "<command-line>"
-#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.cpp"
+#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.cpp"
 #pragma empty_line
 #pragma empty_line
-#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.h" 1
+#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.h" 1
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -19993,7 +19993,6 @@ public:
      clearUnusedBits();
         check_canary();
     }
-#pragma empty_line
     template<int _AP_W1, bool _AP_S1>
     ap_private(const ap_private<_AP_W1, _AP_S1>& that) : VAL((ValType)that.get_VAL()) {
         set_canary();
@@ -20335,7 +20334,7 @@ public:
     inline ap_private& operator*=(uint64_t RHS){ VAL *= (ValType)RHS; clearUnusedBits(); return *this; }
     inline ap_private& operator+=(uint64_t RHS){ VAL += (ValType)RHS; clearUnusedBits(); return *this;}
     inline ap_private& operator-=(uint64_t RHS){ VAL -= (ValType)RHS; clearUnusedBits(); return *this; }
-#pragma line 1989 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 1988 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline bool isMinSignedValue() const {
         static const uint64_t min_mask = ~(~0ULL << (_AP_W-1));
         return BitWidth == 1 ? VAL == 1 :
@@ -20446,7 +20445,7 @@ public:
 #pragma empty_line
     template<bool _AP_S2>
     inline ap_private urem(const ap_private<_AP_W, _AP_S2>& RHS) const {
-        ((RHS.get_VAL() != 0 && "Divide by 0") ? (void)0 : _assert("RHS.get_VAL() != 0 && \"Divide by 0\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2099));
+        ((RHS.get_VAL() != 0 && "Divide by 0") ? (void)0 : _assert("RHS.get_VAL() != 0 && \"Divide by 0\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2098));
         return ap_private(((uint64_t)VAL)%((uint64_t)RHS.get_VAL()));
     }
 #pragma empty_line
@@ -20612,52 +20611,52 @@ public:
 #pragma empty_line
 #pragma empty_line
     inline void invert (int i) {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2265));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2266));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2264));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2265));
         flip(i);
     }
 #pragma empty_line
 #pragma empty_line
     inline bool test (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2272));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2273));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2271));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2272));
         return operator[](i);
     }
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
     inline void lrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2280));
-        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2281));
+        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2279));
+        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2280));
         operator = (shl(n) | lshr(_AP_W - n));
     }
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
     inline void rrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2288));
-        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2289));
+        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2287));
+        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2288));
         operator = (lshr(n) | shl(_AP_W - n));
     }
 #pragma empty_line
 #pragma empty_line
     inline void set (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2295));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2296));
+        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2294));
+        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2295));
         v ? set(i) : clear(i);
     }
 #pragma empty_line
 #pragma empty_line
     inline void set_bit (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2302));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2303));
+        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2301));
+        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2302));
         v ? set(i) : clear(i);
     }
 #pragma empty_line
 #pragma empty_line
     inline bool get_bit (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2309));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2310));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2308));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2309));
         return operator [](i);
     }
 #pragma empty_line
@@ -20665,7 +20664,7 @@ public:
     inline void b_not() {
         flip();
     }
-#pragma line 2337 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2336 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W2, bool _AP_S2>
     inline typename RType<_AP_W2,_AP_S2>::div
     operator / (const ap_private<_AP_W2,_AP_S2>&op) const {
@@ -20683,10 +20682,10 @@ public:
         typename RType<_AP_W2,_AP_S2>::mod res = typename RType<_AP_W2,_AP_S2>::mod (_AP_S?lhs.srem(rhs):lhs.urem(rhs));
         return res;
     }
-#pragma line 2363 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2362 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W2, bool _AP_S2> inline ap_private<_AP_W, _AP_S>& operator /=(const ap_private<_AP_W2,_AP_S2>& op) { *this=operator / (op); return *this; }
     template<int _AP_W2, bool _AP_S2> inline ap_private<_AP_W, _AP_S>& operator %=(const ap_private<_AP_W2,_AP_S2>& op) { *this=operator % (op); return *this; }
-#pragma line 2382 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2381 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline ap_private operator << (const int op) const { if (op >= _AP_W) return ap_private(0); if (true && op < 0) return *this >> (0-op); return shl(op); }
     inline ap_private operator << (const bool op) const { if (op >= _AP_W) return ap_private(0); if (false && op < 0) return *this >> (0-op); return shl(op); }
     inline ap_private operator << (const signed char op) const { if (op >= _AP_W) return ap_private(0); if (true && op < 0) return *this >> (0-op); return shl(op); }
@@ -20712,7 +20711,7 @@ public:
             return *this << sh;
         }
     }
-#pragma line 2424 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2423 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline ap_private operator >> (const int op) const { if (op >= _AP_W) { if (isNegative()) return ap_private(-1); else return ap_private(0); } if (true && op < 0) return *this << (0-op); if (_AP_S) return ashr(op) ; else return lshr(op); }
     inline ap_private operator >> (const bool op) const { if (op >= _AP_W) { if (isNegative()) return ap_private(-1); else return ap_private(0); } if (false && op < 0) return *this << (0-op); if (_AP_S) return ashr(op) ; else return lshr(op); }
     inline ap_private operator >> (const signed char op) const { if (op >= _AP_W) { if (isNegative()) return ap_private(-1); else return ap_private(0); } if (true && op < 0) return *this << (0-op); if (_AP_S) return ashr(op) ; else return lshr(op); }
@@ -20738,7 +20737,7 @@ public:
             return *this >> sh;
         }
     }
-#pragma line 2458 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2457 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W2, bool _AP_S2> inline ap_private<_AP_W, _AP_S>& operator >>=(const ap_private<_AP_W2,_AP_S2>& op) { *this=operator >> (op.get_VAL()); return *this; }
 #pragma empty_line
 #pragma empty_line
@@ -21059,10 +21058,10 @@ template<int _AP_W, bool _AP_S>
 std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSigned) const {
     (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? (void)0 : _assert("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
-#pragma line 2776 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2775 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ,
- 2777
-#pragma line 2776 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+ 2776
+#pragma line 2775 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ))
                                                ;
     static const char *digits[] = {
@@ -21082,7 +21081,7 @@ std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSig
                 case 2: result = "0b0"; break;
                 case 8: result = "0o0"; break;
                 case 16: result = "0x0"; break;
-                default: (("invalid radix" && 0) ? (void)0 : _assert("\"invalid radix\" && 0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2795));
+                default: (("invalid radix" && 0) ? (void)0 : _assert("\"invalid radix\" && 0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2794));
             }
         } else {
             ap_private<_AP_W, false, true> tmp(*this);
@@ -21102,7 +21101,7 @@ std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSig
                 case 2: result += "0b"; break;
                 case 8: result += "0o"; break;
                 case 16: result += "0x"; break;
-                default: (("invalid radix" && 0) ? (void)0 : _assert("\"invalid radix\" && 0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2815));
+                default: (("invalid radix" && 0) ? (void)0 : _assert("\"invalid radix\" && 0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2814));
             }
             insert_at += 2;
 #pragma empty_line
@@ -21145,7 +21144,7 @@ std::string ap_private<_AP_W, _AP_S, true>::toString(uint8_t radix, bool wantSig
         ap_private<_AP_W, false, true> APdigit = tmp%divisor;
         ap_private<_AP_W, false, true> tmp2 = tmp/divisor;
         uint32_t digit = (uint32_t)(APdigit.getZExtValue());
-        ((digit < radix && "divide failed") ? (void)0 : _assert("digit < radix && \"divide failed\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2858));
+        ((digit < radix && "divide failed") ? (void)0 : _assert("digit < radix && \"divide failed\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2857));
         result.insert(insert_at,digits[digit]);
         tmp = tmp2;
     }
@@ -21163,10 +21162,10 @@ public:
     static const int width = _AP_W;
 #pragma empty_line
 private:
-#pragma line 2885 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2884 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ap_private(uint32_t numWords, const uint64_t bigVal[]) {
         set_canary();
-        ((bigVal && "Null pointer detected!") ? (void)0 : _assert("bigVal && \"Null pointer detected!\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2887));
+        ((bigVal && "Null pointer detected!") ? (void)0 : _assert("bigVal && \"Null pointer detected!\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2886));
         {
 #pragma empty_line
             memset(pVal, 0, _AP_N * sizeof(uint64_t));
@@ -21181,15 +21180,15 @@ private:
         }
         check_canary();
     }
-#pragma line 2912 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2911 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ap_private(const std::string& val, uint8_t radix=2) {
         set_canary();
-        ((!val.empty() && "The input string is empty.") ? (void)0 : _assert("!val.empty() && \"The input string is empty.\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2914));
+        ((!val.empty() && "The input string is empty.") ? (void)0 : _assert("!val.empty() && \"The input string is empty.\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 2913));
         const char *c_str = val.c_str();
         fromString(c_str, val.size(), radix);
         check_canary();
     }
-#pragma line 2931 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2930 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ap_private(const char strStart[], uint32_t slen, uint8_t radix) {
         set_canary();
         fromString(strStart, slen, radix);
@@ -21219,7 +21218,7 @@ private:
 #pragma empty_line
 #pragma empty_line
     uint64_t pVal[_AP_N];
-#pragma line 2969 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 2968 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     void check_canary() {}
     void set_canary() {}
 #pragma empty_line
@@ -21424,9 +21423,9 @@ public:
         check_canary();
     }
 #pragma empty_line
-    ap_private(uint64_t* val, uint32_t bits=_AP_W) {((0) ? (void)0 : _assert("0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3173));}
-    ap_private(const uint64_t *const val, uint32_t bits) {((0) ? (void)0 : _assert("0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3174));}
-#pragma line 3199 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+    ap_private(uint64_t* val, uint32_t bits=_AP_W) {((0) ? (void)0 : _assert("0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3172));}
+    ap_private(const uint64_t *const val, uint32_t bits) {((0) ? (void)0 : _assert("0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3173));}
+#pragma line 3198 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ap_private(int val, bool isSigned=true) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
     ap_private(bool val, bool isSigned=false) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
     ap_private(signed char val, bool isSigned=true) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
@@ -21440,7 +21439,7 @@ public:
     ap_private(long long val, bool isSigned=true) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
     ap_private(float val, bool isSigned=false) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
     ap_private(double val, bool isSigned=false) { set_canary(); pVal[0] = (ValType) val; if (isSigned && int64_t(pVal[0]) < 0) { memset(pVal+1, ~0, sizeof(uint64_t)*(_AP_N-1)); } else { memset(pVal+1, 0, sizeof(uint64_t)*(_AP_N-1)); } clearUnusedBits(); check_canary(); }
-#pragma line 3221 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3220 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline bool isSingleWord() const {
         return false;
     }
@@ -21499,23 +21498,23 @@ public:
 #pragma empty_line
         (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? (void)0 : _assert("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
-#pragma line 3277 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3276 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
         ,
- 3278
-#pragma line 3277 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+ 3277
+#pragma line 3276 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
         ))
                                                    ;
-        ((str && "String is null?") ? (void)0 : _assert("str && \"String is null?\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3279));
+        ((str && "String is null?") ? (void)0 : _assert("str && \"String is null?\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3278));
         bool isNeg = str[0] == '-';
         if (isNeg)
             str++, slen--;
 #pragma empty_line
 #pragma empty_line
         while(*str == '0' && *(str+1) != '\0') {str++; slen--;}
-        (((slen <= numbits || radix != 2) && "Insufficient bit width") ? (void)0 : _assert("(slen <= numbits || radix != 2) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3286));
-        ((((slen - 1)*3 <= numbits || radix != 8) && "Insufficient bit width") ? (void)0 : _assert("((slen - 1)*3 <= numbits || radix != 8) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3287));
-        ((((slen - 1)*4 <= numbits || radix != 16) && "Insufficient bit width") ? (void)0 : _assert("((slen - 1)*4 <= numbits || radix != 16) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3288));
-        (((((slen -1)*64)/22 <= numbits || radix != 10) && "Insufficient bit width") ? (void)0 : _assert("(((slen -1)*64)/22 <= numbits || radix != 10) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3289));
+        (((slen <= numbits || radix != 2) && "Insufficient bit width") ? (void)0 : _assert("(slen <= numbits || radix != 2) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3285));
+        ((((slen - 1)*3 <= numbits || radix != 8) && "Insufficient bit width") ? (void)0 : _assert("((slen - 1)*3 <= numbits || radix != 8) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3286));
+        ((((slen - 1)*4 <= numbits || radix != 16) && "Insufficient bit width") ? (void)0 : _assert("((slen - 1)*4 <= numbits || radix != 16) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3287));
+        (((((slen -1)*64)/22 <= numbits || radix != 10) && "Insufficient bit width") ? (void)0 : _assert("(((slen -1)*64)/22 <= numbits || radix != 10) && \"Insufficient bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3288));
 #pragma empty_line
         memset(pVal, 0, _AP_N * sizeof(uint64_t));
 #pragma empty_line
@@ -21538,7 +21537,7 @@ public:
 #pragma empty_line
 #pragma empty_line
                 if (!(((cdigit) >= '0' && (cdigit) <= '9') || ((cdigit) >= 'a' && (cdigit) <= 'f') || ((cdigit) >= 'A' && (cdigit) <= 'F')))
-                    ((0 && "Invalid hex digit in string") ? (void)0 : _assert("0 && \"Invalid hex digit in string\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3312));
+                    ((0 && "Invalid hex digit in string") ? (void)0 : _assert("0 && \"Invalid hex digit in string\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3311));
                 if (((cdigit) >= '0' && (cdigit) <= '9'))
                     digit = cdigit - '0';
                 else if (cdigit >= 'a')
@@ -21546,11 +21545,11 @@ public:
                 else if (cdigit >= 'A')
                     digit = cdigit - 'A' + 10;
                 else
-                    ((0 && "huh? we shouldn't get here") ? (void)0 : _assert("0 && \"huh? we shouldn't get here\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3320));
+                    ((0 && "huh? we shouldn't get here") ? (void)0 : _assert("0 && \"huh? we shouldn't get here\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3319));
             } else if (((cdigit) >= '0' && (cdigit) <= '9')) {
                 digit = cdigit - '0';
             } else if (cdigit != '\0'){
-                ((0 && "Invalid character in digit string") ? (void)0 : _assert("0 && \"Invalid character in digit string\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3324));
+                ((0 && "Invalid character in digit string") ? (void)0 : _assert("0 && \"Invalid character in digit string\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3323));
             }
 #pragma empty_line
 #pragma empty_line
@@ -21668,29 +21667,29 @@ public:
 #pragma empty_line
 #pragma empty_line
     inline void invert (int i) {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3442));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3443));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3441));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3442));
         flip(i);
     }
 #pragma empty_line
 #pragma empty_line
     inline bool test (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3449));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3450));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3448));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3449));
         return operator[](i);
     }
 #pragma empty_line
 #pragma empty_line
     inline void set (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3456));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3457));
+        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3455));
+        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3456));
         v ? set(i) : clear(i);
     }
 #pragma empty_line
 #pragma empty_line
     inline void set_bit (int i, bool v) {
-        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3463));
-        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3464));
+        ((i >= 0 && "Attempting to write bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to write bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3462));
+        ((i < _AP_W && "Attempting to write bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to write bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3463));
         v ? set(i) : clear(i);
     }
 #pragma empty_line
@@ -21708,31 +21707,31 @@ public:
 #pragma empty_line
 #pragma empty_line
     inline bool get (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3482));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3483));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3481));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3482));
         return operator [](i);
     }
 #pragma empty_line
 #pragma empty_line
     inline bool get_bit (int i) const {
-        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3489));
-        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3490));
+        ((i >= 0 && "Attempting to read bit with negative index") ? (void)0 : _assert("i >= 0 && \"Attempting to read bit with negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3488));
+        ((i < _AP_W && "Attempting to read bit beyond MSB") ? (void)0 : _assert("i < _AP_W && \"Attempting to read bit beyond MSB\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3489));
         return operator [](i);
     }
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
     inline void lrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3497));
-        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3498));
+        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3496));
+        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3497));
         operator = (shl(n) | lshr(_AP_W - n));
     }
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
     inline void rrotate(int n) {
-        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3505));
-        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3506));
+        ((n >= 0 && "Attempting to shift negative index") ? (void)0 : _assert("n >= 0 && \"Attempting to shift negative index\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3504));
+        ((n < _AP_W && "Shift value larger than bit width") ? (void)0 : _assert("n < _AP_W && \"Shift value larger than bit width\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3505));
         operator = (lshr(n) | shl(_AP_W - n));
     }
 #pragma empty_line
@@ -21761,7 +21760,7 @@ public:
 #pragma empty_line
 #pragma empty_line
     ap_private& flip(uint32_t bitPosition) {
-        ((bitPosition < BitWidth && "Out of the bit-width range!") ? (void)0 : _assert("bitPosition < BitWidth && \"Out of the bit-width range!\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3535));
+        ((bitPosition < BitWidth && "Out of the bit-width range!") ? (void)0 : _assert("bitPosition < BitWidth && \"Out of the bit-width range!\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 3534));
         if ((*this)[bitPosition]) clear(bitPosition);
         else set(bitPosition);
         return *this;
@@ -21801,7 +21800,7 @@ public:
     operator ^ (const ap_concat_ref<_AP_W2, _AP_T2, _AP_W3, _AP_T3>& a2) {
         return *this ^ a2.get();
     }
-#pragma line 3597 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3596 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W1, bool _AP_S1> inline ap_private& operator &=(const ap_private<_AP_W1, _AP_S1>& RHS) { const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N; uint32_t numWords = AESL_std::min((int)_AP_N, _AP_N1); uint32_t i; for (i = 0; i < numWords; ++i) pVal[i] &= RHS.get_pVal(i); if (_AP_N1 < _AP_N) { uint64_t ext = RHS.isNegative()?~0ULL:0; for (;i<_AP_N; i++) pVal[i] &= ext; } clearUnusedBits(); return *this; };
     template<int _AP_W1, bool _AP_S1> inline ap_private& operator |=(const ap_private<_AP_W1, _AP_S1>& RHS) { const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N; uint32_t numWords = AESL_std::min((int)_AP_N, _AP_N1); uint32_t i; for (i = 0; i < numWords; ++i) pVal[i] |= RHS.get_pVal(i); if (_AP_N1 < _AP_N) { uint64_t ext = RHS.isNegative()?~0ULL:0; for (;i<_AP_N; i++) pVal[i] |= ext; } clearUnusedBits(); return *this; };
     template<int _AP_W1, bool _AP_S1> inline ap_private& operator ^=(const ap_private<_AP_W1, _AP_S1>& RHS) { const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N; uint32_t numWords = AESL_std::min((int)_AP_N, _AP_N1); uint32_t i; for (i = 0; i < numWords; ++i) pVal[i] ^= RHS.get_pVal(i); if (_AP_N1 < _AP_N) { uint64_t ext = RHS.isNegative()?~0ULL:0; for (;i<_AP_N; i++) pVal[i] ^= ext; } clearUnusedBits(); return *this; };
@@ -21873,10 +21872,10 @@ public:
         free(dest);
         return *this;
     }
-#pragma line 3677 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3676 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W2, bool _AP_S2> inline ap_private& operator /=(const ap_private<_AP_W2,_AP_S2>& op) { *this=operator / (op); return *this; }
     template<int _AP_W2, bool _AP_S2> inline ap_private& operator %=(const ap_private<_AP_W2,_AP_S2>& op) { *this=operator % (op); return *this; }
-#pragma line 3711 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3710 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W1, bool _AP_S1> inline typename RType<_AP_W1, _AP_S1>::logic operator | (const ap_private<_AP_W1, _AP_S1>& RHS) const { enum { numWords = (RType<_AP_W1, _AP_S1>::logic_w +APINT_BITS_PER_WORD-1)/APINT_BITS_PER_WORD}; typename RType<_AP_W1, _AP_S1>::logic Result; uint32_t i; const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N; uint32_t min_N = std::min((int)_AP_N, _AP_N1); uint32_t max_N = std::max((int)_AP_N, _AP_N1); for (i = 0; i < min_N; ++i) Result.set_pVal(i, pVal[i] | RHS.get_pVal(i)); if (numWords > i) { uint64_t ext = ((_AP_N<_AP_N1 && isNegative() )||(_AP_N1 < _AP_N && RHS.isNegative())) ? ~0ULL : 0; if (_AP_N>_AP_N1) for (;i<max_N;i++) Result.set_pVal(i, pVal[i] | ext); else for (;i<max_N;i++) Result.set_pVal(i, RHS.get_pVal(i) | ext); if (numWords > i) { uint64_t ext2 = ((_AP_N>_AP_N1 && isNegative() )||(_AP_N1 > _AP_N && RHS.isNegative())) ? ~0ULL : 0; Result.set_pVal(i, ext | ext2); } } Result.clearUnusedBits(); return Result; };
     template<int _AP_W1, bool _AP_S1> inline typename RType<_AP_W1, _AP_S1>::logic operator & (const ap_private<_AP_W1, _AP_S1>& RHS) const { enum { numWords = (RType<_AP_W1, _AP_S1>::logic_w +APINT_BITS_PER_WORD-1)/APINT_BITS_PER_WORD}; typename RType<_AP_W1, _AP_S1>::logic Result; uint32_t i; const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N; uint32_t min_N = std::min((int)_AP_N, _AP_N1); uint32_t max_N = std::max((int)_AP_N, _AP_N1); for (i = 0; i < min_N; ++i) Result.set_pVal(i, pVal[i] & RHS.get_pVal(i)); if (numWords > i) { uint64_t ext = ((_AP_N<_AP_N1 && isNegative() )||(_AP_N1 < _AP_N && RHS.isNegative())) ? ~0ULL : 0; if (_AP_N>_AP_N1) for (;i<max_N;i++) Result.set_pVal(i, pVal[i] & ext); else for (;i<max_N;i++) Result.set_pVal(i, RHS.get_pVal(i) & ext); if (numWords > i) { uint64_t ext2 = ((_AP_N>_AP_N1 && isNegative() )||(_AP_N1 > _AP_N && RHS.isNegative())) ? ~0ULL : 0; Result.set_pVal(i, ext & ext2); } } Result.clearUnusedBits(); return Result; };
     template<int _AP_W1, bool _AP_S1> inline typename RType<_AP_W1, _AP_S1>::logic operator ^ (const ap_private<_AP_W1, _AP_S1>& RHS) const { enum { numWords = (RType<_AP_W1, _AP_S1>::logic_w +APINT_BITS_PER_WORD-1)/APINT_BITS_PER_WORD}; typename RType<_AP_W1, _AP_S1>::logic Result; uint32_t i; const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N; uint32_t min_N = std::min((int)_AP_N, _AP_N1); uint32_t max_N = std::max((int)_AP_N, _AP_N1); for (i = 0; i < min_N; ++i) Result.set_pVal(i, pVal[i] ^ RHS.get_pVal(i)); if (numWords > i) { uint64_t ext = ((_AP_N<_AP_N1 && isNegative() )||(_AP_N1 < _AP_N && RHS.isNegative())) ? ~0ULL : 0; if (_AP_N>_AP_N1) for (;i<max_N;i++) Result.set_pVal(i, pVal[i] ^ ext); else for (;i<max_N;i++) Result.set_pVal(i, RHS.get_pVal(i) ^ ext); if (numWords > i) { uint64_t ext2 = ((_AP_N>_AP_N1 && isNegative() )||(_AP_N1 > _AP_N && RHS.isNegative())) ? ~0ULL : 0; Result.set_pVal(i, ext ^ ext2); } } Result.clearUnusedBits(); return Result; };
@@ -21936,7 +21935,7 @@ public:
         typename RType<_AP_W2,_AP_S2>::mod res = typename RType<_AP_W2,_AP_S2>::mod(_AP_S?lhs.srem(rhs):lhs.urem(rhs));
         return res;
     }
-#pragma line 3781 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3780 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline ap_private operator << (const int op) const { if (op >= _AP_W) return ap_private(0); if (true && op < 0) return *this >> (0-op); return shl(op); }
     inline ap_private operator << (const bool op) const { if (op >= _AP_W) return ap_private(0); if (false && op < 0) return *this >> (0-op); return shl(op); }
     inline ap_private operator << (const signed char op) const { if (op >= _AP_W) return ap_private(0); if (true && op < 0) return *this >> (0-op); return shl(op); }
@@ -21963,7 +21962,7 @@ public:
             return *this << sh;
         }
     }
-#pragma line 3825 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3824 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline ap_private operator >> (const int op) const { if (op >= _AP_W) { if (isNegative()) return ap_private(-1); else return ap_private(0); } if (true && op < 0) return *this << (0-op); if (_AP_S) return ashr(op) ; else return lshr(op); }
     inline ap_private operator >> (const bool op) const { if (op >= _AP_W) { if (isNegative()) return ap_private(-1); else return ap_private(0); } if (false && op < 0) return *this << (0-op); if (_AP_S) return ashr(op) ; else return lshr(op); }
     inline ap_private operator >> (const signed char op) const { if (op >= _AP_W) { if (isNegative()) return ap_private(-1); else return ap_private(0); } if (true && op < 0) return *this << (0-op); if (_AP_S) return ashr(op) ; else return lshr(op); }
@@ -21990,7 +21989,7 @@ public:
             return *this >> sh;
         }
     }
-#pragma line 3872 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 3871 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     template<int _AP_W2, bool _AP_S2> inline ap_private& operator >>=(int op) { *this = operator >> (op); return *this; } inline ap_private& operator >>=(unsigned int op) { *this = operator >> (op); return *this; } template<int _AP_W2, bool _AP_S2> inline ap_private& operator >>=(const ap_private<_AP_W2,_AP_S2>& op) { *this = operator >> (op); return *this; }
     template<int _AP_W2, bool _AP_S2> inline ap_private& operator <<=(int op) { *this = operator << (op); return *this; } inline ap_private& operator <<=(unsigned int op) { *this = operator << (op); return *this; } template<int _AP_W2, bool _AP_S2> inline ap_private& operator <<=(const ap_private<_AP_W2,_AP_S2>& op) { *this = operator << (op); return *this; }
 #pragma empty_line
@@ -22404,7 +22403,7 @@ public:
     inline const uint64_t* getRawData() const {
         return &pVal[0];
     }
-#pragma line 4293 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 4292 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ap_private sqrt() const {
 #pragma empty_line
 #pragma empty_line
@@ -22484,7 +22483,7 @@ public:
             else
                 return x_old + 1;
         } else
-            ((0 && "Error in ap_private<_AP_W, _AP_S>::sqrt computation") ? (void)0 : _assert("0 && \"Error in ap_private<_AP_W, _AP_S>::sqrt computation\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4372));
+            ((0 && "Error in ap_private<_AP_W, _AP_S>::sqrt computation") ? (void)0 : _assert("0 && \"Error in ap_private<_AP_W, _AP_S>::sqrt computation\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4371));
         return x_old + 1;
     }
 #pragma empty_line
@@ -22534,7 +22533,7 @@ public:
         clearUnusedBits();
         return *this;
     }
-#pragma line 4456 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 4455 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline const ap_private operator++(int) {
         ap_private API(*this);
         ++(*this);
@@ -22627,7 +22626,7 @@ public:
 #pragma empty_line
 #pragma empty_line
     ap_private ashr(uint32_t shiftAmt) const {
-        ((shiftAmt <= BitWidth && "Invalid shift amount, too big") ? (void)0 : _assert("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4548));
+        ((shiftAmt <= BitWidth && "Invalid shift amount, too big") ? (void)0 : _assert("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4547));
 #pragma empty_line
         if (shiftAmt == 0)
             return *this;
@@ -22760,7 +22759,7 @@ public:
 #pragma empty_line
 #pragma empty_line
     ap_private shl(uint32_t shiftAmt) const {
-        ((shiftAmt <= BitWidth && "Invalid shift amount, too big") ? (void)0 : _assert("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4681));
+        ((shiftAmt <= BitWidth && "Invalid shift amount, too big") ? (void)0 : _assert("shiftAmt <= BitWidth && \"Invalid shift amount, too big\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4680));
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -22843,7 +22842,7 @@ public:
 #pragma empty_line
         uint32_t rhsBits = RHS.getActiveBits();
         uint32_t rhsWords = !rhsBits ? 0 : (whichWord(rhsBits - 1) + 1);
-        ((rhsWords && "Divided by zero???") ? (void)0 : _assert("rhsWords && \"Divided by zero???\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4764));
+        ((rhsWords && "Divided by zero???") ? (void)0 : _assert("rhsWords && \"Divided by zero???\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4763));
         uint32_t lhsBits = this->getActiveBits();
         uint32_t lhsWords = !lhsBits ? 0 : (whichWord(lhsBits - 1) + 1);
 #pragma empty_line
@@ -22880,7 +22879,7 @@ public:
             return -(this->udiv((ap_private)(-RHS)));
         return this->udiv(RHS);
     }
-#pragma line 4809 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 4808 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ap_private urem(const ap_private& RHS) const {
 #pragma empty_line
         uint32_t lhsBits = getActiveBits();
@@ -22889,7 +22888,7 @@ public:
 #pragma empty_line
         uint32_t rhsBits = RHS.getActiveBits();
         uint32_t rhsWords = !rhsBits ? 0 : (whichWord(rhsBits - 1) + 1);
-        ((rhsWords && "Performing remainder operation by zero ???") ? (void)0 : _assert("rhsWords && \"Performing remainder operation by zero ???\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4817));
+        ((rhsWords && "Performing remainder operation by zero ???") ? (void)0 : _assert("rhsWords && \"Performing remainder operation by zero ???\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4816));
 #pragma empty_line
 #pragma empty_line
         if (lhsWords == 0) {
@@ -22918,7 +22917,7 @@ public:
         uint32_t lhsWords = !lhsBits ? 0 : (whichWord(lhsBits - 1) + 1);
 #pragma empty_line
         uint32_t rhsWords = 1;
-        ((rhsWords && "Performing remainder operation by zero ???") ? (void)0 : _assert("rhsWords && \"Performing remainder operation by zero ???\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4846));
+        ((rhsWords && "Performing remainder operation by zero ???") ? (void)0 : _assert("rhsWords && \"Performing remainder operation by zero ???\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4845));
 #pragma empty_line
         if (lhsWords == 0) {
 #pragma empty_line
@@ -23037,7 +23036,7 @@ public:
 #pragma empty_line
         if (n1 <= APINT_BITS_PER_WORD && n2 <= APINT_BITS_PER_WORD)
             return pVal[0] < RHS;
-        ((0) ? (void)0 : _assert("0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4965));
+        ((0) ? (void)0 : _assert("0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 4964));
     }
 #pragma empty_line
     template<bool _AP_S1>
@@ -23127,8 +23126,8 @@ public:
 #pragma empty_line
     template<int _AP_W1, bool _AP_S1>
     void cpSext(const ap_private<_AP_W1, _AP_S1>& that) {
-        ((_AP_W1 < BitWidth && "Invalid ap_private SignExtend request") ? (void)0 : _assert("_AP_W1 < BitWidth && \"Invalid ap_private SignExtend request\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5055));
-        ((_AP_W1 <= MAX_INT_BITS && "Too many bits") ? (void)0 : _assert("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5056));
+        ((_AP_W1 < BitWidth && "Invalid ap_private SignExtend request") ? (void)0 : _assert("_AP_W1 < BitWidth && \"Invalid ap_private SignExtend request\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5054));
+        ((_AP_W1 <= MAX_INT_BITS && "Too many bits") ? (void)0 : _assert("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5055));
 #pragma empty_line
         if (!that.isNegative()) {
             cpZext(that);
@@ -23166,8 +23165,8 @@ public:
 #pragma empty_line
     template <int _AP_W1, bool _AP_S1>
     void cpZext(const ap_private<_AP_W1, _AP_S1>& that) {
-        ((_AP_W1 < BitWidth && "Invalid ap_private ZeroExtend request") ? (void)0 : _assert("_AP_W1 < BitWidth && \"Invalid ap_private ZeroExtend request\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5094));
-        ((_AP_W1 <= MAX_INT_BITS && "Too many bits") ? (void)0 : _assert("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5095));
+        ((_AP_W1 < BitWidth && "Invalid ap_private ZeroExtend request") ? (void)0 : _assert("_AP_W1 < BitWidth && \"Invalid ap_private ZeroExtend request\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5093));
+        ((_AP_W1 <= MAX_INT_BITS && "Too many bits") ? (void)0 : _assert("_AP_W1 <= MAX_INT_BITS && \"Too many bits\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5094));
         const int _AP_N1 = ap_private<_AP_W1, _AP_S1>::_AP_N;
         int i = 0;
         for (; i < _AP_N1; ++i)
@@ -23229,7 +23228,7 @@ public:
 #pragma empty_line
 #pragma empty_line
     inline uint64_t getZExtValue() const {
-        ((getActiveBits() <= 64 && "Too many bits for uint64_t") ? (void)0 : _assert("getActiveBits() <= 64 && \"Too many bits for uint64_t\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5157));
+        ((getActiveBits() <= 64 && "Too many bits for uint64_t") ? (void)0 : _assert("getActiveBits() <= 64 && \"Too many bits for uint64_t\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5156));
         return *pVal;
     }
 #pragma empty_line
@@ -23238,7 +23237,7 @@ public:
 #pragma empty_line
 #pragma empty_line
     inline int64_t getSExtValue() const {
-        ((getActiveBits() <= 64 && "Too many bits for int64_t") ? (void)0 : _assert("getActiveBits() <= 64 && \"Too many bits for int64_t\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5166));
+        ((getActiveBits() <= 64 && "Too many bits for int64_t") ? (void)0 : _assert("getActiveBits() <= 64 && \"Too many bits for int64_t\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5165));
         return int64_t(pVal[0]);
     }
 #pragma empty_line
@@ -23246,8 +23245,8 @@ public:
 #pragma empty_line
 #pragma empty_line
     static uint32_t getBitsNeeded(const char* str, uint32_t slen, uint8_t radix) {
-        ((str != 0 && "Invalid value string") ? (void)0 : _assert("str != 0 && \"Invalid value string\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5174));
-        ((slen > 0 && "Invalid string length") ? (void)0 : _assert("slen > 0 && \"Invalid string length\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5175));
+        ((str != 0 && "Invalid value string") ? (void)0 : _assert("str != 0 && \"Invalid value string\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5173));
+        ((slen > 0 && "Invalid string length") ? (void)0 : _assert("slen > 0 && \"Invalid string length\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5174));
 #pragma empty_line
 #pragma empty_line
         uint32_t isNegative = str[0] == '-';
@@ -23265,7 +23264,7 @@ public:
             return slen * 4 + isNegative;
 #pragma empty_line
 #pragma empty_line
-        ((radix == 10 && "Invalid radix") ? (void)0 : _assert("radix == 10 && \"Invalid radix\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5193));
+        ((radix == 10 && "Invalid radix") ? (void)0 : _assert("radix == 10 && \"Invalid radix\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5192));
 #pragma empty_line
 #pragma empty_line
 #pragma empty_line
@@ -23325,7 +23324,7 @@ public:
         }
         return Count;
     }
-#pragma line 5261 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 5260 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     inline uint32_t countTrailingZeros() const {
         uint32_t Count = 0;
         uint32_t i = 0;
@@ -23419,7 +23418,7 @@ public:
             if (n > 52)
                 (mantissa) >>= (n - 52);
         } else {
-            ((hiWord > 0 && "High word is negative?") ? (void)0 : _assert("hiWord > 0 && \"High word is negative?\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5354));
+            ((hiWord > 0 && "High word is negative?") ? (void)0 : _assert("hiWord > 0 && \"High word is negative?\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5353));
             uint64_t hibits = (Tmp.get_pVal(hiWord)) << (52 - n % APINT_BITS_PER_WORD);
             uint64_t lobits = (Tmp.get_pVal(hiWord-1)) >> (11 + n % APINT_BITS_PER_WORD);
             mantissa = hibits | lobits;
@@ -23633,10 +23632,10 @@ template<int _AP_W, bool _AP_S>
 std::string ap_private<_AP_W, _AP_S, false>::toString(uint8_t radix, bool wantSigned) const {
     (((radix == 10 || radix == 8 || radix == 16 || radix == 2) && "Radix should be 2, 8, 10, or 16!") ? (void)0 : _assert("(radix == 10 || radix == 8 || radix == 16 || radix == 2) && \"Radix should be 2, 8, 10, or 16!\"",
  "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
-#pragma line 5566 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+#pragma line 5565 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ,
- 5567
-#pragma line 5566 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
+ 5566
+#pragma line 5565 "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h"
     ))
                                                ;
     static const char *digits[] = {
@@ -23671,7 +23670,7 @@ std::string ap_private<_AP_W, _AP_S, false>::toString(uint8_t radix, bool wantSi
                 case 2: result += "0b"; break;
                 case 8: result += "0o"; break;
                 case 16: result += "0x"; break;
-                default: (("invalid radix" && 0) ? (void)0 : _assert("\"invalid radix\" && 0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5600));
+                default: (("invalid radix" && 0) ? (void)0 : _assert("\"invalid radix\" && 0", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5599));
             }
             insert_at += 2;
 #pragma empty_line
@@ -23714,7 +23713,7 @@ std::string ap_private<_AP_W, _AP_S, false>::toString(uint8_t radix, bool wantSi
         ap_private_ops::divide(tmp, tmp.getNumWords(), divisor, divisor.getNumWords(), &tmp2,
                 &APdigit);
         uint64_t digit = APdigit.getZExtValue();
-        ((digit < radix && "divide failed") ? (void)0 : _assert("digit < radix && \"divide failed\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5643));
+        ((digit < radix && "divide failed") ? (void)0 : _assert("digit < radix && \"divide failed\"", "C:/Xilinx/Vivado_HLS/2016.1/include/etc/ap_private.h", 5642));
         result.insert(insert_at,digits[digit]);
         tmp = tmp2;
     }
@@ -27758,9 +27757,9 @@ public:
     }
 #pragma empty_line
 };
-#pragma line 6 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.h" 2
-#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/window_fn_class.h" 1
-#pragma line 48 "C:/Users/aaron/Desktop/git_article/vivadoProjects/window_fn_class.h"
+#pragma line 6 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.h" 2
+#pragma line 1 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/window_fn_class.h" 1
+#pragma line 48 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/window_fn_class.h"
 #pragma line 1 "c:\\xilinx\\vivado_hls\\2016.1\\msys\\bin\\../lib/gcc/mingw32/4.6.2/include/c++/cmath" 1 3
 #pragma line 41 "c:\\xilinx\\vivado_hls\\2016.1\\msys\\bin\\../lib/gcc/mingw32/4.6.2/include/c++/cmath" 3
 #pragma empty_line
@@ -28276,7 +28275,7 @@ namespace std
 #pragma empty_line
 #pragma empty_line
 }
-#pragma line 49 "C:/Users/aaron/Desktop/git_article/vivadoProjects/window_fn_class.h" 2
+#pragma line 49 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/window_fn_class.h" 2
 using namespace std;
 #pragma empty_line
 #pragma empty_line
@@ -28364,32 +28363,31 @@ winfn_loop:
 }
 #pragma empty_line
 };
-#pragma line 7 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.h" 2
+#pragma line 7 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.h" 2
+#pragma line 23 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.h"
+typedef ap_fixed <1,1>fp_bit1;
 #pragma empty_line
-#pragma empty_line
-#pragma empty_line
-#pragma empty_line
-typedef ap_fixed <1,0>fp_bit1;
 typedef short data_inp;
 #pragma empty_line
-typedef struct
-{
- data_inp data;
- fp_bit1 done;
-}outData_s;
+void selectionAlgorithm(void);
+data_inp selectionSort(char indexOutputData);
 #pragma empty_line
-outData_s selectionSort(data_inp dataIn,char posOutData);
-fp_bit1 selectionAlgorithm(data_inp A[2]);
-#pragma line 4 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.cpp" 2
+void writeValues(void);
 #pragma empty_line
-fp_bit1 selectionAlgorithm (data_inp A[2])
+void readValues(void);
+#pragma line 4 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.cpp" 2
+#pragma empty_line
+extern data_inp A[4];
+extern fp_bit1 operation;
+#pragma empty_line
+ void selectionAlgorithm(void)
 {
- data_inp i,j;
-    for (i = 0; i < 2 - 1; i++)
+ short i,j;
+    for (i = 0; i < 4 - 1; i++)
     {
      data_inp min = A[i];
      data_inp index_min = i;
-        for (j = i + 1; j < 2; j++)
+        for (j = i + 1; j < 4; j++)
         {
             if (A[j] < min)
             {
@@ -28402,9 +28400,6 @@ fp_bit1 selectionAlgorithm (data_inp A[2])
         A[i] = A[index_min];
         A[index_min] = temp;
     }
-    fp_bit1 done;
-    done.V = 1;
-    return done;
 }
 #pragma empty_line
 
@@ -28412,34 +28407,15 @@ fp_bit1 selectionAlgorithm (data_inp A[2])
 #include "apatb_selectionSort.h"
 #endif
 #define selectionSort(...) AESL_ORIG_DUT_selectionSort(__VA_ARGS__)
-#pragma line 30 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.cpp"
-outData_s selectionSort(data_inp dataIn,char posOutData)
+#pragma line 30 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.cpp"
+data_inp selectionSort(char indexOutputData)
 {
- static data_inp *ptr;
- static data_inp A[2];
- static char flagFill = 0;
- static data_inp count = 0;
- static outData_s sOutData = {0,0};
-#pragma empty_line
- if(count < 2)
+ switch(operation.V)
  {
-  A[count] = dataIn;
-  count++;
-  return sOutData;
+  case 0: selectionAlgorithm(); return 0;
+  default: return A[indexOutputData];
  }
- else
- {
-  if(flagFill == 0)
-  {
-   ptr = A;
-   sOutData.done = selectionAlgorithm(A);
-   flagFill = 1;
-  }
- }
- sOutData.data = ptr[posOutData];
-#pragma empty_line
- return sOutData;
 }
 #undef selectionSort
 
-#pragma line 56 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort.cpp"
+#pragma line 37 "C:/Users/aaron/Desktop/git_article/vivadoProjects/selectionSort/selectionSort.cpp"

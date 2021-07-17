@@ -66,9 +66,9 @@
          <wvobject fp_name="group18" type="group">
             <obj_property name="label">operation(wire)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject fp_name="/apatb_bubbleSort_top/AESL_inst_bubbleSort/operation" type="array">
-               <obj_property name="ElementShortName">operation[7:0]</obj_property>
-               <obj_property name="ObjectShortName">operation[7:0]</obj_property>
+            <wvobject fp_name="/apatb_bubbleSort_top/AESL_inst_bubbleSort/operation_V" type="array">
+               <obj_property name="ElementShortName">operation_V[0:0]</obj_property>
+               <obj_property name="ObjectShortName">operation_V[0:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>
@@ -93,8 +93,8 @@
             <obj_property name="label">A(memory)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <wvobject fp_name="/apatb_bubbleSort_top/AESL_inst_bubbleSort/A_address0" type="array">
-               <obj_property name="ElementShortName">A_address0[2:0]</obj_property>
-               <obj_property name="ObjectShortName">A_address0[2:0]</obj_property>
+               <obj_property name="ElementShortName">A_address0[3:0]</obj_property>
+               <obj_property name="ObjectShortName">A_address0[3:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/AESL_inst_bubbleSort/A_ce0" type="logic">
@@ -120,8 +120,8 @@
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/AESL_inst_bubbleSort/A_address1" type="array">
-               <obj_property name="ElementShortName">A_address1[2:0]</obj_property>
-               <obj_property name="ObjectShortName">A_address1[2:0]</obj_property>
+               <obj_property name="ElementShortName">A_address1[3:0]</obj_property>
+               <obj_property name="ObjectShortName">A_address1[3:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/AESL_inst_bubbleSort/A_ce1" type="logic">
@@ -167,9 +167,9 @@
          <wvobject fp_name="group58" type="group">
             <obj_property name="label">operation(wire)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
-            <wvobject fp_name="/apatb_bubbleSort_top/operation" type="array">
-               <obj_property name="ElementShortName">operation[7:0]</obj_property>
-               <obj_property name="ObjectShortName">operation[7:0]</obj_property>
+            <wvobject fp_name="/apatb_bubbleSort_top/operation_V" type="array">
+               <obj_property name="ElementShortName">operation_V[0:0]</obj_property>
+               <obj_property name="ObjectShortName">operation_V[0:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>
@@ -194,8 +194,8 @@
             <obj_property name="label">A(memory)</obj_property>
             <obj_property name="DisplayName">label</obj_property>
             <wvobject fp_name="/apatb_bubbleSort_top/A_address0" type="array">
-               <obj_property name="ElementShortName">A_address0[2:0]</obj_property>
-               <obj_property name="ObjectShortName">A_address0[2:0]</obj_property>
+               <obj_property name="ElementShortName">A_address0[3:0]</obj_property>
+               <obj_property name="ObjectShortName">A_address0[3:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/A_ce0" type="logic">
@@ -221,8 +221,8 @@
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/A_address1" type="array">
-               <obj_property name="ElementShortName">A_address1[2:0]</obj_property>
-               <obj_property name="ObjectShortName">A_address1[2:0]</obj_property>
+               <obj_property name="ElementShortName">A_address1[3:0]</obj_property>
+               <obj_property name="ObjectShortName">A_address1[3:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/A_ce1" type="logic">
@@ -260,19 +260,19 @@
                <obj_property name="ObjectShortName">LENGTH_ap_return[31:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
-            <wvobject fp_name="/apatb_bubbleSort_top/LENGTH_operation" type="array">
-               <obj_property name="ElementShortName">LENGTH_operation[31:0]</obj_property>
-               <obj_property name="ObjectShortName">LENGTH_operation[31:0]</obj_property>
+            <wvobject fp_name="/apatb_bubbleSort_top/LENGTH_A" type="array">
+               <obj_property name="ElementShortName">LENGTH_A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_A[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject fp_name="/apatb_bubbleSort_top/LENGTH_operation_V" type="array">
+               <obj_property name="ElementShortName">LENGTH_operation_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_operation_V[31:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
             <wvobject fp_name="/apatb_bubbleSort_top/LENGTH_indexOutputData" type="array">
                <obj_property name="ElementShortName">LENGTH_indexOutputData[31:0]</obj_property>
                <obj_property name="ObjectShortName">LENGTH_indexOutputData[31:0]</obj_property>
-               <obj_property name="Radix">HEXRADIX</obj_property>
-            </wvobject>
-            <wvobject fp_name="/apatb_bubbleSort_top/LENGTH_A" type="array">
-               <obj_property name="ElementShortName">LENGTH_A[31:0]</obj_property>
-               <obj_property name="ObjectShortName">LENGTH_A[31:0]</obj_property>
                <obj_property name="Radix">HEXRADIX</obj_property>
             </wvobject>
          </wvobject>

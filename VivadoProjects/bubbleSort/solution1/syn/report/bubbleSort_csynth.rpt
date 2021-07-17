@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bubbleSort'
 ================================================================
-* Date:           Wed Jul 14 18:07:21 2021
+* Date:           Thu Jul 15 21:02:19 2021
 
 * Version:        2016.1 (Build 1538259 on Fri Apr 08 16:12:49 MDT 2016)
 * Project:        bubbleSort
@@ -29,7 +29,7 @@
     |  Latency  |  Interval | Pipeline|
     | min | max | min | max |   Type  |
     +-----+-----+-----+-----+---------+
-    |    1|   52|    2|   53|   none  |
+    |    2|  514|    3|  515|   none  |
     +-----+-----+-----+-----+---------+
 
     + Detail: 
@@ -37,13 +37,13 @@
         N/A
 
         * Loop: 
-        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
-        |             |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
-        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count | Pipelined|
-        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
-        |- Loop 1     |   10|   50|  2 ~ 10  |          -|          -|      5|    no    |
-        | + Loop 1.1  |    0|    8|         2|          -|          -| 0 ~ 4 |    no    |
-        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+        +-------------+-----+-----+----------+-----------+-----------+--------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  |  Trip  |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+--------+----------+
+        |- Loop 1     |   32|  512|  2 ~ 32  |          -|          -|      16|    no    |
+        | + Loop 1.1  |    0|   30|         2|          -|          -| 0 ~ 15 |    no    |
+        +-------------+-----+-----+----------+-----------+-----------+--------+----------+
 
 
 
@@ -55,14 +55,14 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
 +-----------------+---------+-------+--------+-------+
 |DSP              |        -|      -|       -|      -|
-|Expression       |        -|      -|       0|     15|
+|Expression       |        -|      -|       0|     17|
 |FIFO             |        -|      -|       -|      -|
 |Instance         |        -|      -|       -|      -|
 |Memory           |        -|      -|       -|      -|
-|Multiplexer      |        -|      -|       -|     30|
-|Register         |        -|      -|      38|      -|
+|Multiplexer      |        -|      -|       -|     34|
+|Register         |        -|      -|      43|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        0|      0|      38|     45|
+|Total            |        0|      0|      43|     51|
 +-----------------+---------+-------+--------+-------+
 |Available        |      270|    240|  126800|  63400|
 +-----------------+---------+-------+--------+-------+
@@ -86,41 +86,41 @@
     +----------------------+----------+-------+---+----+------------+------------+
     |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------+----------+-------+---+----+------------+------------+
-    |i_fu_164_p2           |     +    |      0|  0|   4|           4|           2|
-    |j_fu_148_p2           |     +    |      0|  0|   3|           3|           1|
-    |exitcond_i_fu_142_p2  |   icmp   |      0|  0|   2|           4|           4|
-    |tmp_6_i_fu_170_p2     |   icmp   |      0|  0|   6|          16|          16|
+    |i_fu_152_p2           |     +    |      0|  0|   5|           5|           2|
+    |j_fu_136_p2           |     +    |      0|  0|   4|           4|           1|
+    |exitcond_i_fu_130_p2  |   icmp   |      0|  0|   2|           5|           5|
+    |tmp_5_i_fu_158_p2     |   icmp   |      0|  0|   6|          16|          16|
     +----------------------+----------+-------+---+----+------------+------------+
-    |Total                 |          |      0|  0|  15|          27|          23|
+    |Total                 |          |      0|  0|  17|          30|          24|
     +----------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
     +---------------------+----+-----------+-----+-----------+
     |         Name        | LUT| Input Size| Bits| Total Bits|
     +---------------------+----+-----------+-----+-----------+
-    |A_address0           |   3|          4|    3|         12|
-    |A_address1           |   3|          3|    3|          9|
+    |A_address0           |   4|          4|    4|         16|
+    |A_address1           |   4|          3|    4|         12|
     |ap_NS_fsm            |   1|          7|    1|          7|
-    |indvars_iv_i_reg_87  |   4|          2|    4|          8|
-    |j_i_reg_99           |   3|          2|    3|          6|
-    |p_s_reg_110          |  16|          2|   16|         32|
+    |indvars_iv_i_reg_75  |   5|          2|    5|         10|
+    |j_i_reg_87           |   4|          2|    4|          8|
+    |p_0_reg_98           |  16|          2|   16|         32|
     +---------------------+----+-----------+-----+-----------+
-    |Total                |  30|         20|   30|         74|
+    |Total                |  34|         20|   34|         85|
     +---------------------+----+-----------+-----+-----------+
 
     * Register: 
     +---------------------+----+----+-----+-----------+
     |         Name        | FF | LUT| Bits| Const Bits|
     +---------------------+----+----+-----+-----------+
-    |A_addr_1_reg_200     |   3|   0|    3|          0|
-    |A_addr_2_reg_206     |   3|   0|    3|          0|
+    |A_addr_1_reg_183     |   4|   0|    4|          0|
+    |A_addr_2_reg_189     |   4|   0|    4|          0|
     |ap_CS_fsm            |   6|   0|    6|          0|
-    |indvars_iv_i_reg_87  |   4|   0|    4|          0|
-    |j_i_reg_99           |   3|   0|    3|          0|
-    |j_reg_195            |   3|   0|    3|          0|
-    |p_s_reg_110          |  16|   0|   16|          0|
+    |indvars_iv_i_reg_75  |   5|   0|    5|          0|
+    |j_i_reg_87           |   4|   0|    4|          0|
+    |j_reg_178            |   4|   0|    4|          0|
+    |p_0_reg_98           |  16|   0|   16|          0|
     +---------------------+----+----+-----+-----------+
-    |Total                |  38|   0|   38|          0|
+    |Total                |  43|   0|   43|          0|
     +---------------------+----+----+-----+-----------+
 
 
@@ -139,17 +139,17 @@
 |ap_idle          | out |    1| ap_ctrl_hs |    bubbleSort   | return value |
 |ap_ready         | out |    1| ap_ctrl_hs |    bubbleSort   | return value |
 |ap_return        | out |   16| ap_ctrl_hs |    bubbleSort   | return value |
-|A_address0       | out |    3|  ap_memory |        A        |     array    |
+|indexOutputData  |  in |    8|   ap_none  | indexOutputData |    scalar    |
+|operation_V      |  in |    1|   ap_none  |   operation_V   |    pointer   |
+|A_address0       | out |    4|  ap_memory |        A        |     array    |
 |A_ce0            | out |    1|  ap_memory |        A        |     array    |
 |A_we0            | out |    1|  ap_memory |        A        |     array    |
 |A_d0             | out |   16|  ap_memory |        A        |     array    |
 |A_q0             |  in |   16|  ap_memory |        A        |     array    |
-|A_address1       | out |    3|  ap_memory |        A        |     array    |
+|A_address1       | out |    4|  ap_memory |        A        |     array    |
 |A_ce1            | out |    1|  ap_memory |        A        |     array    |
 |A_we1            | out |    1|  ap_memory |        A        |     array    |
 |A_d1             | out |   16|  ap_memory |        A        |     array    |
 |A_q1             |  in |   16|  ap_memory |        A        |     array    |
-|indexOutputData  |  in |    8|   ap_none  | indexOutputData |    scalar    |
-|operation        |  in |    8|   ap_none  |    operation    |    scalar    |
 +-----------------+-----+-----+------------+-----------------+--------------+
 

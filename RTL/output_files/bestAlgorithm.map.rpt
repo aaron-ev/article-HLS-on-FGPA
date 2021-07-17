@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bestAlgorithm
-Wed Jul 14 11:43:57 2021
+Fri Jul 16 14:21:05 2021
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,19 +13,14 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |bubbleSort|flagFill_load_reg_303
-  9. State Machine - |bubbleSort|flagFill
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Top-level Entity: |bubbleSort
- 16. Parameter Settings for User Entity Instance: bubbleSort_A:A_U
- 17. Parameter Settings for User Entity Instance: bubbleSort_A:A_U|bubbleSort_A_ram:bubbleSort_A_ram_U
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |insertionSort
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,16 +46,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 14 11:43:57 2021      ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 16 14:21:05 2021      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; bestAlgorithm                              ;
-; Top-level Entity Name              ; bubbleSort                                 ;
+; Top-level Entity Name              ; insertionSort                              ;
 ; Family                             ; Cyclone IV GX                              ;
-; Total logic elements               ; 333                                        ;
-;     Total combinational functions  ; 312                                        ;
-;     Dedicated logic registers      ; 178                                        ;
-; Total registers                    ; 178                                        ;
-; Total pins                         ; 49                                         ;
+; Total logic elements               ; 72                                         ;
+;     Total combinational functions  ; 69                                         ;
+;     Dedicated logic registers      ; 34                                         ;
+; Total registers                    ; 34                                         ;
+; Total pins                         ; 103                                        ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -77,7 +72,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; bubbleSort         ; bestAlgorithm      ;
+; Top-level entity name                                                      ; insertionSort      ; bestAlgorithm      ;
 ; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -169,15 +164,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                   ;
-+-------------------------------------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                                                                      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                          ; Library ;
-+-------------------------------------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
-; ../vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort_A.v                                     ; yes             ; User Verilog HDL File        ; C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort_A.v     ;         ;
-; ../vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort.v                                       ; yes             ; User Verilog HDL File        ; C:/Users/aaron/Desktop/git_article/vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort.v       ;         ;
-; /users/aaron/desktop/git_article/vivadoprojects/bubblesort/solution1/syn/verilog/bubblesort_a_ram.dat ; yes             ; Auto-Found Unspecified File  ; /users/aaron/desktop/git_article/vivadoprojects/bubblesort/solution1/syn/verilog/bubblesort_a_ram.dat ;         ;
-+-------------------------------------------------------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                             ;
++-----------------------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                      ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                          ; Library ;
++-----------------------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; ../vivadoProjects/insertionSort/solution1/syn/verilog/insertionSort.v ; yes             ; User Verilog HDL File  ; C:/Users/aaron/Desktop/git_article/vivadoProjects/insertionSort/solution1/syn/verilog/insertionSort.v ;         ;
++-----------------------------------------------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -185,73 +178,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 49               ;
+; I/O pins                 ; 103              ;
 ; DSP block 9-bit elements ; 0                ;
 ; Maximum fan-out node     ; ap_clk~input     ;
-; Maximum fan-out          ; 178              ;
-; Total fan-out            ; 1751             ;
-; Average fan-out          ; 2.98             ;
+; Maximum fan-out          ; 34               ;
+; Total fan-out            ; 460              ;
+; Average fan-out          ; 1.49             ;
 +--------------------------+------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
-+---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Library Name ;
-+---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------+--------------+
-; |bubbleSort                                 ; 312 (118)         ; 178 (66)     ; 0           ; 0            ; 0       ; 0         ; 0         ; 49   ; 0            ; |bubbleSort                                                      ;              ;
-;    |bubbleSort_A:A_U|                       ; 194 (0)           ; 112 (0)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |bubbleSort|bubbleSort_A:A_U                                     ;              ;
-;       |bubbleSort_A_ram:bubbleSort_A_ram_U| ; 194 (194)         ; 112 (112)    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |bubbleSort|bubbleSort_A:A_U|bubbleSort_A_ram:bubbleSort_A_ram_U ;              ;
-+---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
+; |insertionSort             ; 69 (69)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 103  ; 0            ; |insertionSort      ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+---------------------------------------------------+
-; State Machine - |bubbleSort|flagFill_load_reg_303 ;
-+-------------------------+-------------------------+
-; Name                    ; flagFill_load_reg_303.1 ;
-+-------------------------+-------------------------+
-; flagFill_load_reg_303.0 ; 0                       ;
-; flagFill_load_reg_303.1 ; 1                       ;
-+-------------------------+-------------------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------+
-; State Machine - |bubbleSort|flagFill ;
-+------------+-------------------------+
-; Name       ; flagFill.0              ;
-+------------+-------------------------+
-; flagFill.1 ; 0                       ;
-; flagFill.0 ; 1                       ;
-+------------+-------------------------+
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; A_addr_2_reg_328[0]                   ; Merged with A_addr_3_reg_334[0]        ;
-; flagFill.0                            ; Stuck at GND due to stuck port data_in ;
-; indvars_iv_i_reg_126[3]               ; Stuck at VCC due to stuck port data_in ;
-; indvars_iv_i_reg_126[0..2]            ; Lost fanout                            ;
-; j_reg_323[1]                          ; Merged with A_addr_3_reg_334[1]        ;
-; j_reg_323[0]                          ; Merged with A_addr_3_reg_334[0]        ;
-; j_reg_323[2]                          ; Merged with A_addr_3_reg_334[2]        ;
-; Total Number of Removed Registers = 9 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; flagFill.0    ; Stuck at GND              ; indvars_iv_i_reg_126[3]                ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
++-------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                      ;
++---------------------------------------+---------------------------------+
+; Register name                         ; Reason for Removal              ;
++---------------------------------------+---------------------------------+
+; A_addr_1_reg_180[0]                   ; Merged with A_addr_2_reg_186[0] ;
+; Total Number of Removed Registers = 1 ;                                 ;
++---------------------------------------+---------------------------------+
 
 
 +------------------------------------------------------+
@@ -259,12 +212,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 178   ;
+; Total registers                              ; 34    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 96    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Clock Enable       ; 28    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -274,71 +227,46 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; ap_CS_fsm[0]                           ; 12      ;
+; ap_CS_fsm[0]                           ; 10      ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |bubbleSort|j_i_reg_138[2]          ;
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |bubbleSort|storemerge1_reg_161[3]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bubbleSort|indvars_iv_i_reg_126[3] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bubbleSort|A_address0[0]           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |insertionSort|j_0_in_i_reg_85[0] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |insertionSort|p_0_reg_95[0]      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |insertionSort|i_i_reg_73[0]      ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |insertionSort|ap_CS_fsm[5]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |insertionSort|A_address0         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |bubbleSort ;
-+-----------------+----------------------------------+-----------------------+
-; Parameter Name  ; Value                            ; Type                  ;
-+-----------------+----------------------------------+-----------------------+
-; ap_ST_st1_fsm_0 ; 000001                           ; Unsigned Binary       ;
-; ap_ST_st2_fsm_1 ; 000010                           ; Unsigned Binary       ;
-; ap_ST_st3_fsm_2 ; 000100                           ; Unsigned Binary       ;
-; ap_ST_st4_fsm_3 ; 001000                           ; Unsigned Binary       ;
-; ap_ST_st5_fsm_4 ; 010000                           ; Unsigned Binary       ;
-; ap_ST_st6_fsm_5 ; 100000                           ; Unsigned Binary       ;
-; ap_const_lv32_0 ; 00000000000000000000000000000000 ; Unsigned Binary       ;
-; ap_const_lv32_1 ; 00000000000000000000000000000001 ; Unsigned Binary       ;
-; ap_const_lv32_2 ; 00000000000000000000000000000010 ; Unsigned Binary       ;
-; ap_const_lv32_4 ; 00000000000000000000000000000100 ; Unsigned Binary       ;
-; ap_const_lv4_4  ; 0100                             ; Unsigned Binary       ;
-; ap_const_lv32_3 ; 00000000000000000000000000000011 ; Unsigned Binary       ;
-; ap_const_lv3_0  ; 000                              ; Unsigned Binary       ;
-; ap_const_lv32_5 ; 00000000000000000000000000000101 ; Unsigned Binary       ;
-; ap_const_lv16_5 ; 0000000000000101                 ; Unsigned Binary       ;
-; ap_const_lv16_1 ; 0000000000000001                 ; Unsigned Binary       ;
-; ap_const_lv3_1  ; 001                              ; Unsigned Binary       ;
-; ap_const_lv4_F  ; 1111                             ; Unsigned Binary       ;
-+-----------------+----------------------------------+-----------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bubbleSort_A:A_U ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; DataWidth      ; 16    ; Signed Integer                       ;
-; AddressRange   ; 5     ; Signed Integer                       ;
-; AddressWidth   ; 3     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: bubbleSort_A:A_U|bubbleSort_A_ram:bubbleSort_A_ram_U ;
-+----------------+-------+--------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                     ;
-+----------------+-------+--------------------------------------------------------------------------+
-; DWIDTH         ; 16    ; Signed Integer                                                           ;
-; AWIDTH         ; 3     ; Signed Integer                                                           ;
-; MEM_SIZE       ; 5     ; Signed Integer                                                           ;
-+----------------+-------+--------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |insertionSort ;
++-----------------+----------------------------------+--------------------------+
+; Parameter Name  ; Value                            ; Type                     ;
++-----------------+----------------------------------+--------------------------+
+; ap_ST_st1_fsm_0 ; 000001                           ; Unsigned Binary          ;
+; ap_ST_st2_fsm_1 ; 000010                           ; Unsigned Binary          ;
+; ap_ST_st3_fsm_2 ; 000100                           ; Unsigned Binary          ;
+; ap_ST_st4_fsm_3 ; 001000                           ; Unsigned Binary          ;
+; ap_ST_st5_fsm_4 ; 010000                           ; Unsigned Binary          ;
+; ap_ST_st6_fsm_5 ; 100000                           ; Unsigned Binary          ;
+; ap_const_lv32_0 ; 00000000000000000000000000000000 ; Unsigned Binary          ;
+; ap_const_lv32_2 ; 00000000000000000000000000000010 ; Unsigned Binary          ;
+; ap_const_lv32_4 ; 00000000000000000000000000000100 ; Unsigned Binary          ;
+; ap_const_lv3_1  ; 001                              ; Unsigned Binary          ;
+; ap_const_lv32_3 ; 00000000000000000000000000000011 ; Unsigned Binary          ;
+; ap_const_lv32_1 ; 00000000000000000000000000000001 ; Unsigned Binary          ;
+; ap_const_lv16_0 ; 0000000000000000                 ; Unsigned Binary          ;
+; ap_const_lv3_4  ; 100                              ; Unsigned Binary          ;
+; ap_const_lv3_7  ; 111                              ; Unsigned Binary          ;
+; ap_const_lv32_5 ; 00000000000000000000000000000101 ; Unsigned Binary          ;
++-----------------+----------------------------------+--------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -347,7 +275,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -357,54 +285,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Jul 14 11:43:48 2021
+    Info: Processing started: Fri Jul 16 14:21:01 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bestAlgorithm -c bestAlgorithm
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10335): Unrecognized synthesis attribute "ram_style" at ../vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort_A.v(27)
-Info (12021): Found 2 design units, including 2 entities, in source file /users/aaron/desktop/git_article/vivadoprojects/bubblesort/solution1/syn/verilog/bubblesort_a.v
-    Info (12023): Found entity 1: bubbleSort_A_ram
-    Info (12023): Found entity 2: bubbleSort_A
-Warning (10335): Unrecognized synthesis attribute "CORE_GENERATION_INFO" at ../vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort.v(10)
-Info (12021): Found 1 design units, including 1 entities, in source file /users/aaron/desktop/git_article/vivadoprojects/bubblesort/solution1/syn/verilog/bubblesort.v
-    Info (12023): Found entity 1: bubbleSort
-Info (12127): Elaborating entity "bubbleSort" for the top level hierarchy
-Warning (10306): Invalid value "none" for synthesis attribute "fsm_encoding" at ../vivadoProjects/bubbleSort/solution1/syn/verilog/bubbleSort.v(65)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(193): truncated value with size 64 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(194): truncated value with size 64 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(233): truncated value with size 64 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(235): truncated value with size 64 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(237): truncated value with size 64 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(239): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(247): truncated value with size 64 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(249): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(275): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at bubbleSort.v(418): truncated value with size 32 to match size of target (6)
-Info (10264): Verilog HDL Case Statement information at bubbleSort.v(384): all case item expressions in this case statement are onehot
-Info (12128): Elaborating entity "bubbleSort_A" for hierarchy "bubbleSort_A:A_U"
-Info (12128): Elaborating entity "bubbleSort_A_ram" for hierarchy "bubbleSort_A:A_U|bubbleSort_A_ram:bubbleSort_A_ram_U"
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "bubbleSort_A:A_U|bubbleSort_A_ram:bubbleSort_A_ram_U|ram" is uninferred due to inappropriate RAM size
-Critical Warning (127005): Memory depth (8) in the design file differs from memory depth (5) in the Memory Initialization File "C:/Users/aaron/Desktop/git_article/RTL/db/bestAlgorithm.ram0_bubbleSort_A_ram_d0904408.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (10335): Unrecognized synthesis attribute "CORE_GENERATION_INFO" at ../vivadoProjects/insertionSort/solution1/syn/verilog/insertionSort.v(10)
+Info (12021): Found 1 design units, including 1 entities, in source file /users/aaron/desktop/git_article/vivadoprojects/insertionsort/solution1/syn/verilog/insertionsort.v
+    Info (12023): Found entity 1: insertionSort
+Info (12127): Elaborating entity "insertionSort" for the top level hierarchy
+Warning (10306): Invalid value "none" for synthesis attribute "fsm_encoding" at ../vivadoProjects/insertionSort/solution1/syn/verilog/insertionSort.v(81)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(151): truncated value with size 64 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(152): truncated value with size 64 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(166): truncated value with size 64 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(168): truncated value with size 64 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(170): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(178): truncated value with size 64 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(180): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at insertionSort.v(323): truncated value with size 32 to match size of target (6)
+Info (10264): Verilog HDL Case Statement information at insertionSort.v(289): all case item expressions in this case statement are onehot
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/aaron/Desktop/git_article/RTL/output_files/bestAlgorithm.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "posOutData[3]"
-    Warning (15610): No output dependent on input pin "posOutData[4]"
-    Warning (15610): No output dependent on input pin "posOutData[5]"
-    Warning (15610): No output dependent on input pin "posOutData[6]"
-    Warning (15610): No output dependent on input pin "posOutData[7]"
-Info (21057): Implemented 383 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 27 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 334 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4640 megabytes
-    Info: Processing ended: Wed Jul 14 11:43:57 2021
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "indexOutputData[2]"
+    Warning (15610): No output dependent on input pin "indexOutputData[3]"
+    Warning (15610): No output dependent on input pin "indexOutputData[4]"
+    Warning (15610): No output dependent on input pin "indexOutputData[5]"
+    Warning (15610): No output dependent on input pin "indexOutputData[6]"
+    Warning (15610): No output dependent on input pin "indexOutputData[7]"
+Info (21057): Implemented 177 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 44 input pins
+    Info (21059): Implemented 59 output pins
+    Info (21061): Implemented 74 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4644 megabytes
+    Info: Processing ended: Fri Jul 16 14:21:05 2021
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

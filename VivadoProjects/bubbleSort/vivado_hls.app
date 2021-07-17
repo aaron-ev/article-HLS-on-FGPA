@@ -2,7 +2,7 @@
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim" setup="true" csimMode="2" lastCsimMode="0"/>
+        <SimFlow name="csim" setup="true" csimMode="0" lastCsimMode="2"/>
     </Simulation>
     <files xmlns="">
         <file name="../bubbleSort_tb.cpp" sc="0" tb="1" cflags=" "/>
